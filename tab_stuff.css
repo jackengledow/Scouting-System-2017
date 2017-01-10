@@ -13,6 +13,10 @@
 	content:'';
 }
 
+.buttons{
+	height: 80px;
+}
+
 .tab-links li {
 	margin:0px 5px;
 	float:left;
