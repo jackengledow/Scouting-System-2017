@@ -17,6 +17,21 @@
 	height: 80px;
 }
 
+#whistle{
+	opacity: 1;
+	position: absolute;
+	z-index: 0;
+}
+
+#cover{
+	position: absoulte;
+	z-index: 1;
+}
+
+#middleSpace{
+	margin-left: 75px;
+}
+
 .leftButton{
 	margin-right: 40px;
 }
