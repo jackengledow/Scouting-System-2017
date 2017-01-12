@@ -80,3 +80,9 @@ li.active a, li.active a:hover {
 		display:block;
 	}
 
+.makeshot:hover {
+	opacity: 0.8;
+}
+.missshot:hover {
+	opacity: 0.8;
+}
