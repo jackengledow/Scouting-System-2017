@@ -28,11 +28,11 @@
 							High Ball
 						</p>
 						<br>
-						<button class = "leftButton"><img class = "buttons, clickable" id = "whistle" src = "http://fscomps.fotosearch.com/compc/CAI/CAI123/412-03363.jpg"><img class = "buttons" id = "cover" src = "http://i3.cpcache.com/product/1168621316/check_mark_green_circle_square_sticker_3_x_3.jpg?width=750&height=750&Filters=%5B%7B%22name%22%3A%22background%22%2C%22value%22%3A%22F2F2F2%22%2C%22sequence%22%3A2%7D%5D"></button>
+						<button class = "leftButton"><img class = "buttons, clickable" id = "whistle" src = "http://media.gettyimages.com/photos/race-car-crossing-the-finish-line-picture-id108473841?s=170667a"><img class = "buttons" id = "cover" src = "http://i3.cpcache.com/product/1168621316/check_mark_green_circle_square_sticker_3_x_3.jpg?width=750&height=750&Filters=%5B%7B%22name%22%3A%22background%22%2C%22value%22%3A%22F2F2F2%22%2C%22sequence%22%3A2%7D%5D"></button>
 						<button><img class = "buttons" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png"></button>
 						<button><img class = "buttons" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png"></button>
 						<br><br>
-						<button class = "leftButton"><img class = "buttons" src = "http://www.clipartlord.com/wp-content/uploads/2015/09/gear5.png"></button>
+						<button class = "leftButton"><div><img class = "buttons, clickable" id = "whistle" src = "http://previews.123rf.com/images/yuliaglam/yuliaglam1211/yuliaglam121100021/16196152-3d-illustration-of-golden-cog-wheel-Stock-Vector-gear.jpg"><img class = "buttons" id = "cover" src = "http://i3.cpcache.com/product/1168621316/check_mark_green_circle_square_sticker_3_x_3.jpg?width=750&height=750&Filters=%5B%7B%22name%22%3A%22background%22%2C%22value%22%3A%22F2F2F2%22%2C%22sequence%22%3A2%7D%5D"></div></button>
 						<button><img class = "buttons" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png"></button>
 						<button><img class = "buttons" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png"></button>
 					</div>
@@ -165,7 +165,20 @@
 </html>
 
 <script>
+	
 	jQuery(document).ready(function() {
+	opacity = 1;
+	$('.clickable').on("click", function(){
+			if(opacity==1){
+				$(this).css("opacity", 0.25);
+				opacity = 0.25;
+			}
+			else{
+				$(this).css("opacity", 1);
+				opacity = 1;
+			}
+		});
+	
     jQuery('.tabs .tab-links a').on('click', function(e)  {
         var currentAttrValue = jQuery(this).attr('href');
 
@@ -177,9 +190,6 @@
 
         e.preventDefault();
 		
-		$('.clickable').on("click", function(){
-			$(this).css("opacity", 0.2);
-		});
     });
 });
 </script>
