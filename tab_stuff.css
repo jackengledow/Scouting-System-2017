@@ -17,17 +17,23 @@
 	height: 80px;
 }
 
+.clickable{
+	height: 80px;
+	opacity: 1;
+}
+
 #whistle{
 	opacity: 1;
 	position: absolute;
-	z-index: 0;
+	z-index: 1;
 }
 
 #cover{
 	position: absoulte;
-	z-index: 1;
+	z-index: 0;
 	opacity: 1;
 }
+
 
 #middleSpace{
 	margin-left: 75px;
