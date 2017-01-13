@@ -17,12 +17,16 @@
 	height: 80px;
 }
 
+#speed{
+	opacity: 1;
+}
+
 .clickable{
 	height: 80px;
 	opacity: 1;
 }
 
-#whistle{
+.whistle{
 	opacity: 1;
 	position: absolute;
 	z-index: 1;
@@ -78,17 +82,29 @@ li.active a, li.active a:hover {
 	background:#fff;
 }
 
-	.tab {
-		display:none;
-	}
+.tab {
+	display:none;
+}
 
-	.tab.active {
-		display:block;
-	}
+.tab.active {
+	display:block;
+}
 
 .makeshot:hover {
 	opacity: 0.8;
 }
 .missshot:hover {
+	opacity: 0.8;
+}
+/*.topstyle {
+	padding-left: 10px;
+	margin-left: 35px;
+}*/
+.topStyle {
+	padding-right: 10px;
+	margin-right: 195px;
+	border-radius: 10px 10px 0px 0px;
+}
+.memes:hover {
 	opacity: 0.8;
 }
