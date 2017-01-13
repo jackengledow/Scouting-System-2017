@@ -101,3 +101,6 @@ li.active a, li.active a:hover {
 	margin-right: 195px;
 	border-radius: 10px 10px 0px 0px;
 }
+.memes:hover {
+	opacity: 0.8;
+}
