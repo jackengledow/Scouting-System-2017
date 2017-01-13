@@ -108,3 +108,8 @@ li.active a, li.active a:hover {
 .memes:hover {
 	opacity: 0.8;
 }
+.top {
+	background-color: #dbdbdb;
+	border-radius: 10px;
+	
+}
