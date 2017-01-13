@@ -17,12 +17,16 @@
 	height: 80px;
 }
 
+#speed{
+	opacity: 1;
+}
+
 .clickable{
 	height: 80px;
 	opacity: 1;
 }
 
-#whistle{
+.whistle{
 	opacity: 1;
 	position: absolute;
 	z-index: 1;
