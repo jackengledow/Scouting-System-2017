@@ -7,6 +7,28 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="scouting.js"></script>
+		<style>
+			.make{
+				border:2px solid green;background-color: #9eff9b;border-radius:0px 0px 0px 10px;
+				margin-left: -15px;
+			}
+			.miss{
+				border:2px solid red;background-color: #ff9b9b;border-radius:0px 0px 10px 0px;
+				margin-left: -15px;
+			}
+			.middle{
+				border:2px solid #cccc00;background-color: #ffff99;
+				margin-left: -15px;
+			}
+			.width{
+				width: 100%;
+			}
+			.button{
+				 position: absolute; right: 0px;
+				 text-align: center;
+				 padding-left: 0% !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="tabs">
@@ -33,53 +55,60 @@
 					</div>
 					
 					<div class="container">
+					
+
+						
+						<br><br><br>
 						<div class="row">
-							<div class="col-md-5" style="background-color:#d3d3d3; border-radius:3px;">
-								<h2><center>High</center></h2>
-							</div>	
-							<div class="col-md-2" style="background-color:white;">
+							<div class="col-md-5">
+								<div class="row">
+									<div class="col-md-12 topStyle" style="background-color:#d3d3d3;">
+										<h2><center>High</center></h2>
+									</div>	
+								</div>
+								<div class="row">
+								<!--button-->
+									<div class="col-md-6">
+										<button class="make makeshot width button" onclick="countHighMakeP()">
+											<h2><center>Make</center></h2>
+										</button>
+									</div>
+														
+									<div class="col-md-6">
+										<button class="miss missshot width button" onclick="countHighMakeM()">
+											<h2><center>Miss</center></h2>
+										</button>
+									</div>
+								</div>
 							</div>
-							<div class="col-md-5" style="background-color:#d3d3d3; border-radius:3px;">
-								<h2><center>Low</center></h2>
+							<div class="col-md-2"></div>
+							<div class="col-md-5">
+								<div class="row">
+									<div class="col-md-12 topStyle" style="background-color:#d3d3d3;padding-left: 0px;">
+										<h2><center>Low</center></h2>
+									</div>	
+								</div>
+								<div class="row">
+								<!--button-->
+									<div class="col-md-4">
+										<button class="make width button memes" onclick="countHighMakeP()">
+											<h2><center>Big</center></h2>
+										</button>
+									</div>
+									<div class="col-md-4">
+										<button class="width button middle memes" onclick="countHighMakeP()">
+											<h2><center>Medium</center></h2>
+										</button>
+									</div>
+									<div class="col-md-4">
+										<button class="miss width button memes" onclick="countHighMakeM()">
+											<h2><center>Small</center></h2>
+										</button>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-2">
-								<button style="border:2px solid green;background-color: #9eff9b;border-radius:5px;" class="makeshot" onclick="countHighMakeP()">
-									<div class="jumbotron" style="background-color:#9eff9b;border:none;">
-									<h2><center>Make</center></h2>
-									</div>
-								</button>
-							</div>
-							<div class="col-md-1">
-							</div>
-							<div class="col-md-2">
-								<button style="border:2px solid red;background-color: #ff9b9b;border-radius:5px;"class="missshot" onclick="countHighMakeM()">
-									<div class="jumbotron" style="background-color:#ff9b9b;<!--border:2px solid red;-->">
-									<h2><center>Miss</center></h2>
-									</div>
-								</button>
-							</div>
-							<div class="col-md-2">
-							<!--<h1><center>Make</center></h1>-->
-							</div>
-							<div class="col-md-2">
-								<button style="border:2px solid green;background-color: #9eff9b;border-radius:5px;" class="makeshot" onclick="countHighMakeP()">
-									<div class="jumbotron" style="background-color:#9eff9b;border:none;">
-									<h2><center>Make</center></h2>
-									</div>
-								</button>
-							</div>
-							<div class="col-md-1">
-							</div>
-							<div class="col-md-2">
-								<button style="border:2px solid red;background-color: #ff9b9b;border-radius:5px;"class="missshot" onclick="countHighMakeM()">
-									<div class="jumbotron" style="background-color:#ff9b9b;<!--border:2px solid red;-->">
-									<h2><center>Miss</center></h2>
-									</div>
-								</button>
-							</div>
-						</div>
+						
 						
 						<!--<div class="row">
 							<div class="col-md-2">
@@ -87,7 +116,7 @@
 									<div class="jumbotron" style="background-color:#9eff9b;border:2px solid green;">
 									<h1><center>+</center></h1>
 									</div>
-								</button>
+								</button>   "this code is the bottom row of auton scoring"
 							</div>
 							<div class="col-md-1">
 							</div>
