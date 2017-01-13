@@ -6,34 +6,28 @@ var totalLow=0;
 var countHighMake=function (){
 	makeHigh++;
 	totalHigh++;
-	//console.log(makeHigh + " high shots made")
+	console.log(makeHigh + " high shots made")
 	//console.log(totalHigh + " total high shots");
-	//return makeHigh;
-	//return totalHigh;
-	console.log(100*(makeHigh/totalHigh) + "% of made high shots");
+	console.log(Math.round(100*(makeHigh/totalHigh)) + "% of high shots made");
 
 }
 
 var countHighMiss=function () {
 	totalHigh++;
 	//console.log(totalHigh + " total high shots");
-	//return totalHigh;
-	console.log(100*(makeHigh/totalHigh) + "% of made high shots");
+	console.log(Math.round(100*(makeHigh/totalHigh)) + "% of high shots made");
 }
 
 var countLowMake=function (){
 	makeLow++;
 	totalLow++;
-	//console.log(makeLow + " low shots made")
+	console.log(makeLow + " low shots made")
 	//console.log(totalLow + " total low shots");
-	//return makeLow;
-	//return totalLow;
-	console.log(100*(makeLow/totalLow) + "% of made low shots");
+	console.log(Math.round(100*(makeLow/totalLow)) + "% of made low shots");
 }
 
 var countLowMiss=function () {
 	totalLow++;
 	//console.log(totalLow + " total low shots");
-	//return totalLow;
-	console.log(100*(makeLow/totalLow) + "% of made low shots");
+	console.log(Math.round(100*(makeLow/totalLow)) + "% of made low shots");
 }
