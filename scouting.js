@@ -2,6 +2,7 @@ var makeHigh=0;
 var totalHigh=0;
 var makeLow=0;
 var totalLow=0;
+var totalGears =0;
 
 var countHighMake=function (){
 	makeHigh++;
@@ -30,4 +31,9 @@ var countLowMiss=function () {
 	totalLow++;
 	//console.log(totalLow + " total low shots");
 	console.log(Math.round(100*(makeLow/totalLow)) + "% of made low shots");
+}
+
+var changeGear = function (change){
+	totalGears += change;
+	console.log(totalGears + " gears collected.")
 }
