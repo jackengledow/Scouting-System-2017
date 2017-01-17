@@ -46,6 +46,13 @@
 .leftButton{
 	margin-right: 40px;
 }
+.rightButton{
+	margin-left: 40px;
+}
+
+.smallButton{
+	height:65px;
+}
 
 .tab-links li {
 	margin:0px 5px;
