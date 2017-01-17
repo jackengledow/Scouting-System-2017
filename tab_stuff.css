@@ -45,6 +45,10 @@
 	margin-left: 75px;
 }
 
+#ballButton{
+	height: 100px;
+}
+
 .leftButton{
 	margin-right: 40px;
 }
