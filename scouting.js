@@ -1,26 +1,28 @@
-var makeHigh=0;
-var totalHigh=0;
-var makeLow=0;
-var totalLow=0;
+var makeHighTeleop=0;
+var makeHighAuton=0;
+var makeLowTeleop=0;
 var totalGears =0;
 
-var countHighMake=function (){
-	makeHigh++;
-	totalHigh++;
-	console.log(makeHigh + " high shots made")
-	//console.log(totalHigh + " total high shots");
-	console.log(Math.round(100*(makeHigh/totalHigh)) + "% of high shots made");
+var countHighMakeTeleop=function (change){
+	makeHighTeleop+=change;
+	document.getElementById("highScoreTeleop").innerHTML = makeHighTeleop;
 
 }
 
-var countHighMiss=function () {
-	totalHigh++;
-	//console.log(totalHigh + " total high shots");
-	console.log(Math.round(100*(makeHigh/totalHigh)) + "% of high shots made");
+var countHighMakeAuton=function (change){
+	makeHighAuton+=change;
+	document.getElementById("highScoreAuton").innerHTML = makeHighAuton;
+
+}
+
+var addGears=function (change){
+	totalGears+=change;
+	document.getElementById("gearsTeleop").innerHTML = totalGears;
+
 }
 
 var countLowMake=function (){
-	makeLow++;
+	makeLowTeleop++;
 	totalLow++;
 	console.log(makeLow + " low shots made")
 	//console.log(totalLow + " total low shots");
