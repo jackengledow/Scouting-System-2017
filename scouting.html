@@ -141,17 +141,17 @@
 								</div>
 								<div class="row">
 									<div class="col-sm-4">
-										<button class="make leftcorner red width button memes" onclick="countHighMakeM()">
+										<button class="make leftcorner red width button memes">
 											<h2><center>Small</center></h2>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button class="width button middle memes" onclick="countHighMakeP()">
+										<button class="width button middle memes">
 											<h2><center>Medium</center></h2>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button class="miss rightcorner green width button memes" onclick="countHighMakeP()">
+										<button class="miss rightcorner green width button memes">
 											<h2><center>Big</center></h2>
 										</button>
 									</div>
@@ -328,7 +328,7 @@
 										</button>
 									</div>
 									<div class = "col-md-3">
-										<button class = "make makeshot lightgreen width button" onclick = "countHighMake(1)Teleop">
+										<button class = "make makeshot lightgreen width button" onclick = "countHighMakeTeleop(1)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
@@ -352,17 +352,17 @@
 								</div>
 								<div class="row">
 									<div class="col-sm-4">
-										<button class="make leftcorner red width button memes dropDown"  onclick="myFunction()">
+										<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDump('Small')">
 											<h2><center>Small</center></h2>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button class="width button middle memes dropDown" onclick="countHighMakeP()">
+										<button class="width button middle memes dropDown" id = "Medium" onclick = "lowDump('Medium')">
 											<h2><center>Medium</center></h2>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button class="miss rightcorner green width button memes dropDown" onclick="countHighMakeP()">
+										<button class="miss rightcorner green width button memes dropDown" id = "Big" onclick = "lowDump('Big')">
 											<h2><center>Big</center></h2>
 										</button>
 									</div>
@@ -371,27 +371,27 @@
 								<br><br><br><br>
 								<div class="row percent" style = "display: none;">
 									<div class="col-lg-3">
-										<button class="make leftcorner red width button memes">
+										<button class="make leftcorner red width button memes clickDrop" onclick = "dumpPercent(0)">
 											<h2><center>0%</center></h2>
 										</button>
 									</div>
 									<div class="col-lg-2">
-										<button class="width button middle memes">
+										<button class="width button middle memes clickDrop" onclick = "dumpPercent(25)">
 											<h2><center>25%</center></h2>
 										</button>
 									</div>
 									<div class="col-lg-2">
-										<button class="miss middle green width button memes">
+										<button class="miss middle green width button memes clickDrop" onclick = "dumpPercent(50)">
 											<h2><center>50%</center></h2>
 										</button>
 									</div>
 									<div class="col-lg-2">
-										<button class="miss green middle width button memes">
+										<button class="miss green middle width button memes clickDrop" onclick = "dumpPercent(75)">
 											<h2><center>75%</center></h2>
 										</button>
 									</div>
 									<div class="col-lg-3">
-										<button class="miss rightcorner green width button memes">
+										<button class="miss rightcorner green width button memes clickDrop" onclick = "dumpPercent(100)">
 											<h2><center>100%</center></h2>
 										</button>
 									</div>
@@ -525,6 +525,9 @@
 		});
 	$(".dropDown").on("click", function(){
 		$(".percent").css("display", "block");
+	});
+	$(".clickDrop").on("click", function(){
+		$(".percent").css("display", "none");
 	});
 		
 	/*

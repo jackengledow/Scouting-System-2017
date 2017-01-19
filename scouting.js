@@ -2,6 +2,15 @@ var makeHighTeleop=0;
 var makeHighAuton=0;
 var makeLowTeleop=0;
 var totalGears =0;
+var lowDumps = [""];
+var lowCount = 0;
+var smallLoads = [""];
+var smallCount = 0;
+var mediumLoads = [""];
+var mediumCount = 0;
+var mediumCount = 0;
+var bigLoads = [""];
+var bigCount = 0;
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
@@ -38,4 +47,29 @@ var countLowMiss=function () {
 var changeGear = function (change){
 	totalGears += change;
 	console.log(totalGears + " gears collected.")
+}
+
+var lowDump = function(type){
+	lowDumps[lowCount] = type;
+	lowCount++;
+	console.log(lowDumps);
+}
+
+var dumpPercent = function(percent){
+	size = lowDumps[lowCount-1];
+	if (size=="Small"){
+		smallLoads[smallCount]=percent;
+		smallCount++;
+		console.log("Small: " + smallLoads);
+	}
+	if (size=="Medium"){
+		mediumLoads[mediumCount]=percent;
+		mediumCount++;
+		console.log("Medium: " + mediumLoads);
+	}
+	if (size=="Big"){
+		bigLoads[bigCount]=percent;
+		bigCount++;
+		console.log("Big: " + bigLoads);
+	}
 }
