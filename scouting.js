@@ -14,18 +14,27 @@ var bigCount = 0;
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
+	if (makeHighTeleop<0){
+		makeHighTeleop = 0;
+	}
 	document.getElementById("highScoreTeleop").innerHTML = makeHighTeleop;
 
 }
 
 var countHighMakeAuton=function (change){
 	makeHighAuton+=change;
+	if (makeHighAuton<0){
+		makeHighAuton = 0;
+	}
 	document.getElementById("highScoreAuton").innerHTML = makeHighAuton;
 
 }
 
 var addGears=function (change){
 	totalGears+=change;
+	if (totalGears<0){
+		totalGears = 0;
+	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
 
 }
