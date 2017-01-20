@@ -51,6 +51,7 @@
 
 .leftButton{
 	margin-right: 40px;
+	border-radius: 5px;
 }
 .rightButton{
 	margin-left: 40px;
