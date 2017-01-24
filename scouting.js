@@ -11,6 +11,7 @@ var mediumCount = 0;
 var mediumCount = 0;
 var bigLoads = [""];
 var bigCount = 0;
+var canvas = document.getElementById('cnv');
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
