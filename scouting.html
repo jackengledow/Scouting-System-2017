@@ -37,6 +37,14 @@
 				background-color: #ff9b9b;
 				border:2px solid red;
 			}
+			.lightred{
+				background-color: #fcbdbd;
+				border: 2px solid red;
+			}
+			.darkred{
+				background-color: #e04545;
+				border: 2px solid red;
+			}
 			.yellowGreen {
 				background-color: #bfff80 !important;
 				border: 2px solid #80ff00 !important;			
@@ -145,23 +153,35 @@
 									</div>
 								</div>-->
 								<div class = "row">
-									<div class = "col-md-3">
-										<button class = "make makeshot darkgreen width button leftcorner" onclick = "countHighMakeAuton(10)">
+									<div class = "col-md-4">
+										<button class = "make makeshot darkgreen width button" onclick = "countHighMakeAuton(10)">
 											<h2><center>+ 10</center></h2>
 										</button>
 									</div>
-									<div class = "col-md-3">
+									<div class = "col-md-4">
 										<button class = "make makeshot medgreen width button" onclick = "countHighMakeAuton(5)">
 											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
-									<div class = "col-md-3">
+									<div class = "col-md-4">
 										<button class = "make makeshot lightgreen width button" onclick = "countHighMakeAuton(1)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
-									<div class = "col-md-3">
-										<button class = "make makeshot red width button rightcorner" onclick = "countHighMakeAuton(-1)">
+								</div>
+								<div class = "row" style = "padding-top: 68px">
+									<div class = "col-md-4">
+										<button class = "make makeshot darkred width button leftcorner" onclick = "countHighMakeAuton(-1)">
+											<h2><center>- 10</center></h2>
+										</button>
+									</div>
+									<div class = "col-md-4">
+										<button class = "make makeshot red width button" onclick = "countHighMakeAuton(-1)">
+											<h2><center>- 5</center></h2>
+										</button>
+									</div>
+									<div class = "col-md-4">
+										<button class = "make makeshot lightred width button rightcorner" onclick = "countHighMakeAuton(-1)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
