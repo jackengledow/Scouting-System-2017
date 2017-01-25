@@ -203,24 +203,52 @@
 									</div>	
 								</div>
 								<div class="row">
-									<div class="col-sm-3">
-										<button class="make leftcorner red width button memes">
-											<h2><center>0-10</center></h2>
+									<div class="col-sm-4">
+										<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDump('Small')">
+											<h2><center>Small 0-20</center></h2>
 										</button>
 									</div>
-									<div class="col-sm-3">
-										<button class="width button middle memes">
-											<h2><center>10-20</center></h2>
+									<div class="col-sm-4">
+										<button class="width button middle memes dropDown" id = "Medium" onclick = "lowDump('Medium')">
+											<h2><center>Med 20-40</center></h2>
 										</button>
 									</div>
-									<div class="col-sm-3">
-										<button class="miss yellowGreen width button memes">
-											<h2><center>20-30</center></h2>
+									<div class="col-sm-4">
+										<button class="miss rightcorner green width button memes dropDown" id = "Big" onclick = "lowDump('Big')">
+											<h2><center>Big 40+</center></h2>
 										</button>
 									</div>
-									<div class="col-sm-3">
-										<button class="make rightcorner green width button memes">
-											<h2><center>30+</center></h2>
+									
+								</div>
+								<br><br><br><br>
+								<div class="row percent" style = "display: none; height: 10px;">
+									<div class="col-lg-3">
+										<button class="make leftcorner red width button memes hi clickDrop" onclick = "dumpPercent(0)">
+											<h2><center>0%</center></h2>
+										</button>
+									</div>
+									<div class="col-lg-2">
+
+										<button class="width button middle orange clickDrop memes" onclick = "dumpPercent(25)">
+
+											<h2><center>25%</center></h2>
+										</button>
+									</div>
+									<div class="col-lg-2">
+										<button class="miss middle green width button memes clickDrop" onclick = "dumpPercent(50)">
+											<h2><center>50%</center></h2>
+										</button>
+									</div>
+									<div class="col-lg-2">
+
+										<button class="miss yellowGreen middle width button memes clickDrop" onclick = "dumpPercent(75)">
+
+											<h2><center>75%</center></h2>
+										</button>
+									</div>
+									<div class="col-lg-3">
+										<button class="miss rightcorner green width button memes goodbye clickDrop" onclick = "dumpPercent(100)">
+											<h2><center>100%</center></h2>
 										</button>
 									</div>
 								</div>
@@ -515,6 +543,7 @@
 				</div>
 
 				<div id="tab4" class="tab">
+					
 					<head>
     <title>StackOverflow test bed</title>
     <script type="text/javascript">
@@ -583,7 +612,14 @@
     </script>
 </head>
 <body onload="drawGrid()">
-    <canvas id="myCanvas" width="578" height="600"></canvas>
+    <canvas id="myCanvas" width="578" height="600">
+		<div class="container">
+			<div class="row">
+				<center><img class="field" src="photos/field2.png"></center>
+			</div>
+		</div>
+	</canvas>
+	<center><p>there is a picture of the field in the canvas, we don't know how to make it show up in the canvas :)</p></center>
     <script>
       function writeMessage(canvas, message) {
         var context = canvas.getContext('2d');
