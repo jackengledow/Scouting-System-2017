@@ -555,6 +555,7 @@
 				</div>
 
 				<div id="tab4" class="tab">
+					
 					<head>
     <title>StackOverflow test bed</title>
     <script type="text/javascript">
@@ -623,7 +624,14 @@
     </script>
 </head>
 <body onload="drawGrid()">
-    <canvas id="myCanvas" width="578" height="600"></canvas>
+    <canvas id="myCanvas" width="578" height="600">
+		<div class="container">
+			<div class="row">
+				<center><img class="field" src="photos/field2.png"></center>
+			</div>
+		</div>
+	</canvas>
+	<center><p>there is a picture of the field in the canvas, we don't know how to make it show up in the canvas :)</p></center>
     <script>
       function writeMessage(canvas, message) {
         var context = canvas.getContext('2d');
