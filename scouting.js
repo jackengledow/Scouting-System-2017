@@ -2,15 +2,22 @@ var makeHighTeleop=0;
 var makeHighAuton=0;
 var makeLowTeleop=0;
 var totalGears =0;
-var lowDumps = [""];
-var lowCount = 0;
-var smallLoads = [""];
-var smallCount = 0;
-var mediumLoads = [""];
-var mediumCount = 0;
-var mediumCount = 0;
-var bigLoads = [""];
-var bigCount = 0;
+var lowDumpsAuton = [""];
+var lowDumpsTeleop = [""];
+var lowCountAuton = 0;
+var lowCountTeleop = 0;
+var smallLoadsAuton = [""];
+var smallLoadsTeleop = [""];
+var smallCountAuton = 0;
+var smallCountTeleop = 0;
+var mediumLoadsAuton = [""];
+var mediumLoadsTeleop = [""];
+var mediumCountAuton = 0;
+var mediumCountTeleop = 0;
+var bigLoadsAuton = [""];
+var bigLoadsTeleop = [""];
+var bigCountAuton = 0;
+var bigCountTeleop = 0;
 var canvas = document.getElementById('cnv');
 
 var countHighMakeTeleop=function (change){
@@ -59,27 +66,52 @@ var changeGear = function (change){
 	console.log(totalGears + " gears collected.")
 }
 
-var lowDump = function(type){
-	lowDumps[lowCount] = type;
-	lowCount++;
-	console.log(lowDumps);
+var lowDumpAuton = function(type){
+	lowDumpsAuton[lowCountAuton] = type;
+	lowCountAuton++;
+	console.log("Auton: " + lowDumpsAuton);
 }
 
-var dumpPercent = function(percent){
-	size = lowDumps[lowCount-1];
+var lowDumpTeleop = function(type){
+	lowDumpsTeleop[lowCountTeleop] = type;
+	lowCountTeleop++;
+	console.log("Teleop: " + lowDumpsTeleop);
+}
+
+var dumpPercentAuton = function(percent){
+	size = lowDumpsAuton[lowCountAuton-1];
 	if (size=="Small"){
-		smallLoads[smallCount]=percent;
-		smallCount++;
-		console.log("Small: " + smallLoads);
+		smallLoadsAuton[smallCountAuton]=percent;
+		smallCountAuton++;
+		console.log("Small Auton: " + smallLoadsAuton);
 	}
 	if (size=="Medium"){
-		mediumLoads[mediumCount]=percent;
-		mediumCount++;
-		console.log("Medium: " + mediumLoads);
+		mediumLoadsAuton[mediumCountAuton]=percent;
+		mediumCountAuton++;
+		console.log("Medium Auton: " + mediumLoadsAuton);
 	}
 	if (size=="Big"){
-		bigLoads[bigCount]=percent;
-		bigCount++;
-		console.log("Big: " + bigLoads);
+		bigLoadsAuton[bigCountAuton]=percent;
+		bigCountAuton++;
+		console.log("Big Auton: " + bigLoadsAuton);
+	}
+}
+
+var dumpPercentTeleop = function(percent){
+	size = lowDumpsTeleop[lowCountTeleop-1];
+	if (size=="Small"){
+		smallLoadsTeleop[smallCountTeleop]=percent;
+		smallCountTeleop++;
+		console.log("Small Teleop: " + smallLoadsTeleop);
+	}
+	if (size=="Medium"){
+		mediumLoadsTeleop[mediumCountTeleop]=percent;
+		mediumCountTeleop++;
+		console.log("Medium Teleop: " + mediumLoadsTeleop);
+	}
+	if (size=="Big"){
+		bigLoadsTeleop[bigCountTeleop]=percent;
+		bigCountTeleop++;
+		console.log("Big Teleop: " + bigLoadsTeleop);
 	}
 }
