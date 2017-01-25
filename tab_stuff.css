@@ -127,6 +127,10 @@ li.active a, li.active a:hover {
 	border-radius: 10px;
 	
 }
+.bottom {
+	background-color: #dbdbdb;
+	border-radius: 0px 0px 10px 10px;
+}
 .hi {
 	border-radius: 5px;
 }	
@@ -137,3 +141,26 @@ li.active a, li.active a:hover {
 	width: 900px;
 	
 }
+/*#check{
+	display: inline-block;
+	margin-left: 141px;
+}*/
+/*#checkTop {
+	display: inline-block;
+	margin-left: 38px;
+}*/
+/*#penLabel {
+	padding-left: 65px; 
+	font-size:20px;
+	margin-right: 40px;
+}*/
+.foul {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.form-control {
+	width: 50px !important;
+}
+/*.iLikeCheck {
+	margin-left: 250px;
+}*/ 
