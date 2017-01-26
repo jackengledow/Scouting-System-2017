@@ -415,10 +415,7 @@
 							</div>
 							<div class="col-md-2">
 								<center>
-									<div class="form-group">
-										<label style="font-size: 22px;" for="usr">Total kPA</label>
-										<input type="text" class="form-control" id="usr">
-									</div>
+									<img id = "ballButton" src = "http://www.longstreth.com/images/sjwb12Y.jpg">
 								</center>
 							</div>
 							<div class="col-md-5">
@@ -622,111 +619,20 @@
 				</div>
 
 				<div id="tab4" class="tab">
-					
-					<head>
-    <title>StackOverflow test bed</title>
-    <script type="text/javascript">
-        function drawGrid() {
-            var cnv = document.getElementById("myCanvas");
+					<img onclick="showCoords(event)" src = "/Users/austinhartman/Documents/Scouting-System-2017/photos/red-field.png">
 
-            var gridOptions = {
-                minorLines: {
-                    separation: 5,
-                    color: '#ffffff'
-                },
-                majorLines: {
-                    separation: 60,
-                    color: '#000000'
-                }
-            };
+						<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
 
-            drawGridLines(cnv, gridOptions.minorLines);
-            drawGridLines(cnv, gridOptions.majorLines);
+						<p id="demo"></p>
 
-            return;
-        }
-
-        function drawGridLines(cnv, lineOptions) {
-
-
-            var iWidth = cnv.width;
-            var iHeight = cnv.height;
-
-            var ctx = cnv.getContext('2d');
-
-            ctx.strokeStyle = lineOptions.color;
-            ctx.strokeWidth = 1;
-
-            ctx.beginPath();
-
-            var iCount = null;
-            var i = null;
-            var x = null;
-            var y = null;
-
-            iCount = Math.floor(iWidth / lineOptions.separation);
-
-            for (i = 1; i <= iCount; i++) {
-                x = (i * lineOptions.separation);
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, iHeight);
-                ctx.stroke();
-            }
-
-
-            iCount = Math.floor(iHeight / lineOptions.separation);
-
-            for (i = 1; i <= iCount; i++) {
-                y = (i * lineOptions.separation);
-                ctx.moveTo(0, y);
-                ctx.lineTo(iWidth, y);
-                ctx.stroke();
-            }
-
-            ctx.closePath();
-
-            return;
-        }
-
-    </script>
-</head>
-<body onload="drawGrid()">
-    <canvas id="myCanvas" width="578" height="600">
-		<div class="container">
-			<div class="row">
-				<center><img class="field" src="photos/field2.png"></center>
-			</div>
-		</div>
-	</canvas>
-	<center><p>there is a picture of the field in the canvas, we don't know how to make it show up in the canvas :)</p></center>
-    <script>
-      function writeMessage(canvas, message) {
-        var context = canvas.getContext('2d');
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.font = '18pt Calibri';
-        context.fillStyle = 'black';
-		context.fillText(message, 10, 25);
-		context.strokeText(message, 10,25);
-      }
-      function getMousePos(canvas, evt) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-          x: evt.clientX - rect.left,
-          y: evt.clientY - rect.top
-        };
-      }
-      var canvas = document.getElementById('myCanvas');
-      var context = canvas.getContext('2d');
-
-      canvas.addEventListener('mousemove', function(evt) {
-        var mousePos = getMousePos(canvas, evt);
-        var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        writeMessage(canvas, message);
-      }, false);
-    </script>
-  </body>
-</body>
-</body>
+						<script>
+						function showCoords(event) {
+							var x = event.clientX;
+							var y = event.clientY;
+							var coords = "X coords: " + x + ", Y coords: " + y;
+							document.getElementById("demo").innerHTML = coords;
+						}
+						</script>
 				</div>
 			</div>
 		</div>
