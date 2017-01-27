@@ -501,29 +501,17 @@
 
 				<div id="tab4" class="tab">
 					<img id = "clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "/Users/austinhartman/Documents/Scouting-System-2017/photos/red-field.png">
-
-						<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
-						<p id="demo"></p>
+					<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
+					<p id="demo"></p>
 
 						
-						<div class="row" id = "popup" style = "display: none; height: 10px;">
-							<div class="col-md-5" style = "margin-left: 17px; margin-right: 50px;">
-
-						<div class="row percent" style = "display: none; height: 10px;">
-				<div class="col-md-5">
+					<div class="row" id = "popup" style = "display: none; height: 10px;">
+						<div class="col-md-5" style = "margin-left: 17px; margin-right: 50px;">
 							<div class="row">
 								<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
 									<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 								</div>
 							</div>
-							<div class="col-md-5">
-
-							<div class="col-md-5" style = " margin-left: 17px;">
-								<div class="row">
-									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
-										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
-									</div>	
-								</div>
 								<div class = "row">
 									<div class = "col-md-4">
 										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(10)">
@@ -580,7 +568,7 @@
 								document.getElementById("demo").innerHTML = coords;
 							}
 						</script>
-					</div>
+				</div>
       <script>
         function drawGridLines(cnv, lineOptions) {
 
