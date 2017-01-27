@@ -71,7 +71,7 @@
 			.button{
 				 position: absolute; right: 0px;
 				 text-align: center;
-				 padding-left: 0% !important;
+				 paddin 	g-left: 0% !important;
 			}
 			.hi {
 				border-radius: 5px 0px 0px 5px;
@@ -503,8 +503,8 @@
 					<img id = "clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "/Users/austinhartman/Documents/Scouting-System-2017/photos/red-field.png">
 
 						<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
-
 						<p id="demo"></p>
+
 						
 						<div class="row" id = "popup" style = "display: none; height: 10px;">
 							<div class="col-md-5" style = "margin-left: 17px; margin-right: 50px;">
@@ -518,6 +518,7 @@
 							</div>
 							<div class="col-md-5">
 
+							<div class="col-md-5" style = " margin-left: 17px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
 										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
@@ -541,7 +542,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-5">
+							<div class="col-md-5" style = "margin-left: 50px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
 										<h2><center>Miss High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
@@ -570,6 +571,16 @@
 				</div>
 
         </div>
+						</div>
+						<script>
+							function showCoords(event) {
+								var x = event.clientX;
+								var y = event.clientY;
+								var coords = "X coords: " + x + ", Y coords: " + y;
+								document.getElementById("demo").innerHTML = coords;
+							}
+						</script>
+					</div>
       <script>
         function drawGridLines(cnv, lineOptions) {
 
@@ -659,7 +670,6 @@
   		</div>
   	</body>
 </html>
-<<<<<<< HEAD
 
 <script>
 	
@@ -759,7 +769,6 @@
     });
 });
 </script>
-=======
   <script>
   	
   	jQuery(document).ready(function() {
@@ -851,4 +860,3 @@
       });
   });
   </script>
->>>>>>> ecb56c7457c245cc87748366930a27bc2ee129ee
