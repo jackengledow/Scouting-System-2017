@@ -79,6 +79,9 @@
 			.goodbye {
 				border-radius: 0px 5px 5px 0px;
 			}
+			.newSize {
+				font-size:
+			}
 		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
@@ -261,8 +264,8 @@
 				</div>
 
 				<div id="tab2" class="tab">
-					<div class="container">
-						<div class="row top">
+					<div style="color: none;" class="container">
+						<div style="color: none;" class="row">
 						<p style = "padding-left: 15px; font-size: 25px; text-decoration: underline;"><strong>Teleop Buttons</strong></p>
 						<hr>
 					
@@ -293,10 +296,10 @@
 								</div>
 							</div>
 						<!-- <button class = "leftButton"><img class = "buttons" id = "speed" src = "http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg"></button> -->
-						<div class="col-md-2 rightButton leftButton">
+							<div class="col-md-3 rightButton leftButton">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-										<h3><center>Gears Picked Up: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h3>
+										<h2><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class="row">
@@ -305,7 +308,7 @@
 										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
 											<center>
 												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
-											<h2>+</h2>
+											<h1 class="newSize">+</h1>
 											</center>
 										</button>
 									</div>
@@ -313,39 +316,13 @@
 										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
 												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
-												<h2>-</h2>
+												<h1 class="newSize">-</h1>
 											</center>
 										</button>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-2 rightButton leftButton">
-								<div class="row">
-									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-										<h3><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h3>
-									</div>
-								</div>
-								<div class="row">
-								<!--button-->
-									<div class="col-md-6">
-										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
-											<center>
-												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
-											<h2>+</h2>
-											</center>
-										</button>
-									</div>
-									<div class="col-md-6">
-										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
-											<center>
-												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
-												<h2>-</h2>
-											</center>
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
+							<div class="col-md-5">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Climbing</center></h2>
