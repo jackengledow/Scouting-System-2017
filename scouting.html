@@ -79,6 +79,12 @@
 			.goodbye {
 				border-radius: 0px 5px 5px 0px;
 			}
+			.newSize {
+				font-size:
+			}
+			.checkboxDescription {
+				margin-left: 15px;
+			}
 		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
@@ -109,8 +115,8 @@
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
 											<form action="">
-												<input type="checkbox" name="vehicle" value="Bike"><div style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
-												<input type="checkbox" name="vehicle" value="Car"><div style = "display: inline-block; font-size: 20px;">Start with Gear</div>
+												<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
+												<input type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
 											</form>
 										</div>
 									</div>
@@ -133,8 +139,8 @@
 								<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
 											<form action="">
-												<input type="checkbox" name="vehicle" value="Bike"><div style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
-												<input type="checkbox" name="vehicle" value="Car"><div style = "display: inline-block; font-size: 20px;">Score the Gear</div>
+												<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
+												<input type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
 											</form>
 										</div>
 									</div>
@@ -269,8 +275,8 @@
 				</div>
 
 				<div id="tab2" class="tab">
-					<div class="container">
-						<div class="row top">
+					<div style="color: none;" class="container">
+						<div style="color: none;" class="row">
 						<p style = "padding-left: 15px; font-size: 25px; text-decoration: underline;"><strong>Teleop Buttons</strong></p>
 
 					<p title="Scouting system">
@@ -300,10 +306,10 @@
 								</div>
 							</div>
 						<!-- <button class = "leftButton"><img class = "buttons" id = "speed" src = "http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg"></button> -->
-						<div class="col-md-2 rightButton leftButton">
+							<div class="col-md-3 rightButton leftButton">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-										<h3><center>Gears Picked Up: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h3>
+										<h2><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class="row">
@@ -312,7 +318,7 @@
 										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
 											<center>
 												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
-											<h2>+</h2>
+											<h1 class="newSize">+</h1>
 											</center>
 										</button>
 									</div>
@@ -320,39 +326,13 @@
 										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
 												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
-												<h2>-</h2>
+												<h1 class="newSize">-</h1>
 											</center>
 										</button>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-2 rightButton leftButton">
-								<div class="row">
-									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-										<h3><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h3>
-									</div>
-								</div>
-								<div class="row">
-								<!--button-->
-									<div class="col-md-6">
-										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
-											<center>
-												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
-											<h2>+</h2>
-											</center>
-										</button>
-									</div>
-									<div class="col-md-6">
-										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
-											<center>
-												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
-												<h2>-</h2>
-											</center>
-										</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3">
+							<div class="col-md-5">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Climbing</center></h2>
@@ -361,26 +341,36 @@
 								<div class="row">
 								<!--button-->
 									<div class="col-sm-4">
-										<button style="height: 80px;" class="make leftcorner green width button memes" id = "success">
-											<h4><center>Success</center></h4>
+										<button class="make leftcorner green width button memes" id = "success">
+											<h1><center>Success</center></h1>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button style="height: 80px;" class="width button middle memes" id = "fail">
-											<h4><center>Fail</center></h4>
+										<button class="width button middle memes" id = "fail">
+											<h1><center>Fail</center></h1>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button style="height: 80px;" class="miss rightcorner red width button memes" id = "noattempt">
-											<h4><center>No attempt</center></h4>
+										<button class="miss rightcorner red width button memes" id = "noattempt">
+											<h1><center>No attempt</center></h1>
 										</button>
 									</div>
 								</div>
+								
 							</div>
+							<div>
+							<form action="" style = "padding-top: 170px; padding-left: 40px;">
+								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div><br><br>
+							</form>
+							</div>
+<<<<<<< HEAD
 							
 							<br><br>
 
 						<br><br><br><br><br>
+=======
+						</p>
+>>>>>>> 2b1f0f74b1ff7f04c50f41d2d030d4f34d247dcb
 						</div>
 					</div>
 					<div class="container">
@@ -505,7 +495,7 @@
 				</div>
 
 				<div id="tab3" class="tab">
-					<div class="container">
+					<!--<div class="container">
 						<div class="row top">
 							<p style = "text-decoration: underline;padding-left: 15px; font-size: 25px;"><strong>Autonomous Buttons</strong></p>
 							<div class="row">
@@ -529,6 +519,43 @@
     					  </table>
 						  </div>
 					  </div>
+				  </div>-->
+				  <div class="container">
+					<div class="row top pen">
+						<div class="col-sm-6">
+							<div class="row">
+								<div class="col-sm-6">
+									<h2><center><strong>Foul(s):</strong></center></h3><center>
+									<td><label style="font-size: 22px;" for="usr"></label>
+    									<input type="number" class="form-control" id="usr" min = "0"></td>
+										</center>
+								</div>
+								<div class="col-sm-6">
+									<h2><strong>Technical(s):</strong></h2><center>
+									<td><label style="font-size: 22px;" for="usr"></label>
+    									<input type="number" class="form-control" id="usr" min = "0"></td>
+										</center>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="col-sm-4">
+								<h2><strong><center>Yellow:</center></strong></h2><center>
+								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
+								</center>
+							</div>
+							<div class="col-sm-4">
+								<h2><strong><center>Red:</center></strong></h2><center>
+								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
+								</center>
+							</div>
+							<div class="col-sm-4"><center>
+								<h2><strong><center>Ejection:</center></strong></h2>
+								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
+							</center>
+							</div>
+						</div>
+					</div>
 				  </div>
 			  </div>
 				
@@ -548,17 +575,17 @@
 							</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(10)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(10), clickZone('Make', 5)">
 											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(5)">
+										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 1)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(1)">
+										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', -1)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
@@ -572,17 +599,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMakeTeleop(10)">
+										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMakeTeleop(10), clickZone('Miss', 5)">
 											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5)">
+										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Miss', 5)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1)">
+										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1), clickZone('Miss', 5)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
@@ -593,100 +620,15 @@
 				</div>
 
         </div>
-						</div>
 						<script>
 							function showCoords(event) {
 								var x = event.clientX;
 								var y = event.clientY;
+								setGridClickPos(x,y);
 								var coords = "X coords: " + x + ", Y coords: " + y;
 								document.getElementById("demo").innerHTML = coords;
 							}
 						</script>
-				</div>
-      <script>
-        function drawGridLines(cnv, lineOptions) {
-
-
-            var iWidth = cnv.width;
-            var iHeight = cnv.height;
-
-            var ctx = cnv.getContext('2d');
-
-            ctx.strokeStyle = lineOptions.color;
-            ctx.strokeWidth = 1;
-
-            ctx.beginPath();
-
-            var iCount = null;
-            var i = null;
-            var x = null;
-            var y = null;
-
-            iCount = Math.floor(iWidth / lineOptions.separation);
-
-            for (i = 1; i <= iCount; i++) {
-                x = (i * lineOptions.separation);
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, iHeight);
-                ctx.stroke();
-            }
-
-
-            iCount = Math.floor(iHeight / lineOptions.separation);
-
-            for (i = 1; i <= iCount; i++) {
-                y = (i * lineOptions.separation);
-                ctx.moveTo(0, y);
-                ctx.lineTo(iWidth, y);
-                ctx.stroke();
-            }
-
-            ctx.closePath();
-
-            return;
-        }
-
-    </script>
-  <body onload="drawGridLines()">
-      <canvas id="myCanvas" width="578" height="600">
-  		<div class="container">
-  			<div class="row">
-  				<center><img class="field" src="C://Users/jackengledow/Documents/Scouting-System-2017/photos/red-field.png"></center>
-  			</div>
-  		</div>
-  	</canvas>
-  	<center><a href="scouting.html#tab1" onclick="return popitup('scouting.html#tab1')">Link to popup</a></center>
-      <script>
-        function writeMessage(canvas, message) {
-          var context = canvas.getContext('2d');
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.font = '18pt Calibri';
-          context.fillStyle = 'black';
-  		context.fillText(message, 10, 25);
-  		context.strokeText(message, 10,25);
-        }
-        function getMousePos(canvas, evt) {
-          var rect = canvas.getBoundingClientRect();
-          return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-          };
-        }
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext('2d');
-  
-  					<script>
-  						function showCoords(event) {
-              	var x = event.clientX;
-  							var y = event.clientY;
-  							var coords = "X coords: " + x + ", Y coords: " + y;
-  							document.getElementById("demo").innerHTML = coords;
-  						}
-  						</script>
-            </div>
-          </div>
-  		  </div>
-  		</div>
   	</body>
 </html>
 

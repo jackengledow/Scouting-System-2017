@@ -176,6 +176,7 @@ li.active a, li.active a:hover {
 	padding-left: 50px;
 	margin-left: 50px;
 }
+<<<<<<< HEAD
 #teamNumber {
   width: 39px;
 }
@@ -214,4 +215,17 @@ li.active a, li.active a:hover {
   height: 34px;
   margin-top: 15px;
   text-align: middle;
+=======
+.input {
+	margin-bottom: 10px;
+}
+.pen {
+	height: 300px;
+}
+.check {
+	margin-bottom: 10px;
+}
+.label {
+	margin-top: 10px !important;
+>>>>>>> 2b1f0f74b1ff7f04c50f41d2d030d4f34d247dcb
 }

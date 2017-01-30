@@ -19,6 +19,10 @@ var bigLoadsTeleop = [""];
 var bigCountAuton = 0;
 var bigCountTeleop = 0;
 var canvas = document.getElementById('cnv');
+var gridCounterMake = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
+var gridCounterMiss = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
+var mouse_x = 0;
+var mouse_y = 0;
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
@@ -114,4 +118,52 @@ var dumpPercentTeleop = function(percent){
 		bigCountTeleop++;
 		console.log("Big Teleop: " + bigLoadsTeleop);
 	}
+}
+
+var setGridClickPos = function(x,y){
+	mouse_x = x;
+	mouse_y = y;
+}
+
+var clickZone = function (makemiss, change){
+	if(mouse_x>=15 && mouse_x<89){
+		index_x = 0;
+	}
+	if(mouse_x>=89 && mouse_x<163){
+		index_x = 1;
+	}
+	if(mouse_x>=163 && mouse_x<237){
+		index_x = 2;
+	}
+	if(mouse_x>=237 && mouse_x<311){
+		index_x = 3;
+	}
+	if(mouse_x>=311 && mouse_x<384){
+		index_x = 4;
+	}
+	
+	
+	if(mouse_y>=65 && mouse_y<145){
+		index_y = 0;
+	}
+	if(mouse_y>=145 && mouse_y<226){
+		index_y = 1;
+	}
+	if(mouse_y>=226 && mouse_y<305){
+		index_y = 2;
+	}
+	if(mouse_y>=305 && mouse_y<386){
+		index_y = 3;
+	}
+	if(mouse_y>=386 && mouse_y<464){
+		index_y = 4;
+	}
+	
+	if(makemiss == "Make"){
+		gridCounterMake[index_x][index_y] += change;
+	}
+	if(makemiss == "Miss"){
+		gridCounterMiss[index_x][index_y] += change;
+	}
+	console.log("When shooting from spot " + index_x + "," + index_y + ". Make: " + gridCounterMake[index_x][index_y] + ". Miss: " + gridCounterMiss[index_x][index_y] + ". Percent: " + 100*gridCounterMake[index_x][index_y]/(gridCounterMake[index_x][index_y]+gridCounterMiss[index_x][index_y])+ "%.");
 }
