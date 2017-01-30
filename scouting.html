@@ -343,10 +343,14 @@
 										</button>
 									</div>
 								</div>
+								
 							</div>
-							<br><br>
+							<div>
+							<form action="" style = "padding-top: 170px; padding-left: 40px;">
+								<input type="checkbox" name="vehicle" value="Bike"><div style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div><br><br>
+							</form>
+							</div>
 						</p>
-						<br><br><br><br><br>
 						</div>
 					</div>
 					<div class="container">
@@ -564,6 +568,7 @@
 							function showCoords(event) {
 								var x = event.clientX;
 								var y = event.clientY;
+								clickZone(x,y, make);
 								var coords = "X coords: " + x + ", Y coords: " + y;
 								document.getElementById("demo").innerHTML = coords;
 							}
