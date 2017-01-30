@@ -544,17 +544,17 @@
 							</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(10)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(10), clickZone('Make', 5)">
 											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(5)">
+										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 1)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(1)">
+										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', -1)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
@@ -568,17 +568,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMakeTeleop(10)">
+										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMakeTeleop(10), clickZone('Miss', 5)">
 											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5)">
+										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Miss', 5)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1)">
+										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1), clickZone('Miss', 5)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
@@ -589,101 +589,15 @@
 				</div>
 
         </div>
-						</div>
 						<script>
 							function showCoords(event) {
 								var x = event.clientX;
 								var y = event.clientY;
-								clickZone(x,y, make);
+								setGridClickPos(x,y);
 								var coords = "X coords: " + x + ", Y coords: " + y;
 								document.getElementById("demo").innerHTML = coords;
 							}
 						</script>
-				</div>
-      <script>
-        function drawGridLines(cnv, lineOptions) {
-
-
-            var iWidth = cnv.width;
-            var iHeight = cnv.height;
-
-            var ctx = cnv.getContext('2d');
-
-            ctx.strokeStyle = lineOptions.color;
-            ctx.strokeWidth = 1;
-
-            ctx.beginPath();
-
-            var iCount = null;
-            var i = null;
-            var x = null;
-            var y = null;
-
-            iCount = Math.floor(iWidth / lineOptions.separation);
-
-            for (i = 1; i <= iCount; i++) {
-                x = (i * lineOptions.separation);
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, iHeight);
-                ctx.stroke();
-            }
-
-
-            iCount = Math.floor(iHeight / lineOptions.separation);
-
-            for (i = 1; i <= iCount; i++) {
-                y = (i * lineOptions.separation);
-                ctx.moveTo(0, y);
-                ctx.lineTo(iWidth, y);
-                ctx.stroke();
-            }
-
-            ctx.closePath();
-
-            return;
-        }
-
-    </script>
-  <body onload="drawGridLines()">
-      <canvas id="myCanvas" width="578" height="600">
-  		<div class="container">
-  			<div class="row">
-  				<center><img class="field" src="C://Users/jackengledow/Documents/Scouting-System-2017/photos/red-field.png"></center>
-  			</div>
-  		</div>
-  	</canvas>
-  	<center><a href="scouting.html#tab1" onclick="return popitup('scouting.html#tab1')">Link to popup</a></center>
-      <script>
-        function writeMessage(canvas, message) {
-          var context = canvas.getContext('2d');
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.font = '18pt Calibri';
-          context.fillStyle = 'black';
-  		context.fillText(message, 10, 25);
-  		context.strokeText(message, 10,25);
-        }
-        function getMousePos(canvas, evt) {
-          var rect = canvas.getBoundingClientRect();
-          return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-          };
-        }
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext('2d');
-  
-  					<script>
-  						function showCoords(event) {
-              	var x = event.clientX;
-  							var y = event.clientY;
-  							var coords = "X coords: " + x + ", Y coords: " + y;
-  							document.getElementById("demo").innerHTML = coords;
-  						}
-  						</script>
-            </div>
-          </div>
-  		  </div>
-  		</div>
   	</body>
 </html>
 
