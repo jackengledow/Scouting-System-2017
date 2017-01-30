@@ -27,7 +27,7 @@
 				border:2px solid green;
 			}
 			.darkgreen{
-				background-color: #40963d;
+				background-color: #40963d;	
 				border:2px solid green;
 			}
 			.grey{
@@ -296,7 +296,7 @@
 						<div class="col-md-2 rightButton leftButton">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-										<h2><center>Gears: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
+										<h3><center>Gears Picked Up: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h3>
 									</div>
 								</div>
 								<div class="row">
@@ -305,7 +305,7 @@
 										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
 											<center>
 												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
-											<h1>+</h1>
+											<h2>+</h2>
 											</center>
 										</button>
 									</div>
@@ -313,33 +313,59 @@
 										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
 												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
-												<h1>-</h1>
+												<h2>-</h2>
 											</center>
 										</button>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-2 rightButton leftButton">
+								<div class="row">
+									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
+										<h3><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h3>
+									</div>
+								</div>
+								<div class="row">
+								<!--button-->
+									<div class="col-md-6">
+										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
+											<center>
+												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
+											<h2>+</h2>
+											</center>
+										</button>
+									</div>
+									<div class="col-md-6">
+										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
+											<center>
+												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
+												<h2>-</h2>
+											</center>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
-										<h1><center>Climbing</center></h1>
+										<h2><center>Climbing</center></h2>
 									</div>
 								</div>
 								<div class="row">
 								<!--button-->
 									<div class="col-sm-4">
-										<button class="make leftcorner green width button memes" id = "success">
-											<h1><center>Success</center></h1>
+										<button style="height: 80px;" class="make leftcorner green width button memes" id = "success">
+											<h4><center>Success</center></h4>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button class="width button middle memes" id = "fail">
-											<h1><center>Fail</center></h1>
+										<button style="height: 80px;" class="width button middle memes" id = "fail">
+											<h4><center>Fail</center></h4>
 										</button>
 									</div>
 									<div class="col-sm-4">
-										<button class="miss rightcorner red width button memes" id = "noattempt">
-											<h1><center>No attempt</center></h1>
+										<button style="height: 80px;" class="miss rightcorner red width button memes" id = "noattempt">
+											<h4><center>No attempt</center></h4>
 										</button>
 									</div>
 								</div>
@@ -489,9 +515,9 @@
     							</tr>
     							<tr>
     								<td><label style="font-size: 22px;" for="usr"></label>
-    									<input type="number" class="form-control" id="usr"></td>
+    									<input type="number" class="form-control" id="usr" min = "0"></td>
     								<td><label style="font-size: 22px;" for="usr"></label>
-    									<input type="number" class="form-control" id="usr"></td>
+    									<input type="number" class="form-control" id="usr" min = "0"></td>
     							<td style="paddzing-top: 27px"><label><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
     							  <td style="padding-top: 27px"><label><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
     							  <td style="padding-top: 27px"><label><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
@@ -504,7 +530,7 @@
 				
 
 				<div id="tab4" class="tab">
-					<img id = "clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "/Users/austinhartman/Documents/Scouting-System-2017/photos/red-field.png">
+					<img id = "clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "Red-field.png">
 					<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
 					<p id="demo"></p>
 
@@ -618,11 +644,11 @@
         }
 
     </script>
-  <body onload="drawGrid()">
+  <body onload="drawGridLines()">
       <canvas id="myCanvas" width="578" height="600">
   		<div class="container">
   			<div class="row">
-  				<center><img class="field" src="photos/field2.png"></center>
+  				<center><img class="field" src="C://Users/jackengledow/Documents/Scouting-System-2017/photos/red-field.png"></center>
   			</div>
   		</div>
   	</canvas>
@@ -645,9 +671,6 @@
         }
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
-  						<p id="demo"></p>
-  						</div>
-  					</div>
   
   					<script>
   						function showCoords(event) {
