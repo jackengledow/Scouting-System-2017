@@ -1,7 +1,11 @@
+body {
+  margin-top: 15px;
+}
 /*----- Tabs -----*/
 .tabs {
-    width:100%;
-    display:inline-block;
+  width:100%;
+  display:inline-block;
+	margin-top: 15px;
 }
 
 /*----- Tab Links -----*/
@@ -10,6 +14,7 @@
 	display:block;
 	clear:both;
 	content:'';
+
 }
 .tab-links {
 	border-radius: 5px;
@@ -170,4 +175,43 @@ li.active a, li.active a:hover {
 	height: 200px;
 	padding-left: 50px;
 	margin-left: 50px;
+}
+#teamNumber {
+  width: 39px;
+}
+#redButton {
+  border-radius: 5px;
+  background-color: #ff9b9b;
+  border: solid 2px red;
+  height: 54px;
+  width: 94px;
+  padding: 1px 1px 1px 1px;
+  font-size: 30px;
+  display:flex;
+  text-align: center;
+}
+#redButton:hover {
+  opacity: 0.5;
+}
+#blueButton {
+  border-radius: 5px;
+  background-color: #5587F3;
+  border: solid 2px blue;
+  height: 54px;
+  width: 94px;
+  padding: 1px 1px 1px 1px;
+  font-size: 30px;
+  display:flex;
+  text-align: center;
+}
+#blueButton:hover {
+  opacity: 0.5;
+}
+.teamInfo {
+  display: flex;
+  position: absolute;
+  margin-left: 575px;
+  height: 34px;
+  margin-top: 15px;
+  text-align: middle;
 }
