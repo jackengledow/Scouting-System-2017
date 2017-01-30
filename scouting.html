@@ -280,7 +280,10 @@
 						<p style = "padding-left: 15px; font-size: 25px; text-decoration: underline;"><strong>Teleop Buttons</strong></p>
 
 					<p title="Scouting system">
-						<div class="col-md-2 rightButton">
+						<form action="" style = "padding-top: 10px; padding-left: 0px;">
+								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div><br><br>
+						</form>
+						<div class="col-md-2">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Speed</center></h2>
@@ -332,7 +335,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Climbing</center></h2>
@@ -358,133 +361,135 @@
 								</div>
 								
 							</div>
+
 							<div>
 							<form action="" style = "padding-top: 170px; padding-left: 40px;">
 								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div><br><br>
 							</form>
 							</div>
+
 							
 							<br><br>
 
 						<br><br><br><br><br>
 
+
 						</p>
 
 						</div>
 					</div>
+
+					<div class="col-md-6" style = "margin-top: 120px;">
+						<center>
+						<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
+						<img id = "clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "Red-field.png">
+						<p id="demo"></p>
+						</center>
+					</div>
+					<div class="col-md-5" style = "margin-top: 120px;">
+
 					<div class="container">
 					<br><br>
 
 							<center><strong style = "font-size: 35px; text-decoration: underline;">Fuel</strong></center>
 
 						<div class="row">
-							<div class="col-md-5">
+							<div class="col-md-12 topStyle" style="background-color:#d3d3d3;padding-left: 0px;">
+								<h2><center>Low Goal</center></h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDumpTeleop('Small')">
+									<h2><center>Small 0-20</center></h2>
+								</button>
+							</div>
+							<div class="col-sm-4">
+								<button class="width button middle memes dropDown" id = "Medium" onclick = "lowDumpTeleop('Medium')">
+									<h2><center>Med 20-40</center></h2>
+								</button>
+							</div>
+							<div class="col-sm-4">
+								<button class="miss rightcorner green width button memes dropDown" id = "Big" onclick = "lowDumpTeleop('Big')">
+									<h2><center>Big 40+</center></h2>
+								</button>
+							</div>
+						</div>
+						<br><br><br><br>
+						<div class="row percent" style = "display: none; height: 10px;">
+							<div class="col-lg-3">
+								<button class="make leftcorner red width button memes hi clickDrop" onclick = "dumpPercentTeleop(0)">
+									<h2><center>0%</center></h2>
+								</button>
+							</div>
+							<div class="col-lg-2">
+								<button class="width button middle orange clickDrop memes" onclick = "dumpPercentTeleop(25)">
+									<h2><center>25%</center></h2>
+								</button>
+							</div>
+							<div class="col-lg-2">
+								<button class="miss middle green width button memes clickDrop" onclick = "dumpPercentTeleop(50)">
+									<h2><center>50%</center></h2>
+								</button>
+							</div>
+							<div class="col-lg-2">
+								<button class="miss yellowGreen middle width button memes clickDrop" onclick = "dumpPercentTeleop(75)">
+									<h2><center>75%</center></h2>
+								</button>
+							</div>
+							<div class="col-lg-3">
+								<button class="miss rightcorner green width button memes goodbye clickDrop" onclick = "dumpPercentTeleop(100)">
+									<h2><center>100%</center></h2>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class = "col-md-6" style = "padding-left: 0px; margin-top: 80px;">
+						<div class="row" id = "popup" style = "display: none; height: 10px;">
+							<div class="col-md-5" style = "margin-left: 17px; margin-right: 50px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
 										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 									</div>
 								</div>
-								<!--<div class="row">
-									<div class="col-md-6">
-										<div class="make green width button">
-											<h2><center>Make</center></h2>
-										</div>
-									</div>
-														
-									<div class="col-md-6">
-										<div class="miss red width button">
-											<h2><center>Miss</center></h2>
-										</div>
-									</div>
-								</div>-->
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen width button" onclick = "countHighMakeTeleop(10)">
-											<h2><center>+ 10</center></h2>
-										</button>
-									</div>
-									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button" onclick = "countHighMakeTeleop(5)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(10), clickZone('Make', 5)">
 											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot lightgreen width button" onclick = "countHighMakeTeleop(1)">
+										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 1)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
-								</div>
-								<div class = "row" style = "padding-top: 68px">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width button leftcorner" onclick = "countHighMakeTeleop(-10)">
-											<h2><center>- 10</center></h2>
-										</button>
-									</div>
-									<div class = "col-md-4">
-										<button class = "make makeshot red width button" onclick = "countHighMakeTeleop(-5)">
-											<h2><center>- 5</center></h2>
-										</button>
-									</div>
-									<div class = "col-md-4">
-										<button class = "make makeshot lightred width button rightcorner" onclick = "countHighMakeTeleop(-1)">
+										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', -1)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-2">
-								<center>
-									<img id = "ballButton" src = "http://www.longstreth.com/images/sjwb12Y.jpg">
-								</center>
-							</div>
-							<div class="col-md-5">
+							<div class="col-md-5" style = "margin-left: 10px;">
 								<div class="row">
-									<div class="col-md-12 topStyle" style="background-color:#d3d3d3;padding-left: 0px;">
-										<h2><center>Low Goal</center></h2>
-									</div>
+									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
+										<h2><center>Miss High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
+									</div>	
 								</div>
-								<div class="row">
-									<div class="col-sm-4">
-										<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDumpTeleop('Small')">
-											<h2><center>Small 0-20</center></h2>
+								<div class = "row">
+									<div class = "col-md-4">
+										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMakeTeleop(10), clickZone('Miss', 5)">
+											<h2><center>+ 5</center></h2>
 										</button>
 									</div>
-									<div class="col-sm-4">
-										<button class="width button middle memes dropDown" id = "Medium" onclick = "lowDumpTeleop('Medium')">
-											<h2><center>Med 20-40</center></h2>
+									<div class = "col-md-4">
+										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Miss', 5)">
+											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
-									<div class="col-sm-4">
-										<button class="miss rightcorner green width button memes dropDown" id = "Big" onclick = "lowDumpTeleop('Big')">
-											<h2><center>Big 40+</center></h2>
-										</button>
-									</div>
-								</div>
-								<br><br><br><br>
-								<div class="row percent" style = "display: none; height: 10px;">
-									<div class="col-lg-3">
-										<button class="make leftcorner red width button memes hi clickDrop" onclick = "dumpPercentTeleop(0)">
-											<h2><center>0%</center></h2>
-										</button>
-									</div>
-									<div class="col-lg-2">
-										<button class="width button middle orange clickDrop memes" onclick = "dumpPercentTeleop(25)">
-											<h2><center>25%</center></h2>
-										</button>
-									</div>
-									<div class="col-lg-2">
-										<button class="miss middle green width button memes clickDrop" onclick = "dumpPercentTeleop(50)">
-											<h2><center>50%</center></h2>
-										</button>
-									</div>
-									<div class="col-lg-2">
-										<button class="miss yellowGreen middle width button memes clickDrop" onclick = "dumpPercentTeleop(75)">
-											<h2><center>75%</center></h2>
-										</button>
-									</div>
-									<div class="col-lg-3">
-										<button class="miss rightcorner green width button memes goodbye clickDrop" onclick = "dumpPercentTeleop(100)">
-											<h2><center>100%</center></h2>
+									<div class = "col-md-4">
+										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1), clickZone('Miss', 5)">
+											<h2><center>- 1</center></h2>
 										</button>
 									</div>
 								</div>
