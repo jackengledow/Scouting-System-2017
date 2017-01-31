@@ -12,7 +12,7 @@
 			.make{
 				margin-left: 15px;
 			}
-			.leftcorner{
+			.le	ftcorner{
 				border-radius:0px 0px 0px 5px;
 			}
 			.rightcorner{
@@ -107,7 +107,7 @@
 				 
 			<div class="tab-content">
 				<div id="tab1" class="tab active">
-					<div class="container">
+					<div class="container" style="margin-top:15px;">
 						<div class="container top">
 							<div class="row">
 								<div class = "col-md-4">
@@ -369,9 +369,10 @@
 					<div class="col-md-6" style = "margin-top: 120px;">
 						<center>
 						<p><strong>Instructions:</strong> Click the location of a made/missed shot</p>
-						<img id = "clickGrid" class = "redPic" onclick="showCoords(event)" style = "height: 400px;" src = "Red-field.png">
-						<img id = "clickGrid" class = "bluePic" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "Blue-field.png">
+						<img class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "Red-field.png">
+						<img class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "Blue-field.png">
 						<p id="demo"></p>
+						<button id = "Rotate">Rotate Field</button>
 						</center>
 					</div>
 					<div class="col-md-6" style = "margin-top: 120px; padding-left: 0px; padding-right: 75px;">
@@ -465,12 +466,12 @@
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Miss', 5)">
+										<button class = "make makeshot red width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Miss', 1)">
 											<h2><center>+ 1</center></h2>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1), clickZone('Miss', 5)">
+										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMakeTeleop(1), clickZone('Miss', -1)">
 											<h2><center>- 1</center></h2>
 										</button>
 									</div>
@@ -610,12 +611,12 @@
 						<br><br><br><br>
 					<div style="	margin-top: 50px;" class="row top" id="pepe">
 							<div class="col-sm-4">
-								<h2><strong><center>Yellow:</center></strong></h2><center>
+								<h2><strong><center>Yellow Card:</center></strong></h2><center>
 								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
 								</center>
 							</div>
 							<div class="col-sm-4">
-								<h2><strong><center>Red:</center></strong></h2><center>
+								<h2><strong><center>Red Card:</center></strong></h2><center>
 								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
 								</center>
 							</div>
@@ -650,6 +651,7 @@
 	
 	jQuery(document).ready(function() {
 	opacity = 1;
+	rotate = 0;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -703,7 +705,7 @@
 	$(".clickDrop").on("click", function(){
 		$(".percent").css("display", "none");
 	});
-	$("#clickGrid").on("click", function(){
+	$(".clickGrid").on("click", function(){
 		$("#popup").css("display", "block");
 	});
 	
@@ -719,6 +721,20 @@
 	$("#redButton").on("click", function(){
 		$(".redPic").css("display", "block");
 		$(".bluePic").css("display", "none");
+	});
+	
+	$("#Rotate").on("click", function(){
+		if (rotate == 0){
+			$(".redPic").css("transform", "rotate(180deg)");
+			$(".bluePic").css("transform", "rotate(180deg)");
+			rotate = 180;
+		}
+		else{
+			$(".redPic").css("transform", "rotate(0deg)");
+			$(".bluePic").css("transform", "rotate(0deg)");
+			rotate = 0;
+		}
+		
 	});
 		
 	/*
