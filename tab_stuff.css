@@ -75,7 +75,7 @@ body {
 .tab-links a {
 	padding:9px 15px;
 	display:inline-block;
-	border-radius	:5px 5px 0px 0px;
+	border-radius	:5px 5px 5px 5px;
 	background:#7FB5DA;
 	font-size:16px;
 	font-weight:600;
