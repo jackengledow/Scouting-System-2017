@@ -42,9 +42,7 @@ var countTechnicals=function (change) {
 	}
 	document.getElementById("addTechnical").innerHTML = technicals;
 }
-=======
-var rotate = 0;
->>>>>>> 351e4d00e1b0354e456ed35d989567f1332f1391
+
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
