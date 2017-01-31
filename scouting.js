@@ -1,4 +1,5 @@
 var makeHighTeleop=0;
+var missHighTeleop=0;
 var makeHighAuton=0;
 var makeLowTeleop=0;
 var totalGears =0;
@@ -49,6 +50,15 @@ var countHighMakeTeleop=function (change){
 		makeHighTeleop = 0;
 	}
 	document.getElementById("highScoreTeleop").innerHTML = makeHighTeleop;
+
+}
+
+var countHighMissTeleop=function (change){
+	missHighTeleop+=change;
+	if (missHighTeleop<0){
+		missHighTeleop = 0;
+	}
+	document.getElementById("highMissTeleop").innerHTML = missHighTeleop;
 
 }
 
