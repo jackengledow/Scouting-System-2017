@@ -208,6 +208,14 @@ li.active a, li.active a:hover {
 #blueButton:hover {
   opacity: 0.5;
 }
+
+.redPic{
+	transform: rotate(0deg);
+}
+
+.bluePic{
+	transform: rotate(0deg);
+}
 .teamInfo {
   display: flex;
   position: absolute;
