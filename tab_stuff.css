@@ -128,7 +128,7 @@ li.active a, li.active a:hover {
 	opacity: 0.8;
 }
 .top {
-	background-color: #dbdbdb;
+	background-color: #c1c1c1;
 	border-radius: 10px;
 	
 }
@@ -176,7 +176,6 @@ li.active a, li.active a:hover {
 	padding-left: 50px;
 	margin-left: 50px;
 }
-<<<<<<< HEAD
 #teamNumber {
   width: 39px;
 }
@@ -223,7 +222,7 @@ li.active a, li.active a:hover {
   height: 34px;
   margin-top: 15px;
   text-align: middle;
-=======
+
 .input {
 	margin-bottom: 10px;
 }
@@ -235,5 +234,10 @@ li.active a, li.active a:hover {
 }
 .label {
 	margin-top: 10px !important;
->>>>>>> 2b1f0f74b1ff7f04c50f41d2d030d4f34d247dcb
+}
+.sizeFix {
+	padding-left: none !important;
+}
+#pepe {
+	margin-top: 50px;
 }
