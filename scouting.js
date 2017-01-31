@@ -23,7 +23,6 @@ var gridCounterMake = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,
 var gridCounterMiss = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 var mouse_x = 0;
 var mouse_y = 0;
-<<<<<<< HEAD
 var fouls = 0;
 var technicals = 0;
 
