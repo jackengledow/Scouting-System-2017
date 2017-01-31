@@ -66,6 +66,9 @@ var addGears=function (change){
 	if (totalGears<0){
 		totalGears = 0;
 	}
+	if(totalGears > 18) {
+		totalGears = 18;
+	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
 
 }
