@@ -128,7 +128,7 @@ li.active a, li.active a:hover {
 	opacity: 0.8;
 }
 .top {
-	background-color: #dbdbdb;
+	background-color: #c1c1c1;
 	border-radius: 10px;
 	
 }
@@ -226,4 +226,10 @@ li.active a, li.active a:hover {
 }
 .label {
 	margin-top: 10px !important;
+}
+.sizeFix {
+	padding-left: none !important;
+}
+#pepe {
+	margin-top: 50px;
 }
