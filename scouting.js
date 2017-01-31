@@ -23,7 +23,6 @@ var gridCounterMake = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,
 var gridCounterMiss = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 var mouse_x = 0;
 var mouse_y = 0;
-<<<<<<< HEAD
 var fouls = 0;
 var technicals = 0;
 
@@ -66,6 +65,9 @@ var addGears=function (change){
 	totalGears+=change;
 	if (totalGears<0){
 		totalGears = 0;
+	}
+	if(totalGears > 18) {
+		totalGears = 18;
 	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
 
