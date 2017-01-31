@@ -23,6 +23,24 @@ var gridCounterMake = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,
 var gridCounterMiss = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 var mouse_x = 0;
 var mouse_y = 0;
+var fouls = 0;
+var technicals = 0;
+
+var countFouls=function (change) {
+	fouls+=change;
+	if (fouls<0){
+		fouls = 0;
+	}
+	document.getElementById("addFoul").innerHTML = fouls;
+}
+
+var countTechnicals=function (change) {
+	technicals+=change;
+	if (technicals<0) {
+		technicals=0;
+	}
+	document.getElementById("addTechnical").innerHTML = technicals;
+}
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;

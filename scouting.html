@@ -554,13 +554,13 @@
 						<div style="margin-right:15px;" class="col-md-4">
 							<div class="row">
 								<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-									<h2><center>Foul(s): <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
+									<h2><center>Foul(s): <p style = "display: inline-block;" id = "addFoul">0</p></center></h2>
 								</div>
 							</div>
 							<div class="row">
 							<!--button-->
 								<div class="col-md-6">
-									<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
+									<button class="make leftcorner green makeshot width button"  onclick="countFouls(1)">
 										<center>
 											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 										<h1 class="newSize">+</h1>
@@ -568,7 +568,7 @@
 									</button>
 								</div>
 								<div class="col-md-6">
-								<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
+								<button class="miss rightcorner missshot red width button" style = "margin-left: 3px;" onclick="countFouls(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<h1 class="newSize">-</h1>
@@ -580,13 +580,13 @@
 						<div style="margin-left:15px;" class="col-md-4">
 							<div  class="row">
 								<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
-									<h2><center>Technical(s): <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
+									<h2><center>Technical(s): <p style = "display: inline-block;" id= "addTechnical">0</p></center></h2>
 								</div>
 							</div>
 							<div class="row">
 							<!--button-->
 								<div class="col-md-6">
-									<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
+									<button class="make leftcorner green makeshot width button" onclick="countTechnicals(1)">
 										<center>
 											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 										<h1 class="newSize">+</h1>
@@ -594,7 +594,7 @@
 									</button>
 								</div>
 								<div class="col-md-6">
-								<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
+								<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<h1 class="newSize">-</h1>
