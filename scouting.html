@@ -142,8 +142,8 @@
 								<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
 											<form action="">
-												<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
-												<input type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
 											</form>
 										</div>
 									</div>
@@ -373,7 +373,7 @@
 
 					<div class="col-md-6" style = "margin-top: 120px;">
 						<center>
-						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of a attempted shot</p>
+						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
 						<img class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "Red-field.png">
 						<img class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "Blue-field.png">
 						<p id="demo"></p>
@@ -383,13 +383,13 @@
 					<div class="col-md-6" style = "margin-top: 120px; padding-left: 0px; padding-right: 75px;">
 						<div class="row">
 							<div class="col-md-12 topStyle" style="background-color:#d3d3d3;">
-								<h2><center>Low Goal - </center></h2>
+								<h2><center>Low Goal - Balls collected before dump</center></h2>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-4">
 								<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDumpTeleop('Small')">
-									<h2><center>mdall 0-20</center></h2>
+									<h2><center>Small 0-20</center></h2>
 								</button>
 							</div>
 							<div class="col-md-4">
@@ -405,6 +405,9 @@
 						</div>
 						<br><br><br><br>
 						<div class="row percent" style = "display: none; height: 10px;">
+							<center>
+								<p style = "font-size: 20px;">What percent of collected balls were made?</p>
+							</center>
 							<div class="col-lg-3">
 								<button class="make leftcorner red width button memes hi clickDrop" onclick = "dumpPercentTeleop(0)">
 									<h2><center>0%</center></h2>
