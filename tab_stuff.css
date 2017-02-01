@@ -19,7 +19,9 @@ body {
 .tab-links {
 	border-radius: 5px;
 }
-
+button {
+	height: 50px !important;
+}
 .buttons{
 	height: 80px;
 }
