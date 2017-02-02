@@ -247,6 +247,18 @@ li.active a, li.active a:hover {
 #pepe {
 	margin-top: 50px;
 }
+<<<<<<< HEAD
 #Rotate:hover{
 	opacity: 0.6;
+=======
+.rotate:hover {
+	opacity: .1;
+}
+#Rotate {
+	height: 25px !important;
+	background-color: #ccc;
+	border-radius: 2px;
+	border: none;
+	font-weight: bold;
+>>>>>>> dd3cbbca382b56145f9f5d6cb2c3114815947e78
 }
