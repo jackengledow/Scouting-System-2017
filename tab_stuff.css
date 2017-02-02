@@ -247,3 +247,6 @@ li.active a, li.active a:hover {
 #pepe {
 	margin-top: 50px;
 }
+#Rotate:hover{
+	opacity: 0.6;
+}
