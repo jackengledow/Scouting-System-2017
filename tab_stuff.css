@@ -165,8 +165,8 @@ li.active a, li.active a:hover {
 	margin-left: 10px;
 }
 .form-control {
-	width: 75px !important;
-	height: 45px !important;
+	width: 75px ;
+	height: 45px ;
 }
 /*.iLikeCheck {
 	margin-left: 250px;
