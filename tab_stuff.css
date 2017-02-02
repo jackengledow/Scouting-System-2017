@@ -247,3 +247,13 @@ li.active a, li.active a:hover {
 #pepe {
 	margin-top: 50px;
 }
+.rotateField{
+	height: 25px !important;
+	background-color: #ccc; 
+	border-radius: 2px; 
+	border: none; 
+	font-weight: bold;
+}
+.rotateField:hover {
+	opacity: .6;
+}
