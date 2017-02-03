@@ -91,8 +91,8 @@
 	<div class = "everything">
 	   <div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
-          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;margin-right: 15px; text-align:center;"/>
-          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px; text-align:center">Team Number:</label><br>
+          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;margin-right: 15px"/>
+          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px">Team Number:</label><br>
             <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
@@ -153,13 +153,27 @@
 
   					<div class="container">
   					  <br><br>
+  						<p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p>
   						<div class="row">
-  							<div class="col-md-5" style = "width: 38.666666667%; margin-right: 15px;">
+  							<div class="col-md-5">
   								<div class="row">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: -10px;">
   										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreAuton">0</p></center></h2>
   									</div>
   								</div>
+  								<!--<div class="row">
+  									<div class="col-md-6">
+  										<div class="make green width button">
+  											<h2><center>Make</center></h2>
+  										</div>
+  									</div>
+  														
+  									<div class="col-md-6">
+  										<div class="miss red width button">
+  											<h2><center>Miss</center></h2>
+  										</div>
+  									</div>
+  								</div>-->
   								<div class = "row" style = "margin-top: 10px">
   									<div class = "col-md-4">
   										<button class = "make makeshot darkgreen width button" onclick = "countHighMakeAuton(10)">
@@ -195,6 +209,11 @@
   									</div>
   								</div>
   							</div>
+  							<div class="col-md-2">
+  								<center>
+  									<img id = "ballButton" src = "fuelImage.jpg">
+  								</center>
+  							</div>
   							<div class="col-md-5">
   								<div class="row">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3;padding-left: 0px;">
@@ -203,18 +222,18 @@
   								</div>
   								<div class="row">
   									<div class="col-md-4">
-  										<button class="make leftcorner red width button opacity dropDown" id = "Small" onclick = "lowDumpAuton('Small')">
-  											<p style = "font-size: 25px; padding-top: 5px;">Small 1-20</p>
+  										<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDumpAuton('Small')">
+  											<p style = "font-size: 25px; padding-top: 5px;">Small 1-19</p>
   										</button>
   									</div>
   									<div class="col-md-4">
-  										<button class="width button middle opacity dropDown" id = "Medium" onclick = "lowDumpAuton('Medium')">
-  											<p style = "font-size: 25px; padding-top: 5px;">Med 21-40</p>
+  										<button class="width button middle memes dropDown" id = "Medium" onclick = "lowDumpAuton('Medium')">
+  											<p style = "font-size: 25px; padding-top: 5px;">Med 20-39</p>
   										</button>
   									</div>
   									<div class="col-md-4">
-  										<button class="miss rightcorner green width button opacity dropDown" id = "Big" onclick = "lowDumpAuton('Big')">
-  											<p style = "font-size: 25px; padding-top: 5px;">Large 41+</p>
+  										<button class="miss rightcorner green width button memes dropDown" id = "Big" onclick = "lowDumpAuton('Big')">
+  											<p style = "font-size: 25px; padding-top: 5px;">Big 40+</p>
   										</button>
   									</div>
   								</div>
@@ -223,29 +242,29 @@
 										<p style = "font-size: 20px;">What percent of collected balls were made?</p>
 									</center>
   									<div class="col-lg-3">
-  										<button class="make leftcorner red width button opacity hi clickDrop" onclick = "dumpPercentAuton(0)">
+  										<button class="make leftcorner red width button memes hi clickDrop" onclick = "dumpPercentAuton(0)">
   											<p style = "font-size: 25px; padding-top: 5px;">0%</p>
   										</button>
   									</div>
   									<div class="col-lg-2">
   
-  										<button class="width button middle orange clickDrop opacity" onclick = "dumpPercentAuton(25)">
+  										<button class="width button middle orange clickDrop memes" onclick = "dumpPercentAuton(25)">
 											<p style = "font-size: 25px; padding-top: 5px;">25%</p>
   										</button>
   									</div>
   									<div class="col-lg-2">
-  										<button class="miss middle green width button opacity clickDrop" onclick = "dumpPercentAuton(50)">
+  										<button class="miss middle green width button memes clickDrop" onclick = "dumpPercentAuton(50)">
   											<p style = "font-size: 25px; padding-top: 5px;">50%</p>
   										</button>
   									</div>
   									<div class="col-lg-2">
   
-  										<button class="miss yellowGreen middle width button opacity clickDrop" onclick = "dumpPercentAuton(75)">
+  										<button class="miss yellowGreen middle width button memes clickDrop" onclick = "dumpPercentAuton(75)">
 											<p style = "font-size: 25px; padding-top: 5px;">75%</p>
   										</button>
   									</div>
   									<div class="col-lg-3">
-  										<button class="miss rightcorner green width button opacity goodbye clickDrop" onclick = "dumpPercentAuton(100)">
+  										<button class="miss rightcorner green width button memes goodbye clickDrop" onclick = "dumpPercentAuton(100)">
   											<p style = "font-size: 25px; padding-top: 5px;">100%</p>
   										</button>
   									</div>
@@ -276,17 +295,17 @@
 								<div class="row">
 								<!--button-->
 									<div class="col-md-4">
-										<button class="make leftcorner red width button opacity" id = "1">
+										<button class="make leftcorner red width button memes" id = "1">
 											<center><p style = "font-size: 25px; padding-top: 5px;">1</p></center>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button class="width button middle opacity" id = "2">
+										<button class="width button middle memes" id = "2">
 											<center><p style = "font-size: 25px; padding-top: 5px;">2</p></center>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button class="miss rightcorner green width button opacity" id = "3">
+										<button class="miss rightcorner green width button memes" id = "3">
 											<center><p style = "font-size: 25px; padding-top: 5px;">3</p></center>
 										</button>
 									</div>
@@ -295,21 +314,21 @@
 						<!-- <button class = "leftButton"><img class = "buttons" id = "speed" src = "http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg"></button> -->
 							<div class="col-md-3 rightButton leftButton">
 								<div class="row">
-									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
+									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px; height: 63px;">
 										<h2><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class="row">
 								<!--button-->
-									<div class="col-md-6">
+									<div class="col-md-6" style="margin-top: 10px;">
 										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
 											<center>
-												<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
+												<!--<img style = "height: 30px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 												<p style = "font-size: 30px; padding-top: 5px;">+</p>
 											</center>
 										</button>
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-6" style="margin-top: 10px;">
 										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
 												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
@@ -328,17 +347,17 @@
 								<div class="row">
 								<!--button-->
 									<div class="col-md-4">
-										<button class="make leftcorner green width button opacity" id = "success">
+										<button class="make leftcorner green width button memes" id = "success">
 											<p style = "font-size: 25px; padding-top: 5px;">Success</p>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button class="width button middle opacity" id = "fail">
+										<button class="width button middle memes" id = "fail">
 											<p style = "font-size: 25px; padding-top: 5px;">Fail</p>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button class="miss rightcorner red width button opacity" id = "noattempt">
+										<button class="miss rightcorner red width button memes" id = "noattempt">
 											<p style = "font-size: 25px; padding-top: 5px;">No attempt</p>
 										</button>
 									</div>
@@ -356,7 +375,7 @@
 						<img class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px;" src = "RedTeam.png">
 						<img class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png">
 						<p id="demo"></p>
-						<button id = "Rotate" class = "opacity" style = "height: 25px; background-color: #ccc; border-width: 0.5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px; margin-bottom: 50px;">Rotate Field</p></button>
+						<button id = "Rotate" class = "memes" style = "height: 25px; background-color: #ccc; border-width: 0.5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px; margin-bottom: 50px;">Rotate Field</p></button>
 						</center>
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
@@ -367,18 +386,18 @@
 						</div>
 						<div class="row">
 							<div class="col-md-4">
-								<button class="make leftcorner red width button opacity dropDown" id = "Small" onclick = "lowDumpTeleop('Small')">
-									<p style = "font-size: 25px; padding-top: 5px;">Small 1-20</p>
+								<button class="make leftcorner red width button memes dropDown" id = "Small" onclick = "lowDumpTeleop('Small')">
+									<p style = "font-size: 25px; padding-top: 5px;">Small 1-19</p>
 								</button>
 							</div>
 							<div class="col-md-4">
-								<button class="width button middle opacity dropDown" id = "Medium" onclick = "lowDumpTeleop('Medium')">
-									<p style = "font-size: 25px; padding-top: 5px;">Med 21-40</p>
+								<button class="width button middle memes dropDown" id = "Medium" onclick = "lowDumpTeleop('Medium')">
+									<p style = "font-size: 25px; padding-top: 5px;">Med 20-39</p>
 								</button>
 							</div>
 							<div class="col-md-4">
-								<button class="miss rightcorner green width button opacity dropDown" id = "Big" onclick = "lowDumpTeleop('Big')">
-									<p style = "font-size: 25px; padding-top: 5px;">Large 41+</p>
+								<button class="miss rightcorner green width button memes dropDown" id = "Big" onclick = "lowDumpTeleop('Big')">
+									<p style = "font-size: 25px; padding-top: 5px;">Big 40+</p>
 								</button>
 							</div>
 						</div>
@@ -387,27 +406,27 @@
 								<p style = "font-size: 20px;">What percent of collected balls were made?</p>
 							</center>
 							<div class="col-lg-3">
-								<button class="make leftcorner red width button opacity hi clickDrop" onclick = "dumpPercentTeleop(0)">
+								<button class="make leftcorner red width button memes hi clickDrop" onclick = "dumpPercentTeleop(0)">
 									<p style = "font-size: 25px; padding-top: 5px;">0%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button class="width button middle orange clickDrop opacity" onclick = "dumpPercentTeleop(25)">
+								<button class="width button middle orange clickDrop memes" onclick = "dumpPercentTeleop(25)">
 									<p style = "font-size: 25px; padding-top: 5px;">25%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button class="miss middle green width button opacity clickDrop" onclick = "dumpPercentTeleop(50)">
+								<button class="miss middle green width button memes clickDrop" onclick = "dumpPercentTeleop(50)">
 									<p style = "font-size: 25px; padding-top: 5px;">50%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button class="miss yellowGreen middle width button opacity clickDrop" onclick = "dumpPercentTeleop(75)">
+								<button class="miss yellowGreen middle width button memes clickDrop" onclick = "dumpPercentTeleop(75)">
 									<p style = "font-size: 25px; padding-top: 5px;">75%</p>
 								</button>
 							</div>
 							<div class="col-lg-3">
-								<button class="miss rightcorner green width button opacity goodbye clickDrop" onclick = "dumpPercentTeleop(100)">
+								<button class="miss rightcorner green width button memes goodbye clickDrop" onclick = "dumpPercentTeleop(100)">
 									<p style = "font-size: 25px; padding-top: 5px;">100%</p>
 								</button>
 							</div>
@@ -484,16 +503,16 @@
 							</div>
 							<div class="row">
 							<!--button-->
-								<div class="col-md-6">
-									<button class="make leftcorner green makeshot width button"  onclick="countFouls(1)" style="margin-top:10px">
+								<div class="col-md-6" style="margin-top:10px">
+									<button class="make leftcorner green makeshot width button"  onclick="countFouls(1)">
 										<center>
 											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 										<p style="font-size: 30px; padding-top: 5px;">+</p>
 										</center>
 									</button>
 								</div>
-								<div class="col-md-6">
-								<button class="miss rightcorner missshot red width button" style = "margin-left: 3px; margin-top:10px" onclick="countFouls(-1)">
+								<div class="col-md-6" style="margin-top:10px">
+								<button class="miss rightcorner missshot red width button" style = "margin-left: 3px;" onclick="countFouls(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
@@ -510,16 +529,16 @@
 							</div>
 							<div class="row">
 							<!--button-->
-								<div class="col-md-6">
-									<button class="make leftcorner green makeshot width button" onclick="countTechnicals(1)" style="margin-top:10px">
+								<div class="col-md-6" style="margin-top:10px">
+									<button class="make leftcorner green makeshot width button" onclick="countTechnicals(1)">
 										<center>
 											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 										<p style="font-size: 30px; padding-top: 5px;">+</p>
 										</center>
 									</button>
 								</div>
-								<div class="col-md-6">
-								<button class="miss rightcorner missshot red width button" onclick="countTechnicals(-1)" style="margin-top:10px; margin-left:3px">
+								<div class="col-md-6" style="margin-top:10px">
+								<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
@@ -800,3 +819,4 @@
       });
   });
   </script>
+
