@@ -26,6 +26,12 @@ var mouse_x = 0;
 var mouse_y = 0;
 var fouls = 0;
 var technicals = 0;
+var clickSmallAuton = false;
+var clickMedAuton = false;
+var clickBigAuton = false;
+var clickSmallTeleop = false;
+var clickMedTeleop = false;
+var clickBigTeleop = false;
 
 var countFouls=function (change) {
 	fouls+=change;
@@ -103,15 +109,143 @@ var changeGear = function (change){
 }
 
 var lowDumpAuton = function(type){
-	lowDumpsAuton[lowCountAuton] = type;
-	lowCountAuton++;
-	console.log("Auton: " + lowDumpsAuton);
+	if(clickSmallAuton || clickMedAuton || clickBigAuton){
+		if(type == "Small"){
+			if(clickSmallAuton==false){
+				lowCountAuton -= 1;
+				lowDumpsAuton[lowCountAuton] = type;
+				lowCountAuton++;
+				console.log("Auton: " + lowDumpsAuton);
+				clickSmallAuton = true;
+				clickMedAuton = false;
+				clickBigAuton = false;
+			}
+		}
+		if(type == "Medium"){
+			if(clickMedAuton==false){
+				lowCountAuton -= 1;
+				lowDumpsAuton[lowCountAuton] = type;
+				lowCountAuton++;
+				console.log("Auton: " + lowDumpsAuton);
+				clickMedAuton = true;
+				clickSmallAuton = false;
+				clickBigAuton = false;
+			}
+		}
+		if(type == "Big"){
+			if(clickBigAuton==false){
+				lowCountAuton -=1;
+				lowDumpsAuton[lowCountAuton] = type;
+				lowCountAuton++;
+				console.log("Auton: " + lowDumpsAuton);
+				clickBigAuton = true;
+				clickMedAuton = false;
+				clickSmallAuton = false;
+			}
+		}
+	}
+	else{
+		if(type == "Small"){
+			if(clickSmallAuton==false){
+				lowDumpsAuton[lowCountAuton] = type;
+				lowCountAuton++;
+				console.log("Auton: " + lowDumpsAuton);
+				clickSmallAuton = true;
+				clickMedAuton = false;
+				clickBigAuton = false;
+			}
+		}
+		if(type == "Medium"){
+			if(clickMedAuton==false){
+				lowDumpsAuton[lowCountAuton] = type;
+				lowCountAuton++;
+				console.log("Auton: " + lowDumpsAuton);
+				clickMedAuton = true;
+				clickSmallAuton = false;
+				clickBigAuton = false;
+			}
+		}
+		if(type == "Big"){
+			if(clickBigAuton==false){
+				lowDumpsAuton[lowCountAuton] = type;
+				lowCountAuton++;
+				console.log("Auton: " + lowDumpsAuton);
+				clickBigAuton = true;
+				clickMedAuton = false;
+				clickSmallAuton = false;
+			}
+		}
+	}
 }
 
 var lowDumpTeleop = function(type){
-	lowDumpsTeleop[lowCountTeleop] = type;
-	lowCountTeleop++;
-	console.log("Teleop: " + lowDumpsTeleop);
+	if(clickSmallTeleop || clickMedTeleop || clickBigTeleop){
+		if(type == "Small"){
+			if(clickSmallTeleop==false){
+				lowCountTeleop -= 1;
+				lowDumpsTeleop[lowCountTeleop] = type;
+				lowCountTeleop++;
+				console.log("Teleop: " + lowDumpsTeleop);
+				clickSmallTeleop = true;
+				clickMedTeleop = false;
+				clickBigTeleop = false;
+			}
+		}
+		if(type == "Medium"){
+			if(clickMedTeleop==false){
+				lowCountTeleop -= 1;
+				lowDumpsTeleop[lowCountTeleop] = type;
+				lowCountTeleop++;
+				console.log("Teleop: " + lowDumpsTeleop);
+				clickMedTeleop = true;
+				clickSmallTeleop = false;
+				clickBigTeleop = false;
+			}
+		}
+		if(type == "Big"){
+			if(clickBigTeleop==false){
+				lowCountTeleop -=1;
+				lowDumpsTeleop[lowCountTeleop] = type;
+				lowCountTeleop++;
+				console.log("Teleop: " + lowDumpsTeleop);
+				clickBigTeleop = true;
+				clickMedTeleop = false;
+				clickSmallTeleop = false;
+			}
+		}
+	}
+	else{
+		if(type == "Small"){
+			if(clickSmallTeleop==false){
+				lowDumpsTeleop[lowCountTeleop] = type;
+				lowCountTeleop++;
+				console.log("Teleop: " + lowDumpsTeleop);
+				clickSmallTeleop = true;
+				clickMedTeleop = false;
+				clickBigTeleop = false;
+			}
+		}
+		if(type == "Medium"){
+			if(clickMedTeleop==false){
+				lowDumpsTeleop[lowCountTeleop] = type;
+				lowCountTeleop++;
+				console.log("Teleop: " + lowDumpsTeleop);
+				clickMedTeleop = true;
+				clickSmallTeleop = false;
+				clickBigTeleop = false;
+			}
+		}
+		if(type == "Big"){
+			if(clickBigTeleop==false){
+				lowDumpsTeleop[lowCountTeleop] = type;
+				lowCountTeleop++;
+				console.log("Teleop: " + lowDumpsTeleop);
+				clickBigTeleop = true;
+				clickMedTeleop = false;
+				clickSmallTeleop = false;
+			}
+		}
+	}
 }
 
 var dumpPercentAuton = function(percent){
@@ -131,6 +265,9 @@ var dumpPercentAuton = function(percent){
 		bigCountAuton++;
 		console.log("Big Auton: " + bigLoadsAuton);
 	}
+	clickBigAuton = false;
+	clickMedAuton = false;
+	blickSmallAuton = false;
 }
 
 var dumpPercentTeleop = function(percent){
@@ -150,6 +287,9 @@ var dumpPercentTeleop = function(percent){
 		bigCountTeleop++;
 		console.log("Big Teleop: " + bigLoadsTeleop);
 	}
+	clickBigTeleop = false;
+	clickMedTeleop = false;
+	blickSmallTeleop = false;
 }
 
 var setGridClickPos = function(x,y){
