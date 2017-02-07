@@ -291,6 +291,7 @@ li.active a, li.active a:hover {
 #Rotate:hover{
 	opacity: 0.6;
 }
+
 .rotateField{
 	height: 25px !important;
 	background-color: #ccc; 
@@ -311,3 +312,9 @@ li.active a, li.active a:hover {
 	border: none;
 	font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+#blueButton:hover {
+	opacity: 0.6;
+}
+>>>>>>> 1a315c640badcfe0e10ac152162a7f7087af2da4
