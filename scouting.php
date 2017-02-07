@@ -62,8 +62,7 @@
 				margin-left: 15px;
 			}
 			.middle{
-				border:2px solid #d8d802;
-				background-color: #ffff99;
+				border:2px solid #d8d802;background-color: #ffff99;
 				margin-left: 15px;
 			}
 			.width{
@@ -382,8 +381,8 @@
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
-						<img id = "fieldpic" class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
-						<img id = "fieldpic" class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png">
+						<img class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png">
+						<img class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png">
 						<p id="demo"></p>
 						<button id = "Rotate" class = "opacity" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
 						</center>
@@ -499,7 +498,7 @@
 
 				<div id="tab3" class="tab">
 				
-				<p style = "padding-left: 50px; font-size: 25px; text-decoration: underline;"><strong>Penalties:</strong></p>
+				<p style = "padding-left: 50px; font-size: 25px; text-decoration: underline;"><strong>Penalty Buttons:</strong></p>
 				 <div class="container">
 					<div class="row">
 						<br><br>
@@ -589,14 +588,11 @@
 						<h2><b>Match Notes:</b></h2>
 						<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 					</div>
-<<<<<<< HEAD
-=======
 					<center>
 					<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
 						<p style="font-size: 35px; padding-top: 5px;">Submit</p>
 					</button>
 					</center>
->>>>>>> 69e8c687e93c980ce947e3dd822ec3d364d003b5
 				</div>
 
         </div>
@@ -802,20 +798,7 @@
   	});
   	$(".clickDrop").on("click", function(){
   		$(".percent").css("display", "none");
-  	}); 
-	$("#fieldpic").on("click", function(ev,color){
-		$("#fieldPicDiv").append(            
-			$('<div></div>').css({
-				position: 'absolute',
-				top: ev.pageY -286 + 'px',
-				left: ev.pageX -23.5+ 'px',
-				width: '20px',
-				height: '20px',
-				background-color: color
-				'border-radius': '100%'
-			})              
-		);
-	});
+  	});
   		
   	/*
   	$('#speed').on("click", function(){
