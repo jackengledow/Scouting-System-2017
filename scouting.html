@@ -452,17 +452,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart percent" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button class = "make makeshot medgreen width button shotChart percent" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(-1), clickZone('Make', -1)">
+										<button class = "make makeshot rightcorner grey width button shotChart percent" onclick = "countHighMakeTeleop(-1), clickZone('Make', -1)">
 											<p style = "font-size: 25px; padding-top: 5px;">-1</p>
 										</button>
 									</div>
@@ -476,17 +476,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button class = "make makeshot darkred width leftcorner button shotChart percent" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button class = "make makeshot red width button shotChart percent" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMissTeleop(-1), clickZone('Miss', -1)">
+										<button class = "make makeshot width grey button rightcorner shotChart percent" onclick = "countHighMissTeleop(-1), clickZone('Miss', -1)">
 											<p style = "font-size: 25px; padding-top: 5px;">-1</p>
 										</button>
 									</div>
@@ -813,7 +813,9 @@
 			})              
 		);
 	});
-  		
+  	$(".percent").on("click", function(){
+		$("#fieldPicDiv").empty();
+	});
   	/*
   	$('#speed').on("click", function(){
   		var speed = prompt("What is the speed from 1-3? 3 is fastest.")
