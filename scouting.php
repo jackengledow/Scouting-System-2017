@@ -385,8 +385,10 @@
 						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
 						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
 						<p id="demo"></p>
-						<button id = "Rotate" class = "opacity" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
 						</center>
+						<button id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
+						<button id = "undo" class = "opacity" style = "margin-left: 165px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
+						
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
 						<div class="row">
@@ -452,18 +454,18 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 10)">
+											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
+										</button>
+									</div>
+									<div class = "col-md-4">
+										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button class = "make makeshot rightcorner lightgreen width button shotChart" onclick = "countHighMakeTeleop(-1), clickZone('Make', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
-										</button>
-									</div>
-									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner grey width button shotChart" id = "undo" onclick = "countHighMakeTeleop(-1), clickZone('Make', -1)">
-											<p style = "font-size: 25px; padding-top: 5px;">-1</p>
 										</button>
 									</div>
 								</div>
@@ -476,18 +478,18 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMissTeleop(5), clickZone('Miss', 10)">
+											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
+										</button>
+									</div>
+									<div class = "col-md-4">
+										<button class = "make makeshot red width button shotChart" onclick = "countHighMissTeleop(1), clickZone('Miss', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button class = "make makeshot width lightred button rightcorner shotChart" onclick = "countHighMissTeleop(-1), clickZone('Miss', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
-										</button>
-									</div>
-									<div class = "col-md-4">
-										<button class = "make makeshot width grey button rightcorner shotChart" id = "undo" onclick = "countHighMissTeleop(-1), clickZone('Miss', -1)">
-											<p style = "font-size: 25px; padding-top: 5px;">-1</p>
 										</button>
 									</div>
 								</div>
