@@ -1,0 +1,126 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+#compare-teams {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+#teams-management {
+	display: flex;
+	flex-flow: row nowrap;
+
+	margin: 10px 0;
+}
+
+#teams-management > button {
+	margin: 0 15px 0 0;
+}
+
+#compare-teams > select {
+	margin: 0 10px 0 0;
+	width: 10%;
+}
+
+#general-stats {
+	padding-top: 20px;
+}
+
+.panel-body {
+	display: flex;
+	flex-flow: row nowrap;
+
+	padding: 0;
+}
+
+.panel-data {
+	margin-right: 20px;
+}
+
+.panel-data:last-child {
+	margin: 0;
+}
+
+.graph-content {
+	display: flex;
+	flex-flow: row nowrap;
+
+	padding: 0;
+}
+
+.graph-list {
+	display: flex;
+	flex-flow: column nowrap;
+
+	padding-right: 20px;
+	border-right: 1px solid #eee;
+}
+
+.graph-list > * {
+	margin-bottom: 15px;
+}
+
+.graph-space {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: baseline;
+
+	text-align: center;
+
+	margin-bottom: 15px;
+}
+
+.graph-space > div {
+	margin: 0 20px 20px 20px;
+}
+
+#team-selector {
+	margin-top: 20px;
+}
+
+#pit-viewer {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#pit-viewer .panel {
+	margin: 15px;
+}
+
+#pit-viewer .panel-body {
+	display: block;
+}
+
+#pit-viewer .panel-body p {
+	margin: 5px;
+
+	text-align: center;
+	vertical-align: middle;
+}
+
+#pit-viewer h2 {
+	width: 100vw;
+}
+
+#notes-viewer .panel-body {
+	display: block;
+}
+
+#notes-viewer .panel-body p {
+	margin: 15px;
+}
+
+#notes-content {
+	margin-left: 20px;
+}
+
+#match-list > h2:first-child {
+	margin: 0;
+}
+
+#match-list > h2 {
+	margin-bottom: 4px;
+}
+
+.blueimp-gallery>.prev, .blueimp-gallery>.next {
+	line-height: 42px;
+}

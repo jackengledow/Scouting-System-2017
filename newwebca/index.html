@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/webca.css" rel="stylesheet">
+		<link rel="icon"
+					type="image/png"
+					href="img/logo/profile/logo-1024px-transparent.png">
+		<title>WeBCa, powered by FReCon</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="page-header">
+				<h1>FReCon <small id="currentCompetitionStylishIndicator"></small></h1>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<label>Create a New Competition</label>
+					<input class="form-control" id="newCompetitionName" placeholder="Competition Name"></input><br/>
+					<input class="form-control" id="newCompetitionLocation" placeholder="Competition Location"></input><br/>
+					<button class="btn btn-default" onclick="createCompetition()">Submit</button>
+				</div>
+				<div class="col-md-2">
+					<a href="./teams.html">Teams, Robots, and Participations</a><br />
+					<a href="./robots.html">Pit Scouting Form</a><br />
+					<a href="./2016-tabs.html">Scouting Form</a><br />
+					<a href="./datavis.html">Data Visualization</a><br />
+					<a href="./options.html">User Options</a><br />
+				</div>
+				<div class="col-md-2">
+          <h3 style="margin-top: 0px">Competition List</h3>
+          <div id="competitionList">
+          </div>
+        </div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="currentCompetition">Set Current Competition</label>
+						<select class="form-control" id="currentCompetitionSelect">
+						</select>
+					</div>
+					<!--<button class="btn btn-default" onclick="setCompetition()">Submit</button>-->
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ba-resize.js"></script>
+	<script type="text/javascript" src="js/jquery.appear.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</html>
