@@ -720,7 +720,7 @@
 		);
     });
 	
-	$(".percent").on("click", function(){
+	$("#popup").on("click", function(){
 		$("#fieldPicDiv").empty();
 	});
 		
