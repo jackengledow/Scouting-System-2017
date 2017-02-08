@@ -96,8 +96,8 @@
             <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
-            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
-            <button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
+            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 5.5px">Red</button>
+            <button type="button" id ="blueButton" style = "padding-left: 5.5px">Blue</button>
             </p>
           </div>
 		<div class="tabs">
@@ -592,9 +592,15 @@
 					<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
 						<p style="font-size: 35px; padding-top: 5px;">Submit</p>
 					</button>
+					<!--<br>
+					<div>
+						<select name="competitionDropdown">
+							<option value="comp1">Competition 1</option>
+							<option value="comp2">Competition 2</option>
+						</select>
+					</div>-->
 					</center>
 				</div>
-
         </div>
 						<script>
 							function showCoords(event) {
