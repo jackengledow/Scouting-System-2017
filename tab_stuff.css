@@ -209,7 +209,7 @@ li.active a, li.active a:hover {
   border: solid 3px red;
   height: 54px;
   width: 94px;
-  padding: 1px 1px 1px 1px;
+  padding: 1px 5px 1px 1px;
   font-size: 30px;
   display:flex;
   text-align: center;
@@ -221,7 +221,7 @@ li.active a, li.active a:hover {
   border: solid 3px #f44242;
   height: 54px;
   width: 94px;
-  padding: 1px 1px 1px 1px;
+  padding: 1px 5px 1px 1px;
   font-size: 30px;
   display:flex;
   text-align: center;
@@ -232,7 +232,7 @@ li.active a, li.active a:hover {
   border: solid 3px blue;
   height: 54px;
   width: 94px;
-  padding: 1px 1px 1px 1px;
+  padding: 1px 5px 1px 1px;
   font-size: 30px;
   display:flex;
   text-align: center;
@@ -244,7 +244,7 @@ li.active a, li.active a:hover {
   border: solid 3px #5587F3;
   height: 54px;
   width: 94px;
-  padding: 1px 1px 1px 1px;
+  padding: 1px 5px 1px 1px;
   font-size: 30px;
   display:flex;
   text-align: center;
