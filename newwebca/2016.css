@@ -1,0 +1,38 @@
+.col-md-5 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.col-md-5 .row {
+    margin-left: 0px;
+}
+
+.col-md-7 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.col-md-7 .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.col-md-5 .row #map-img {
+    width: 100%;
+}
+
+.col-md-5 .row .btn {
+    margin-top: 5px;
+}
+
+section {
+    margin-top: 10px;
+}
+
+.container-fluid h1 {
+    display: inline;
+    margin-left: 20px;
+}
+
+.back-arrow-container {
+    margin-top: 10px;
+}

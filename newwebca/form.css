@@ -1,0 +1,39 @@
+/* Base stylings */
+
+.check-box {
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: center;
+}
+
+.check-box > label {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.check-box > input {
+    width: 25px;
+    height: 25px;
+}
+
+#map-col, #input-col, #notes-col {
+
+}
+
+/* Map stylings */
+
+#map-img {
+    width: 100%;
+}
+
+#submit-row {
+    margin-top: 25px;
+}
+
+/* Input panel */
+
+/* Notes panel */
+#notes-col {
+    padding-right: 50px;
+}

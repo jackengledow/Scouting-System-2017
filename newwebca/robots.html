@@ -1,0 +1,71 @@
+<!doctype html>
+<html manifest="/manifest">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/webca.css" rel="stylesheet">
+		<link rel="icon"
+					type="image/png"
+					href="img/logo/profile/logo-1024px-transparent.png">
+		<title>WeBCa, powered by FReCon - Pit Scouting</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="page-header">
+				<div class="back-arrow-container">
+					<a href="/" class="back-arrow">&larr;</a>
+				</div>
+				<h1 class="main-header">Pit Scouting</h1>
+				<div id="titleDiv" hidden="true"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<select class="form-control" id="teamSelect"></select>
+					</div>
+				</div>
+				<div class="col-md-4" id="connectionDiv">
+				</div>
+				<div class="col-md-4">
+					<!--<textarea rows="10" cols="42" class="form-control" name="robotNotes" id="robotNotes"></textarea>-->
+					<button type="button" class="btn btn-default" onclick="saveData();">Save Data</button>
+					<button type="button" class="btn btn-default" onclick="uploadImages();">Sync Data</button>
+				</div>
+				<!--<div class="col-md-2">
+					<label><h2>Team Notes<h2><label>
+				</div>
+				<div class="col-md-4">
+					<textarea rows="10" cols="42" class="form-control" name="teamNotes" id="teamNotes"></textarea>
+				</div>-->
+			</div>
+			<div class="row">
+				<div class="col-md-4" id="viewDiv"></div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-12" id="fileDiv" hidden="true"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-6" id="formDiv1" hidden="true"></div>
+						<div class="col-md-6" id="formDiv2" hidden="true"></div>
+					</div>
+				</div>
+				<!--<div class="col-md-2">
+						<label><h2>Robot Notes<h2><label>
+				</div>-->
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ba-resize.js"></script>
+	<script type="text/javascript" src="js/jquery.appear.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/sort.js"></script>
+	<script type="text/javascript" src="js/d3.js"></script>
+	<script type="text/javascript" src="js/multiselect.js"></script>
+	<script type="text/javascript" src="js/multifile.js"></script>
+	<script type="text/javascript" src="js/multiview.js"></script>
+	<script type="text/javascript" src="js/connection.js"></script>
+	<script type="text/javascript" src="js/pitscout.js"></script>
+</html>

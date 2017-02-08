@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" manifest="/manifest">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon"
+					type="image/png"
+					href="img/logo/profile/logo-1024px-transparent.png">
+		<title>WeBCa, powered by FReCon - 2016 Scouting Form</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/webca.css" rel="stylesheet">
+		<!--<link href="css/2016.css" rel="stylesheet">-->
+		<link href="css/form.css" rel="stylesheet">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+				<![endif]-->
+
+		<!-- Using non-minified plugins for easier debugging -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/jquery.form-validator.js"></script>
+
+		<!--<script src="js/dexie.js"></script>-->
+
+		<!-- Counters and Hiders -->
+		<script src="js/form.js"></script>
+	</head>
+	<body>
+		<form method="post" action="" class="container-fluid noSelect">
+			<div class="row">
+				<div class="col-md-10 scouting-container">
+					<div class="page-header">
+						<div class="back-arrow-container">
+							<a href="/" class="back-arrow">&larr;</a>
+						</div>
+					</div>
+					<ul class="nav nav-tabs scout">
+						<li class="active"><a href="#start" data-toggle="tab">Starting Info</a></li>
+						<li><a href="#auton" data-toggle="tab">Autonomous</a></li>
+						<li><a href="#teleop" data-toggle="tab">Teleop</a></li>
+						<li><a href="#penalty" data-toggle="tab">Penalties</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="start">
+							<section>
+								<div class="row">
+									<div class="col-md-3" id="matchTypeDiv">
+									</div>
+									<div class="col-md-2" id="matchNumberDiv">
+									</div>
+									<div class="col-md-3" id="teamDiv">
+									</div>
+									<div class="col-md-2" id="allianceDiv">
+										<!-- I'm not generating this particular input with input.js because this is a special case with the colored buttons. If we decide not to use the colored buttons, we can go back to generating this input group -->
+										<div class="form-group">
+											<label style="width: 100%;">Alliance</label>
+											<div data-toggle="buttons" class="btn-group btn-group-justified">
+												<label class="btn btn-danger btn-lg">
+													<input type="radio" name="alliance" value="Red" onchange="changeAlliance(this);" data-validation="required" data-validation-error-msg="You did not select an alliance!">Red
+												</label>
+												<label class="btn btn-primary btn-lg">
+													<input type="radio" name="alliance" value="Blue" onchange="changeAlliance(this);" data-validation="required" data-validation-error-msg="You did not select an alliance!">Blue
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-2" id="positionDiv">
+									</div>
+								</div>
+								<div class="form-group">
+									<img id="map-img" src="img/2016/field.png">
+								</div>
+								<h4><span id="allianceDefenseSpan">?</span> Alliance Defenses <small>Note: These defenses belong to the alliance that the robot is on. <strong>NOT</strong> the ones it has to cross/breach.</small></h4>
+								<div class="row">
+									<div class="col-md-3" id="defenseDiv1">
+									</div>
+									<div class="col-md-3" id="defenseDiv2">
+									</div>
+									<div class="col-md-3" id="defenseDiv3">
+									</div>
+									<div class="col-md-3" id="defenseDiv4">
+									</div>
+								</div>
+								<h4><span id="enemyAllianceDefenseSpan">?</span> Alliance Defenses <small>Note: These are the defenses that the robot must <strong>cross/breach</strong> to earn points.</small></h4>
+								<div class="row">
+									<div class="col-md-3">
+										<label>1</label>
+										<select class="form-control input-lg enemy-defense-dropdown" data-target="#defense1" data-validation="required"></select>
+									</div>
+									<div class="col-md-3">
+										<label>2</label>
+										<select class="form-control input-lg enemy-defense-dropdown" data-target="#defense2" data-validation="required"></select>
+									</div>
+									<div class="col-md-3">
+										<label>3</label>
+										<select class="form-control input-lg enemy-defense-dropdown" data-target="#defense3" data-validation="required"></select>
+									</div>
+									<div class="col-md-3">
+										<label>4</label>
+										<select class="form-control input-lg enemy-defense-dropdown" data-target="#defense4" data-validation="required"></select>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="tab-pane" id="auton">
+							<section>
+								<div class="row">
+									<div class="col-md-6">
+										<div id="autonShootDiv">
+											<label>High Goal Shots</label>
+											<p>Click/Tap once on the field to indicate from where the <strong>robot</strong> shot a boulder into the high goal, creating a <span style="color:green;">green</span> dot.<br>
+												Click/Tap on an existing <span style="color:green;">green</span> dot to indicate that the robot <strong>missed</strong> a shot, changing it to a <span style="color:red;">red</span> dot.<br>
+												Click/Tap on an existing <span style="color:red;">red</span> dot to remove it from the field.
+											</p>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="row">
+											<div id="start-w-boulder" class="col-md-6"></div>
+											<div id="spy-bot-div" class="col-md-6"></div>
+										</div>
+										<hr>
+										<div class="row">
+											<div id="auton-reach-div" class="col-md-6"></div>
+											<div id="auton-defense-div" class="col-md-6"></div>
+										</div>
+										<hr>
+										<div class="row">
+											<div id="auton-low-made-div" class="col-md-6">
+												<label>Low Goals Made</label>
+											</div>
+											<div id="auton-low-miss-div" class="col-md-6">
+												<label>Low Goals Missed</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="tab-pane" id="teleop">
+							<section>
+								<div class="row">
+									<div class="col-md-6">
+										<div id="teleopShootDiv">
+											<label>High Goal Shots</label>
+											<p>Click/Tap once on the field to indicate from where the <strong>robot</strong> shot a boulder into the high goal, creating a <span style="color:green;">green</span> dot.<br>
+												Click/Tap on an existing <span style="color:green;">green</span> dot to indicate that the robot <strong>missed</strong> a shot, changing it to a <span style="color:red;">red</span> dot.<br>
+												Click/Tap on an existing <span style="color:red;">red</span> dot to remove it from the field.
+											</p>
+											<div style = "position: relative; display:inline-block; width: 85%">
+												<img src="./img/2016/red_flipped.png" style = "width: 100%">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="row">
+											<div id="teleop-low-made-div" class="col-md-6">
+												<label>Low Goals Made</label>
+											</div>
+											<div id="teleop-low-miss-div" class="col-md-6">
+												<label>Low Goals Missed</label>
+											</div>
+										</div>
+										<hr>
+										<label>Defenses Crossed</label>
+										<p><strong>Note: This has changed.</strong> A "cross" is when a robot has crossed the defense from the midfield to courtyard <i>by itself</i>.</p>
+										<p>For Ratings:<br>
+											Cross within <em>2 seconds</em> = <strong>5</strong>. <em>2-5 seconds</em> = <strong>4</strong>, <em>5-7 seconds</em> = <strong>3</strong>, <em>7-10 seconds</em> = <strong>2</strong>, <em>More than 10</em> = <strong>1</strong>.<br>
+											<u>Remember</u>: <strong>Higher Rating</strong> means <em>Less Time</em></p>
+										<div class="row">
+											<div class="col-md-6 form-group teleop-defense-div">
+												<label>Defense 1</label>
+											</div>
+											<div class="col-md-6 form-group teleop-defense-div">
+												<label>Defense 2</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6" id="defense1RatingDiv"></div>
+											<div class="col-md-6" id="defense2RatingDiv"></div>
+										</div>
+										<div class="row">
+											<div class="col-md-6 form-group teleop-defense-div">
+												<label>Defense 3</label>
+											</div>
+											<div class="col-md-6 form-group teleop-defense-div">
+												<label>Defense 4</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6" id="defense3RatingDiv"></div>
+											<div class="col-md-6" id="defense4RatingDiv"></div>
+										</div>
+										<label>Low Bar</label>
+										<div class="row">
+											<div id="teleop-lowbar-div" class="col-md-6 form-group"></div>
+											<div id="teleop-struggle" class="col-md-6 form-group"></div>
+										</div>
+										<div class="row">
+											<div class="col-md-6" id="lowbarCrossedRatingDiv"></div>
+											<div class="col-md-6"></div>
+											<div id="teleop-struggle-text" class="col-md-6 form-group"></div>
+										</div>
+										<hr>
+										<label>Defensive Manuevers (Blocking)</label>
+										<div class="row">
+											<div id="teleop-movement-blocks" class="col-md-6"></div>
+											<div id="teleop-scoring-blocks" class="col-md-6"></div>
+										</div>
+										<hr>
+										<div class="row">
+											<div id="teleop-challenge" class="col-md-6"></div>
+											<div id="teleop-climb" class="col-md-6"></div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<p><strong>Note</strong>: Select the "Fail" option above if the robot made an attempt but failed. If no effort was made, select "None."</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="tab-pane" id="penalty">
+							<section>
+								<div class="row">
+									<div id="foul-div" class="form-group col-md-6"></div>
+									<div id="tech-foul-div" class="form-group col-md-6"></div>
+								</div>
+								<div class="row">
+									<div id="yellow-card-div" class="col-md-6 form-group"></div>
+									<div id="red-card-div" class="col-md-6 form-group"></div>
+								</div>
+								<div class="row">
+									<div id="disabled-div" class="form-group col-md-6"></div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="sideDiv affix">
+						<div id="notesDiv">
+							<h1 style="margin-top: 28px">Notes</h1>
+							<hr>
+							<h3>Scouting <span id="teamSpan">?</span> - <span id="allianceSpan">?</span><span id="positionSpan">?</span></h3>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn btn-primary btn-lg rotate-button" onclick="rotateField();">Rotate Field</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10">
+					<hr>
+					<button type="submit" class="btn btn-default btn-lg">Submit</button>
+				</div>
+			</div>
+			<br>
+		</form>
+		<script type="text/javascript" src="js/input.js"></script>
+		<script type="text/javascript" src="js/incdec.js"></script>
+		<script type="text/javascript" src="js/field.js"></script>
+		<script type="text/javascript" src="js/touchfield.js"></script>
+		<script type="text/javascript" src="js/defaults.js"></script>
+		<script type="text/javaScript" src="js/sort.js"></script>
+		<script type="text/javascript" src="js/2016.js"></script>
+		<script type="text/javascript" src="js/scout.js"></script>
+		<script type="text/javascript" src="js/validate.js"></script>
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html manifest="/manifest">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>WeBCa, powered by FReCon - 2015 Scout Form</title>
+        <!-- Bootstrap -->
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+        <link type="text/css" rel="stylesheet" href="css/webca.css"/>
+        <link type="text/css" rel="stylesheet" href="css/2015.css"/>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.form-validator.js"></script>
+        <link rel="icon"
+        type="image/png"
+        href="img/logo/profile/logo-1024px-transparent.png">
+    </head>
+    <body>
+        <form method="post" action="" class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 scouting-container">
+                    <!-- Here is everything to be edited during scouting. (Main Content) -->
+                    <section>
+                        <div class="page-header">
+                            <div class="back-arrow-container">
+                                <a href="/" class="back-arrow">&larr;</a>
+                            </div>
+                            <h1 class="main-header">Starting Information</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3" id="matchTypeDiv">
+                            </div>
+                            <div class="col-md-2" id="matchNumberDiv">
+                            </div>
+                            <div class="col-md-1" id="teamDiv">
+                            </div>
+                            <div class="col-md-2" id="allianceDiv">
+                                <!-- I'm not generating this particular input with input.js because this is a special case with the colored buttons. If we decide not to use the colored buttons, we can go back to generating this input group -->
+                                <div class="form-group">
+                                    <label style="width: 100%;">Alliance</label>
+                                    <div data-toggle="buttons" class="btn-group">
+                                        <label class="btn btn-danger btn-lg">
+                                            <input type="radio" name="alliance" value="Red" onchange="changeAlliance(this);" data-validation="required" data-validation-error-msg="You did not select an alliance!">Red
+                                        </label>
+                                        <label class="btn btn-primary btn-lg">
+                                            <input type="radio" name="alliance" value="Blue" onchange="changeAlliance(this);" data-validation="required" data-validation-error-msg="You did not select an alliance!">Blue
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2" id="positionDiv"></div>
+                            <div class="col-md-2">
+                                <label style="width: 100%;">Start Match</label>
+                                <button class="btn btn-default btn-lg" id="startButton">Start</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+
+
+                    </section>
+                </div>
+                <!-- This is the Notes Section -->
+                <div class="col-md-3">
+                    <div id="notesDiv" class="affix">
+                        <h1 style="margin-top: 28px">Notes</h1>
+                        <hr>
+                        <h3>Scouting <span id="teamSpan">?</span> - <span id="allianceSpan">?</span><span id="positionSpan">?</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <hr />
+                    <button type="submit" class="btn btn-default btn-lg">Submit</button>
+                </div>
+            </div>
+            <br />
+        </form>
+        <script type="text/javascript" src="js/input.js"></script>
+        <script type="text/javascript" src="js/incdec.js"></script>
+        <script type="text/javascript" src="js/field.js"></script>
+        <script type="text/javascript" src="js/touchfield.js"></script>
+        <script type="text/javascript" src="js/defaults.js"></script>
+        <script type="text/javaScript" src="js/sort.js"></script>
+        <script type="text/javascript" src="js/2015.js"></script>
+        <script type="text/javascript" src="js/scout.js"></script>
+        <script type="text/javascript" src="js/validate.js"></script>
+    </body>
+</html>

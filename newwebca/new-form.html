@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WeBCa, powered by FReCon - 2016 Scout Form</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/webca.css">
+    <link rel="stylesheet" href="css/2015.css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.form-validator.js"></script>
+
+    <!-- Additional Scripts and Stylesheets -->
+    <link rel="stylesheet" href="css/form.css">
+
+    <!-- Counters and Hiders -->
+    <script src="js/dexie.js"></script>
+    <script src="js/form.js"></script>
+  </head>
+  <body>
+    <form method="post" action="" class="container-fluid noSelect">
+      <div id="content" class="row">
+        <div class="col-md-10">
+					<div class="page-header">
+						<div class="back-arrow-container">
+							<a href="/" class="back-arrow">&larr;</a>
+						</div>
+						<h1 class="main-header">Stronghold Scouting Form</h1>
+					</div>
+					<div class="row">
+						<!--Map-->
+						<div id="map-col" class="col-md-5">
+							<label for="team-number">Team Number</label>
+							<select id="team_number" name="team-number" class="form-control input-lg" data-validation="required"></select>
+							<div id="startDiv">
+								<!--<img id="map-img" src="img/first_field2.png">-->
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<select class="form-control input-lg defense-dropdown" data-validation="required"></select>
+								</div>
+								<div class="col-md-3">
+									<select class="form-control input-lg defense-dropdown" data-validation="required"></select>
+								</div>
+								<div class="col-md-3">
+									<select class="form-control input-lg defense-dropdown" data-validation="required"></select>
+								</div>
+								<div class="col-md-3">
+									<select class="form-control input-lg defense-dropdown" data-validation="required"></select>
+								</div>
+							</div>
+						</div>
+						<!--Container-->
+						<div id="input-col" class="col-md-7">
+							<h1>Autonomous Period</h1>
+							<hr>
+							<div class="row">
+								<div id="auton-defense" class="col-md-6">
+									<label for="auton-defense">Cross Defense</label>
+									<select name="auton-defense" class="form-control input-lg"></select>
+								</div>
+								<div id="auton-shooting" class="col-md-6">
+									<label>Shooting</label>
+									<!--High Hits-->
+									<div class="input-group input-group-lg counter">
+										<span class="input-group-addon">High</span>
+										<input class="form-control addIncDec" value="0" type="text" name="topHits" id="topAutonHits" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div id="auton-reach" class="check-box col-md-6">
+									<label>Reached Tower</label>
+									<input name="auton-reach" type="checkbox">
+								</div>
+								<div class="col-md-6">
+									<div class="input-group input-group-lg counter">
+										<span class="input-group-addon">Low</span>
+										<input class="form-control addIncDec" type="text" value="0" name="topHits" id="lowAutonHits" readonly>
+									</div>
+								</div>
+							</div>
+							<h1>Teleoperated Period</h1>
+							<hr>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-12">
+											<div id="teleopShootDiv"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div id="climb" class="form-group check-box col-md-6">
+											<label>Climb</label>
+											<input name="climb" type="checkbox">
+										</div>
+									</div>
+									<label>Low Goal</label>
+									<div class="row">
+										<div id="teleop-low-shooting" class="form-group col-md-6">
+											<div class="input-group input-group-lg col-md-12 counter">
+												<span class="input-group-addon">Success</span>
+												<input class="form-control addIncDec" type="text" value="0" name="low-telop" id="low-telop" readonly>
+											</div>
+										</div>
+										<div id="teleop-low-shooting" class="form-group col-md-6">
+											<div class="input-group input-group-lg col-md-12 counter">
+												<span class="input-group-addon">Fail</span>
+												<input class="form-control addIncDec" type="text" value="0" name="low-telop" id="low-telop" readonly>
+											</div>
+										</div>
+									</div>
+									<h1>Defenses Breached</h1>
+									<hr>
+									<div class="row">
+										<div class="col-md-6 form-group">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Portcullis</span>
+												<input class="form-control addIncDec" type="text" value="0" name="gate" id="gate" readonly>
+											</div>
+										</div>
+										<div class="col-md-6 form-group">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Cheval de Frise</span>
+												<input class="form-control addIncDec" type="text" value="0" name="ramps" id="ramps" readonly>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 form-group">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Moat</span>
+												<input class="form-control addIncDec" type="text" value="0" name="gate" id="gate" readonly>
+											</div>
+										</div>
+										<div class="col-md-6 form-group">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Ramparts</span>
+												<input class="form-control addIncDec" type="text" value="0" name="ramps" id="ramps" readonly>
+											</div>
+										</div>
+									</div>
+									<h1>Penalties</h1>
+									<hr>
+									<div class="row">
+										<div class="form-group col-md-6">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Foul</span>
+												<input class="form-control addIncDec" type="text" value="0" name="foul-penalty" id="foul-penalty" readonly>
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Tech-Foul</span>
+												<input class="form-control addIncDec" type="text" value="0" name="techFoul-penalty" id="techFoul-penalty" readonly>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 form-group">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Yellow Card</span>
+												<input class="form-control addIncDec" type="text" value="0" name="yellow-penalty" id="yellow-penalty" readonly>
+											</div>
+										</div>
+										<div class="col-md-6 form-group">
+											<div class="input-group input-group-lg counter">
+												<span class="input-group-addon">Red Card</span>
+												<input class="form-control addIncDec" type="text" value="0" name="red-penalty" id="red-penalty" readonly>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div id="disabled" class="form-group check-box col-md-6">
+											<label>Disabled</label>
+											<input name="disabled" type="checkbox">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+				<div class="col-md-2">
+					<div id="notes-col" class="affix">
+						<h1>Notes</h1>
+						<hr>
+						<div class="form-group">
+							<label for="auton-notes">Auton Notes</label>
+							<textarea class="form-control" name="auton-notes" rows="10" cols="21"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="teleop-notes">Teleop Notes</label>
+							<textarea class="form-control" name="teleop-notes" rows="10" cols="21"></textarea>
+						</div>
+					</div>
+				</div>
+      </div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+					<button type="submit" class="btn btn-default btn-lg">Submit</button>
+				</div>
+			</div>
+			<br>
+    </form>
+    <script type="text/javascript" src="js/input.js"></script>
+    <!--<script type="text/javascript" src="js/incdec.js"></script>-->
+    <script type="text/javascript" src="js/field.js"></script>
+    <script type="text/javascript" src="js/touchfield.js"></script>
+    <script type="text/javascript" src="js/defaults.js"></script>
+    <script type="text/javaScript" src="js/sort.js"></script>
+    <script type="text/javascript" src="js/2016.js"></script>
+    <script type="text/javascript" src="js/scout.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
+  </body>
+</html>

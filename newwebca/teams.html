@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/webca.css" rel="stylesheet">
+		<link rel="icon"
+			  type="image/png"
+			  href="img/logo/profile/logo-1024px-transparent.png">
+		<title>WeBCa, powered by FReCon - Add Teams</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="page-header">
+				<div class="back-arrow-container">
+					<a href="/" class="back-arrow">&larr;</a>
+				</div>
+				<h1 id="titleDiv" class="main-header">Add Teams</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="workingComp">Competition</label>
+						<select class="form-control" id="competitionList">
+						</select>
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" id="addTeamList" placeholder="Enter the teams here, seperated by anything." rows="25"></textarea>
+					</div>
+					<button class="btn btn-default btn-lg" onclick="submitTeams()">Submit</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ba-resize.js"></script>
+	<script type="text/javascript" src="js/jquery.appear.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/addteamscomp.js"></script>
+</html>
