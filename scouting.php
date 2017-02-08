@@ -83,7 +83,7 @@
 				font-size:
 			}
 			.checkboxDescription {
-				margin-left: 15px;
+				margin-left: 11px;
 			}
 		</style>
 	</head>
@@ -293,7 +293,8 @@
 						<form action="" style = "margin-top: -5px; padding-left: 0px;">
 								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
-								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div><br><br>
+								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
+								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
 						</form>
 						<div class="col-md-2">
 								<div class="row">
