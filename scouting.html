@@ -612,241 +612,241 @@
 
 <script>
 	
-	jQuery(document).ready(function() {
-	opacity = 1;
-	rotate = 0;
-	$('.clickable').on("click", function(){
-			if(opacity==1){
-				$(this).css("opacity", 0.25);
-				opacity = 0.25;
-			}
-			else{
-				$(this).css("opacity", 1);
-				opacity = 1;
-			}
-		});
-		
-		
-	$('#success').on("click", function(){
-			$('#success').css("opacity", 1);
-			$('#fail').css("opacity", 0.3);
-			$('#noattempt').css("opacity", 0.3);
-		});
-		
-	$('#fail').on("click", function(){
-			$('#success').css("opacity", 0.3);
-			$('#fail').css("opacity", 1);
-			$('#noattempt').css("opacity", 0.3);
-		});
-		
-	$('#noattempt').on("click", function(){
-			$('#success').css("opacity", 0.3);
-			$('#fail').css("opacity", 0.3);
-			$('#noattempt').css("opacity", 1);
-		});
-		
-	$('#1').on("click", function(){
-			$('#1').css("opacity", 1);
-			$('#2').css("opacity", 0.3);
-			$('#3').css("opacity", 0.3);
-		});
-		
-	$('#2').on("click", function(){
-			$('#1').css("opacity", 0.3);
-			$('#2').css("opacity", 1);
-			$('#3').css("opacity", 0.3);
-		});
-		
-	$('#3').on("click", function(){
-			$('#1').css("opacity", 0.3);
-			$('#2').css("opacity", 0.3);
-			$('#3').css("opacity", 1);
-		});
-	$(".dropDown").on("click", function(){
-		$(".percent").css("display", "block");
-	});
-	$(".clickDrop").on("click", function(){
-		$(".percent").css("display", "none");
-	});
-	$(".clickGrid").on("click", function(){
-		$("#popup").css("display", "block");
-	});
-	
-	$(".shotChart").on("click", function(){
-		$("#popup").css("display", "none");
-	});
-	
-	$("#blueButton").on("click", function(){
-		$(".redPic").css("display", "none");
-		$(".bluePic").css("display", "block");
-	});
-	
-	$("#redButton").on("click", function(){
-		$(".redPic").css("display", "block");
-		$(".bluePic").css("display", "none");
-	});
-	
-	$("#Rotate").on("click", function(){
-		if (rotate == 0){
-			$(".redPic").css("transform", "rotate(180deg)");
-			$(".bluePic").css("transform", "rotate(180deg)");
-			rotate = 180;
+jQuery(document).ready(function() {
+opacity = 1;
+rotate = 0;
+$('.clickable').on("click", function(){
+		if(opacity==1){
+			$(this).css("opacity", 0.25);
+			opacity = 0.25;
 		}
 		else{
-			$(".redPic").css("transform", "rotate(0deg)");
-			$(".bluePic").css("transform", "rotate(0deg)");
-			rotate = 0;
+			$(this).css("opacity", 1);
+			opacity = 1;
 		}
-		
 	});
-		
-	/*
-	$('#speed').on("click", function(){
-		var speed = prompt("What is the speed from 1-3? 3 is fastest.")
-		if (speed ==1){
-			jQuery('#speed').attr('src','http://www.clker.com/cliparts/X/f/4/c/w/i/one-in-circle-md.png');
-		}
-		else if (speed ==2){
-			jQuery('#speed').attr('src','http://www.clker.com/cliparts/V/X/q/v/W/X/2-inside-a-circle-md.png');
-		}
-		else if (speed ==3){
-			jQuery('#speed').attr('src','http://www.clker.com/cliparts/9/3/h/S/g/Y/number-3-in-circle-hi.png');
+	
+	
+$('#success').on("click", function(){
+		$('#success').css("opacity", 1);
+		$('#fail').css("opacity", 0.3);
+		$('#noattempt').css("opacity", 0.3);
+	});
+	
+$('#fail').on("click", function(){
+		$('#success').css("opacity", 0.3);
+		$('#fail').css("opacity", 1);
+		$('#noattempt').css("opacity", 0.3);
+	});
+	
+$('#noattempt').on("click", function(){
+		$('#success').css("opacity", 0.3);
+		$('#fail').css("opacity", 0.3);
+		$('#noattempt').css("opacity", 1);
+	});
+	
+$('#1').on("click", function(){
+		$('#1').css("opacity", 1);
+		$('#2').css("opacity", 0.3);
+		$('#3').css("opacity", 0.3);
+	});
+	
+$('#2').on("click", function(){
+		$('#1').css("opacity", 0.3);
+		$('#2').css("opacity", 1);
+		$('#3').css("opacity", 0.3);
+	});
+	
+$('#3').on("click", function(){
+		$('#1').css("opacity", 0.3);
+		$('#2').css("opacity", 0.3);
+		$('#3').css("opacity", 1);
+	});
+$(".dropDown").on("click", function(){
+	$(".percent").css("display", "block");
+});
+$(".clickDrop").on("click", function(){
+	$(".percent").css("display", "none");
+});
+$(".clickGrid").on("click", function(){
+	$("#popup").css("display", "block");
+});
+
+$(".shotChart").on("click", function(){
+	$("#popup").css("display", "none");
+});
+
+$("#blueButton").on("click", function(){
+	$(".redPic").css("display", "none");
+	$(".bluePic").css("display", "block");
+});
+
+$("#redButton").on("click", function(){
+	$(".redPic").css("display", "block");
+	$(".bluePic").css("display", "none");
+});
+
+$("#Rotate").on("click", function(){
+	if (rotate == 0){
+		$(".redPic").css("transform", "rotate(180deg)");
+		$(".bluePic").css("transform", "rotate(180deg)");
+		rotate = 180;
+	}
+	else{
+		$(".redPic").css("transform", "rotate(0deg)");
+		$(".bluePic").css("transform", "rotate(0deg)");
+		rotate = 0;
+	}
+	
+});
+	
+/*
+$('#speed').on("click", function(){
+	var speed = prompt("What is the speed from 1-3? 3 is fastest.")
+	if (speed ==1){
+		jQuery('#speed').attr('src','http://www.clker.com/cliparts/X/f/4/c/w/i/one-in-circle-md.png');
+	}
+	else if (speed ==2){
+		jQuery('#speed').attr('src','http://www.clker.com/cliparts/V/X/q/v/W/X/2-inside-a-circle-md.png');
+	}
+	else if (speed ==3){
+		jQuery('#speed').attr('src','http://www.clker.com/cliparts/9/3/h/S/g/Y/number-3-in-circle-hi.png');
+	}
+	else{
+		jQuery('#speed').attr('src','http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg');
+	}
+});
+*/
+
+
+jQuery('.tabs .tab-links a').on('click', function(e)  {
+	var currentAttrValue = jQuery(this).attr('href');
+
+	// Show/Hide Tabs
+	jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+	// Change/remove current tab to active
+	jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+	e.preventDefault();
+	
+});
+});
+</script>-->
+<script>
+  	
+jQuery(document).ready(function() {
+opacity = 1;
+$('.clickable').on("click", function(){
+		if(opacity==1){
+			$(this).css("opacity", 0.25);
+			opacity = 0.25;
 		}
 		else{
-			jQuery('#speed').attr('src','http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg');
+			$(this).css("opacity", 1);
+			opacity = 1;
 		}
 	});
-	*/
 	
 	
-    jQuery('.tabs .tab-links a').on('click', function(e)  {
-        var currentAttrValue = jQuery(this).attr('href');
+$('#success').on("click", function(){
+		$('#success').css("opacity", 1);
+		$('#fail').css("opacity", 0.3);
+		$('#noattempt').css("opacity", 0.3);
+	});
+	
+$('#fail').on("click", function(){
+		$('#success').css("opacity", 0.3);
+		$('#fail').css("opacity", 1);
+		$('#noattempt').css("opacity", 0.3);
+	});
+	
+$('#noattempt').on("click", function(){
+		$('#success').css("opacity", 0.3);
+		$('#fail').css("opacity", 0.3);
+		$('#noattempt').css("opacity", 1);
+	});
+	
+$('#1').on("click", function(){
+		$('#1').css("opacity", 1);
+		$('#2').css("opacity", 0.3);
+		$('#3').css("opacity", 0.3);
+	});
+	
+$('#2').on("click", function(){
+		$('#1').css("opacity", 0.3);
+		$('#2').css("opacity", 1);
+		$('#3').css("opacity", 0.3);
+	});
+	
+$('#redButton').on("click", function(){
+		$('#redButton').css("opacity", 1);
+		$('#blueButton').css("opacity", 0.3);
+	});
+	
+$('#blueButton').on("click", function(){
+		$('#redButton').css("opacity", 0.3);
+		$('#blueButton').css("opacity", 1);
+	});
+	
+$('#3').on("click", function(){
+		$('#1').css("opacity", 0.3);
+		$('#2').css("opacity", 0.3);
+		$('#3').css("opacity", 1);
+	});
+$(".dropDown").on("click", function(){
+	$(".percent").css("display", "block");
+});
+$(".clickDrop").on("click", function(){
+	$(".percent").css("display", "none");
+}); 
+$("#fieldpic").on("click", function(ev){
+	$("#fieldPicDiv").append(            
+		$('<div></div>').css({
+			position: 'absolute',
+			top: ev.pageY -286 + 'px',
+			left: ev.pageX -23.5+ 'px',
+			width: '20px',
+			height: '20px',
+			background: '#0F0',
+			'border-radius': '100%'
+		})              
+	);
+});
+$(".percent").on("click", function(){
+	$("#fieldPicDiv").empty();
+}); 
+/*
+$('#speed').on("click", function(){
+	var speed = prompt("What is the speed from 1-3? 3 is fastest.")
+	if (speed ==1){
+		jQuery('#speed').attr('src','http://www.clker.com/cliparts/X/f/4/c/w/i/one-in-circle-md.png');
+	}
+	else if (speed ==2){
+		jQuery('#speed').attr('src','http://www.clker.com/cliparts/V/X/q/v/W/X/2-inside-a-circle-md.png');
+	}
+	else if (speed ==3){
+		jQuery('#speed').attr('src','http://www.clker.com/cliparts/9/3/h/S/g/Y/number-3-in-circle-hi.png');
+	}
+	else{
+		jQuery('#speed').attr('src','http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg');
+	}
+});
+*/
 
-        // Show/Hide Tabs
-        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
-        // Change/remove current tab to active
-        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+  jQuery('.tabs .tab-links a').on('click', function(e)  {
+	  var currentAttrValue = jQuery(this).attr('href');
 
-        e.preventDefault();
-		
-    });
+	  // Show/Hide Tabs
+	  jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+	  // Change/remove current tab to active
+	  jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+	  e.preventDefault();
+	
+  });
 });
 </script>
-  <script>
-  	
-  	jQuery(document).ready(function() {
-  	opacity = 1;
-  	$('.clickable').on("click", function(){
-  			if(opacity==1){
-  				$(this).css("opacity", 0.25);
-  				opacity = 0.25;
-  			}
-  			else{
-  				$(this).css("opacity", 1);
-  				opacity = 1;
-  			}
-  		});
-  		
-  		
-  	$('#success').on("click", function(){
-  			$('#success').css("opacity", 1);
-  			$('#fail').css("opacity", 0.3);
-  			$('#noattempt').css("opacity", 0.3);
-  		});
-  		
-  	$('#fail').on("click", function(){
-  			$('#success').css("opacity", 0.3);
-  			$('#fail').css("opacity", 1);
-  			$('#noattempt').css("opacity", 0.3);
-  		});
-  		
-  	$('#noattempt').on("click", function(){
-  			$('#success').css("opacity", 0.3);
-  			$('#fail').css("opacity", 0.3);
-  			$('#noattempt').css("opacity", 1);
-  		});
-  		
-  	$('#1').on("click", function(){
-  			$('#1').css("opacity", 1);
-  			$('#2').css("opacity", 0.3);
-  			$('#3').css("opacity", 0.3);
-  		});
-  		
-  	$('#2').on("click", function(){
-  			$('#1').css("opacity", 0.3);
-  			$('#2').css("opacity", 1);
-  			$('#3').css("opacity", 0.3);
-  		});
-		
-	$('#redButton').on("click", function(){
-  			$('#redButton').css("opacity", 1);
-  			$('#blueButton').css("opacity", 0.3);
-  		});
-  		
-  	$('#blueButton').on("click", function(){
-  			$('#redButton').css("opacity", 0.3);
-  			$('#blueButton').css("opacity", 1);
-  		});
-  		
-  	$('#3').on("click", function(){
-  			$('#1').css("opacity", 0.3);
-  			$('#2').css("opacity", 0.3);
-  			$('#3').css("opacity", 1);
-  		});
-  	$(".dropDown").on("click", function(){
-  		$(".percent").css("display", "block");
-  	});
-  	$(".clickDrop").on("click", function(){
-  		$(".percent").css("display", "none");
-  	}); 
-	$("#fieldpic").on("click", function(ev){
-		$("#fieldPicDiv").append(            
-			$('<div></div>').css({
-				position: 'absolute',
-				top: ev.pageY -286 + 'px',
-				left: ev.pageX -23.5+ 'px',
-				width: '20px',
-				height: '20px',
-				background: '#0F0',
-				'border-radius': '100%'
-			})              
-		);
-	});
-  	$(".percent").on("click", function(){
-		$("#fieldPicDiv").empty();
-	});
-  	/*
-  	$('#speed').on("click", function(){
-  		var speed = prompt("What is the speed from 1-3? 3 is fastest.")
-  		if (speed ==1){
-  			jQuery('#speed').attr('src','http://www.clker.com/cliparts/X/f/4/c/w/i/one-in-circle-md.png');
-  		}
-  		else if (speed ==2){
-  			jQuery('#speed').attr('src','http://www.clker.com/cliparts/V/X/q/v/W/X/2-inside-a-circle-md.png');
-  		}
-  		else if (speed ==3){
-  			jQuery('#speed').attr('src','http://www.clker.com/cliparts/9/3/h/S/g/Y/number-3-in-circle-hi.png');
-  		}
-  		else{
-  			jQuery('#speed').attr('src','http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg');
-  		}
-  	});
-  	*/
-  	
-  	
-      jQuery('.tabs .tab-links a').on('click', function(e)  {
-          var currentAttrValue = jQuery(this).attr('href');
-  
-          // Show/Hide Tabs
-          jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
-  
-          // Change/remove current tab to active
-          jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-  
-          e.preventDefault();
-  		
-      });
-  });
-  </script>
 
