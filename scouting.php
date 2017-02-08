@@ -381,8 +381,8 @@
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
-						<img class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png">
-						<img class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png">
+						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
+						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
 						<p id="demo"></p>
 						<button id = "Rotate" class = "opacity" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
 						</center>
@@ -698,6 +698,20 @@
 		}
 		
 	});
+	
+	$('#fieldpic').on("click",function(ev) {
+            $("#fieldPicDiv").append(            
+                $('<div></div>').css({
+                    position: 'absolute',
+                    top: ev.pageY-286 + 'px',
+                    left: ev.pageX-23.5 + 'px',
+                    width: '10px',
+                    height: '10px',
+                    background: '#0F0',
+					'border-radius': '100%'
+                })              
+            );
+    });
 		
 	/*
 	$('#speed').on("click", function(){
