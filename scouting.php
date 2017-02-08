@@ -616,10 +616,10 @@
 </html>
 
 <script>
-	
-	jQuery(document).ready(function() {
+	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
+	var i  = 0;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -706,8 +706,7 @@
 	});
 	
 	$('#fieldpic').on("click", function(ev){
-		$("#fieldPicDiv").empty();
-		$("#fieldPicDiv").append(            
+		$("#fieldPicDiv").append(
 			$('<div></div>').css({
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
@@ -718,6 +717,8 @@
 				'border-radius': '100%'
 			}) 
 		);
+		shotList[i] = ;
+		i++;
     });
 	
 	$("#popup").on("click", function(){
