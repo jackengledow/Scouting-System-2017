@@ -461,7 +461,7 @@
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner grey width button shotChart" onclick = "countHighMakeTeleop(-1), clickZone('Make', -1)">
+										<button class = "make makeshot rightcorner grey width button shotChart" id = "undo" onclick = "countHighMakeTeleop(-1), clickZone('Make', -1)">
 											<p style = "font-size: 25px; padding-top: 5px;">-1</p>
 										</button>
 									</div>
@@ -485,7 +485,7 @@
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width grey button rightcorner shotChart" onclick = "countHighMissTeleop(-1), clickZone('Miss', -1)">
+										<button class = "make makeshot width grey button rightcorner shotChart" id = "undo" onclick = "countHighMissTeleop(-1), clickZone('Miss', -1)">
 											<p style = "font-size: 25px; padding-top: 5px;">-1</p>
 										</button>
 									</div>
@@ -707,7 +707,7 @@
 	
 	$('#fieldpic').on("click", function(ev){
 		$("#fieldPicDiv").append(
-			$('<div></div>').css({
+			$('<div id = "shot'+i+'"></div>').css({
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
 				left: ev.pageX-20.5 + 'px',
@@ -717,12 +717,12 @@
 				'border-radius': '100%'
 			}) 
 		);
-		shotList[i] = ;
 		i++;
     });
 	
-	$("#popup").on("click", function(){
-		$("#fieldPicDiv").empty();
+	$('#undo').on("click", function(){
+		i--;
+		$('#shot' + i).remove();
 	});
 		
 	/*
