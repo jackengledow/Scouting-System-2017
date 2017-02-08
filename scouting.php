@@ -96,8 +96,8 @@
             <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
-            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
-            <button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
+            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 5.5px">Red</button>
+            <button type="button" id ="blueButton" style = "padding-left: 5.5px">Blue</button>
             </p>
           </div>
 		<div class="tabs">
@@ -381,8 +381,8 @@
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
-						<img class = "redPic clickGrid" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png">
-						<img class = "bluePic clickGrid" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png">
+						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
+						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
 						<p id="demo"></p>
 						<button id = "Rotate" class = "opacity" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
 						</center>
@@ -592,9 +592,15 @@
 					<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
 						<p style="font-size: 35px; padding-top: 5px;">Submit</p>
 					</button>
+					<!--<br>
+					<div>
+						<select name="competitionDropdown">
+							<option value="comp1">Competition 1</option>
+							<option value="comp2">Competition 2</option>
+						</select>
+					</div>-->
 					</center>
 				</div>
-
         </div>
 						<script>
 							function showCoords(event) {
@@ -697,6 +703,25 @@
 			rotate = 0;
 		}
 		
+	});
+	
+	$('#fieldpic').on("click", function(ev){
+		$("#fieldPicDiv").empty();
+		$("#fieldPicDiv").append(            
+			$('<div></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#0F0',
+				'border-radius': '100%'
+			}) 
+		);
+    });
+	
+	$("#popup").on("click", function(){
+		$("#fieldPicDiv").empty();
 	});
 		
 	/*
