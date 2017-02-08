@@ -709,8 +709,8 @@
             $("#fieldPicDiv").append(            
                 $('<div></div>').css({
                     position: 'absolute',
-                    top: ev.pageY-286 + 'px',
-                    left: ev.pageX-23.5 + 'px',
+                    top: ev.pageY-282 + 'px',
+                    left: ev.pageX-20.5 + 'px',
                     width: '10px',
                     height: '10px',
                     background: '#0F0',
