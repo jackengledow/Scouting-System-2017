@@ -705,19 +705,24 @@
 		
 	});
 	
-	$('#fieldpic').on("click",function(ev) {
-            $("#fieldPicDiv").append(            
-                $('<div></div>').css({
-                    position: 'absolute',
-                    top: ev.pageY-282 + 'px',
-                    left: ev.pageX-20.5 + 'px',
-                    width: '10px',
-                    height: '10px',
-                    background: '#0F0',
-					'border-radius': '100%'
-                })              
-            );
+	$('#fieldpic').on("click", function(ev){
+		$("#fieldPicDiv").empty();
+		$("#fieldPicDiv").append(            
+			$('<div></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#0F0',
+				'border-radius': '100%'
+			}) 
+		);
     });
+	
+	$("#popup").on("click", function(){
+		$("#fieldPicDiv").empty();
+	});
 		
 	/*
 	$('#speed').on("click", function(){
