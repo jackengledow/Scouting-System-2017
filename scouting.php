@@ -705,7 +705,8 @@
 		
 	});
 	
-	$('#fieldpic').on("click",function(ev) {
+	$('#fieldpic').on("click", function(ev){
+			$("#fieldPicDiv").empty();
             $("#fieldPicDiv").append(            
                 $('<div></div>').css({
                     position: 'absolute',
@@ -715,9 +716,14 @@
                     height: '10px',
                     background: '#0F0',
 					'border-radius': '100%'
-                })              
+                }) 
             );
+		
     });
+	
+	$(".percent").on("click", function(){
+		$("#fieldPicDiv").empty();
+	});
 		
 	/*
 	$('#speed').on("click", function(){
