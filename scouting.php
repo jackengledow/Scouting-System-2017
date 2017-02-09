@@ -454,17 +454,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 10)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 5)">
+										<button class = "make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(-1), clickZone('Make', 1)">
+										<button class = "make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -478,17 +478,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 10)">
+										<button class = "make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 5)">
+										<button class = "make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(-1), clickZone('Miss', 1)">
+										<button class = "make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -622,7 +622,8 @@
 	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
-	var i  = 0;
+	var i  = 1;
+	var count = 1;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -709,6 +710,7 @@
 	});
 	
 	$('#fieldpic').on("click", function(ev){
+		if(count<=1){
 		$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'"></div>').css({
 				position: 'absolute',
@@ -721,6 +723,23 @@
 			}) 
 		);
 		i++;
+		}
+		else{
+			i--;
+			$('#shot' + i).remove();
+			$("#fieldPicDiv").append(
+			$('<div id = "shot'+i+'"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%'
+			}) 
+		);
+		i++;
+		}
     });
 	
 	$('#undo').on("click", function(){
