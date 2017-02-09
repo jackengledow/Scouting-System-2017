@@ -583,9 +583,20 @@
 							</div>
 					</div>
 				 </div>
+				 <div class="tools">
+				  <a href="#tools_sketch" data-tool="marker"><button>Marker</button></a>
+				  <a href="#tools_sketch" data-tool="eraser"><button>Eraser</button></a>
+				</div>
+				<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>
+				<script type="text/javascript">
+				  $(function() {
+					$('#tools_sketch').sketch({defaultColor: "#ff0"});
+				  });
+				</script>
+								 
+				 
 			  </div>
 				
-
 				<div id="tab4" class="tab">
 					<div class="container">
 						<h2><b>Match Notes:</b></h2>
