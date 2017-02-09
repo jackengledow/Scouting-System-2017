@@ -583,9 +583,20 @@
 							</div>
 					</div>
 				 </div>
+				 <div class="tools">
+					<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+					<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+				</div>
+				<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>
+				<script type="text/javascript">
+				  $(function() {
+					$('#tools_sketch').sketch({defaultColor: "#ff0"});
+				  });
+				</script>
+			
+				 
 			  </div>
 				
-
 				<div id="tab4" class="tab">
 					<div class="container">
 						<h2><b>Match Notes:</b></h2>
@@ -670,6 +681,14 @@
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 1);
+		});
+	$('.marker').on("click", function(){
+			$('.marker').css("opacity", 1);
+			$('.eraser').css("opacity", 0.3);
+		});
+	$('.eraser').on("click", function(){
+			$('.eraser').css("opacity", 1);
+			$('.marker').css("opacity", 0.3);
 		});
 	$(".dropDown").on("click", function(){
 		$(".percent").css("display", "block");
