@@ -96,8 +96,8 @@
             <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
-            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 5.5px">Red</button>
-            <button type="button" id ="blueButton" style = "padding-left: 5.5px">Blue</button>
+            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
+            <button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
             </p>
           </div>
 		<div class="tabs">
@@ -454,17 +454,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart" onclick = "countHighMakeTeleop(5), clickZone('Make', 10)">
+										<button class = "make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart" onclick = "countHighMakeTeleop(1), clickZone('Make', 5)">
+										<button class = "make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner lightgreen width button shotChart" onclick = "countHighMakeTeleop(-1), clickZone('Make', 1)">
+										<button class = "make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(-1), clickZone('Make', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -478,17 +478,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart" onclick = "countHighMissTeleop(5), clickZone('Miss', 10)">
+										<button class = "make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart" onclick = "countHighMissTeleop(1), clickZone('Miss', 5)">
+										<button class = "make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width lightred button rightcorner shotChart" onclick = "countHighMissTeleop(-1), clickZone('Miss', 1)">
+										<button class = "make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(-1), clickZone('Miss', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -716,7 +716,7 @@
 				left: ev.pageX-20.5 + 'px',
 				width: '10px',
 				height: '10px',
-				background: '#0F0',
+				background: '#FFF',
 				'border-radius': '100%'
 			}) 
 		);
@@ -726,6 +726,16 @@
 	$('#undo').on("click", function(){
 		i--;
 		$('#shot' + i).remove();
+	});
+	$('.madeShot').on("click", function(){
+		i--;
+		$('#shot' + i).css("background", "#0F0");
+		i++;
+	});
+	$('.miss').on("click", function(){
+		i--;
+		$('#shot' +i).css("background", "red");
+		i++;
 	});
 		
 	/*
