@@ -454,17 +454,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
+										<button class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -478,17 +478,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
+										<button class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -723,8 +723,10 @@
 			}) 
 		);
 		i++;
+		count++;
 		}
 		else{
+			console.log("deleting");
 			i--;
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
@@ -737,10 +739,15 @@
 				background: '#FFF',
 				'border-radius': '100%'
 			}) 
-		);
-		i++;
+			);
+			i++;
 		}
     });
+	
+	$('.deleter').on("click", function(){
+		count = 1;
+	});
+	
 	
 	$('#undo').on("click", function(){
 		i--;
