@@ -312,9 +312,21 @@ li.active a, li.active a:hover {
 	border: none;
 	font-weight: bold;
 }
-<<<<<<< HEAD
-=======
 #blueButton:hover {
 	opacity: 0.6;
 }
->>>>>>> 1a315c640badcfe0e10ac152162a7f7087af2da4
+#controllers {
+  width: 600px;
+  font-size: 0.8em;
+  color: #333;
+}
+#paint {
+  border: 1px solid #000;
+  background: #fff;
+}
+.controller {
+  display: inline-block;
+  background: #eee;
+  border: 1px solid #e7e7e7;
+  padding: 5px;
+}
