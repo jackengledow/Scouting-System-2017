@@ -99,7 +99,7 @@
             <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
             <button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
             </p>
-          </div>
+         </div>
 		<div class="tabs">
 			<ul class="tab-links">
 				<li class="active"><a href="#tab1">Autonomous</a></li>
@@ -114,7 +114,7 @@
 						<div class="container top">
 							<div class="row">
 								<div class = "col-md-4">
-									<p style = "padding-left: 15px; font-size: 25px;"><strong>Preliminary Buttons:</strong></p>
+									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
 											<form action="">
@@ -127,19 +127,19 @@
 								<div class = "col-md-4">
 									<br>
 									<center>
-									  <p>
-                      <p align = "center" style="font-size:18px;">Instructions</p>
-                      <ol align = "left" style = "font-size: 17px;">
-                        <li>Click button when action is completed</li>
-                        <li>Count high balls made in High Score</li>
-                        <li>Select capacity and % made in Low Score</li>
-                      </ol>
-                    </p>
-                  </center>
+										<p>
+											<p align = "center" style="font-size:18px;">Instructions</p>
+											<ol align = "left" style = "font-size: 17px;">
+												<li>Click button when action is completed</li>
+												<li>Count high balls made in High Score</li>
+												<li>Select capacity and % made in Low Score</li>
+											</ol>
+										</p>
+									</center>
 								</div>
 								<div class = "col-md-4" style = "padding-bottom: 20px">
-								<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong>Autonomous Buttons:</strong></p>
-								<div class="row">
+									<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong style = "text-decoration: underline; padding-bottom: 5px;">Autonomous Buttons:</strong></p>
+									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
 											<form action="">
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
@@ -149,31 +149,31 @@
 									</div>
 								</div>
 							</div>
-					  </div>
+						</div>
+					</div>
 
   					<div class="container">
-  					  <br><br>
+						<br><br>
   						<p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p>
   						<div class="row">
+  							<div class="col-md-7">
+								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+								<div class="tools">
+									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+									<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+								</div>
+								<script type="text/javascript">
+								  $(function() {
+									$('#tools_sketch').sketch({defaultColor: "#ff0"});
+								  });
+								</script>
+  							</div>
   							<div class="col-md-5">
   								<div class="row">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: -10px;">
   										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreAuton">0</p></center></h2>
   									</div>
   								</div>
-  								<!--<div class="row">
-  									<div class="col-md-6">
-  										<div class="make green width button">
-  											<h2><center>Make</center></h2>
-  										</div>
-  									</div>
-  														
-  									<div class="col-md-6">
-  										<div class="miss red width button">
-  											<h2><center>Miss</center></h2>
-  										</div>
-  									</div>
-  								</div>-->
   								<div class = "row" style = "margin-top: 10px">
   									<div class = "col-md-4">
   										<button class = "make makeshot darkgreen width button" onclick = "countHighMakeAuton(10)">
@@ -208,14 +208,7 @@
   										</button>
   									</div>
   								</div>
-  							</div>
-  							<div class="col-md-2">
-  								<center>
-  									<img id = "ballButton" src = "fuelImage.jpg">
-  								</center>
-  							</div>
-  							<div class="col-md-5">
-  								<div class="row">
+  								<div class="row" style = "margin-top: 75px">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3;padding-left: 0px;">
   										<h2 style = "font-size: 25px;"><center>Low Goal - Balls collected before dump</center></h2>
   									</div>
@@ -270,20 +263,8 @@
   									</div>
   								</div>
   							</div>
-  						</div>
-						<div class="row">
-							<div class="col-md-5">
-							</div>
-							<div class="col-md-5">
-							</div>
-							<div class="col-md-2">
-								
-							</div>
-						</div>
-						  						
+						</div> 						
   					</div>
-  					
-					</div>
 				</div>
 
 				<div id="tab2" class="tab">
@@ -580,41 +561,29 @@
 								<h2><strong><center>Ejection:</center></strong></h2>
 								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
 							</center>
-							</div>
+						</div>
 					</div>
-				 </div>
-				 <div class="tools">
-					<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-					<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
 				</div>
-				<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>
-				<script type="text/javascript">
-				  $(function() {
-					$('#tools_sketch').sketch({defaultColor: "#ff0"});
-				  });
-				</script>
-			
-				 
-			  </div>
+			</div>
 				
-				<div id="tab4" class="tab">
-					<div class="container">
-						<h2><b>Match Notes:</b></h2>
-						<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
-					</div>
-					<center>
-					<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
-						<p style="font-size: 35px; padding-top: 5px;">Submit</p>
-					</button>
-					<!--<br>
-					<div>
-						<select name="competitionDropdown">
-							<option value="comp1">Competition 1</option>
-							<option value="comp2">Competition 2</option>
-						</select>
-					</div>-->
-					</center>
+			<div id="tab4" class="tab">
+				<div class="container">
+					<h2><b>Match Notes:</b></h2>
+					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
+				<center>
+				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
+					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
+				</button>
+				<!--<br>
+				<div>
+					<select name="competitionDropdown">
+						<option value="comp1">Competition 1</option>
+						<option value="comp2">Competition 2</option>
+					</select>
+				</div>-->
+				</center>
+			</div>
         </div>
 						<script>
 							function showCoords(event, elem) {
