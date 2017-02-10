@@ -831,6 +831,7 @@
 	
 	$('#undo').on("click", function(){
 		i--;
+		count = 1;
 		$('#shot' + i).remove();
 	});
 	
