@@ -114,7 +114,7 @@
 						<div class="container top">
 							<div class="row">
 								<div class = "col-md-4">
-									<p style = "text-decoration: underline;padding-left: 15px; font-size: 25px;"><strong>Preliminary Buttons</strong></p>
+									<p style = "padding-left: 15px; font-size: 25px;"><strong>Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
 											<form action="">
@@ -138,7 +138,7 @@
                   </center>
 								</div>
 								<div class = "col-md-4" style = "padding-bottom: 20px">
-								<p align = "right" style = "text-decoration: underline;padding-right: 15px; font-size: 25px;"><strong>Autonomous Buttons</strong></p>
+								<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong>Autonomous Buttons:</strong></p>
 								<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
 											<form action="">
@@ -382,8 +382,8 @@
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
-						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
-						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
+						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
+						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
 						<p id="demo"></p>
 						</center>
 						<button id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
@@ -565,7 +565,7 @@
 					</div>
 					</div>
 						<br><br><br><br>
-					<div style="margin-top: 50px;" class="row top" id="pepe">
+					<div style="margin-top: 50px;" class="row top" id="marginTop">
 							<div class="col-md-4">
 								<h2><strong><center>Yellow Card:</center></strong></h2><center>
 								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
@@ -617,12 +617,18 @@
 				</div>
         </div>
 						<script>
-							function showCoords(event) {
+							function showCoords(event, elem) {
+								var box = elem.getBoundingClientRect();
+								var boxY = box.top;
+								var boxX = box.left;
 								var x = event.clientX;
 								var y = event.clientY;
 								setGridClickPos(x,y);
-								var coords = "X coords: " + x + ", Y coords: " + y;
-								document.getElementById("demo").innerHTML = coords;
+								var newX = x - boxX;
+								var newY = y - boxY;
+								var newerX = Math.floor(newX);
+								var newerY = Math.floor(newY);
+								document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
 							}
 							
 						</script>
