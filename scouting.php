@@ -703,6 +703,10 @@
 		$("#popup").css("display", "block");
 	});
 	
+	$("#fieldPicDiv").on("click", function(){
+		$("#popup").css("display", "block");
+	});
+	
 	$(".shotChart").on("click", function(){
 		$("#popup").css("display", "none");
 	});
@@ -731,19 +735,21 @@
 		
 	});
 	
-	$('#fieldpic').on("click", function(ev){
+	$('#fieldPicDiv').on("click", function(ev){
+		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
 		$("#fieldPicDiv").append(
-			$('<div id = "shot'+i+'"></div>').css({
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
 				left: ev.pageX-20.5 + 'px',
 				width: '10px',
 				height: '10px',
 				background: '#FFF',
-				'border-radius': '100%'
+				'border-radius': '100%',
+				opacity: 0.4
 			}) 
 		);
 		i++;
@@ -763,7 +769,49 @@
 				width: '10px',
 				height: '10px',
 				background: '#FFF',
-				'border-radius': '100%'
+				'border-radius': '100%',
+				opacity: 0.4
+			}) 
+			);
+			i++;
+		}
+    });
+	
+	$('#fieldpic').on("click", function(ev){
+		if(count<=1){
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+		$("#fieldPicDiv").append(
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.5
+			}) 
+		);
+		i++;
+		count++;
+		}
+		else{
+			console.log("deleting");
+			i--;
+			top = ev.pageY-282
+			left = ev.pageY-20.5
+			$('#shot' + i).remove();
+			$("#fieldPicDiv").append(
+			$('<div id = "shot'+i+'"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.5
 			}) 
 			);
 			i++;
