@@ -806,7 +806,7 @@
 			console.log("deleting");
 			i--;
 			top = ev.pageY-282
-			left = ev.pageY-20.5
+			left = ev.pageX-20.5
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'"></div>').css({
