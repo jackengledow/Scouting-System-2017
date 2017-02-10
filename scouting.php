@@ -454,17 +454,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
+										<button id = "20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button id = "15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button id = "10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -478,17 +478,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
+										<button id = "20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button id = "15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button id = "10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -624,6 +624,7 @@
 								var coords = "X coords: " + x + ", Y coords: " + y;
 								document.getElementById("demo").innerHTML = coords;
 							}
+							
 						</script>
 	</div>
   	</body>
@@ -635,6 +636,8 @@
 	rotate = 0;
 	var i  = 1;
 	var count = 1;
+	var top = 0;
+	var left = 0;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -730,6 +733,8 @@
 	
 	$('#fieldpic').on("click", function(ev){
 		if(count<=1){
+			top = ev.pageY-282
+			left = ev.pageX-20.5
 		$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'"></div>').css({
 				position: 'absolute',
@@ -747,6 +752,8 @@
 		else{
 			console.log("deleting");
 			i--;
+			top = ev.pageY-282
+			left = ev.pageY-20.5
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'"></div>').css({
@@ -772,14 +779,25 @@
 		i--;
 		$('#shot' + i).remove();
 	});
+	
 	$('.madeShot').on("click", function(){
+		size = $(this).attr('id');
 		i--;
 		$('#shot' + i).css("background", "#0F0");
+		$('#shot' + i).css("height", size);
+		$('#shot' + i).css("width", size);
+		$('#shot' + i).css("top", top-(size/2-5) + 'px');
+		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
 	});
 	$('.miss').on("click", function(){
+		size = $(this).attr('id');
 		i--;
 		$('#shot' +i).css("background", "red");
+		$('#shot' + i).css("height", size);
+		$('#shot' + i).css("width", size);
+		$('#shot' + i).css("top", top-(size/2-5) + 'px');
+		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
 	});
 		
