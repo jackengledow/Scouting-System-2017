@@ -88,6 +88,7 @@
 		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
+	<form action="sql.html" method = "post">
 	<div class = "everything">
 	   <div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
@@ -117,8 +118,8 @@
 									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="balls" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="gear" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
 										</div>
 									</div>
 								</div>
@@ -568,9 +569,8 @@
 					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
 				<center>
-				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
-					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
-				</button>
+				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
+					<!--<input style="font-size: 35px; padding-top: 5px;" type="submit" >Submit</input>-->
 				<!--<br>
 				<div>
 					<select name="competitionDropdown">
@@ -598,6 +598,7 @@
 							
 						</script>
 	</div>
+	</form>
   	</body>
 </html>
 
