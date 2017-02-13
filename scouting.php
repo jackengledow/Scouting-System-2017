@@ -117,10 +117,8 @@
 									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
-											<form action="">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
-											</form>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="balls" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="gear" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
 										</div>
 									</div>
 								</div>
@@ -141,10 +139,8 @@
 									<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong style = "text-decoration: underline; padding-bottom: 5px;">Autonomous Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
-											<form action="">
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
-											</form>
 										</div>
 									</div>
 								</div>
@@ -161,7 +157,11 @@
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+<<<<<<< HEAD
 									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+=======
+									<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px; opacity: 0.3;" onclick = "undoLastPoint()">Eraser</button></a>
+>>>>>>> 1ec40a94cdbb0cb8de318a19e78a7bb576a4e133
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -280,12 +280,12 @@
 					<div style="color: none;" class="container">
 						<div style="color: none;" class="row">
 					<p title="Scouting system">
-						<form action="" style = "margin-top: -5px; padding-left: 0px;">
+						<div style = "margin-top: -5px; padding-left: 0px;">
 								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
-						</form>
+						</div>
 						<div class="col-md-2">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
@@ -373,7 +373,7 @@
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
 						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
-						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
+						<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv2"></div>
 						<p id="demo"></p>
 						</center>
 						<button id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
@@ -439,7 +439,7 @@
 							<div class="col-md-5" style = "margin-left: 0px; margin-right: 40px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
-										<h2 style = "font-size: 24px"><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
+										<h2 style = "font-size: 24px"><center>Made HIgh Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class = "row">
@@ -581,9 +581,8 @@
 					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
 				<center>
-				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
-					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
-				</button>
+				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
+					<!--<input style="font-size: 35px; padding-top: 5px;" type="submit" >Submit</input>-->
 				<!--<br>
 				<div>
 					<select name="competitionDropdown">
@@ -698,11 +697,15 @@
 	$("#blueButton").on("click", function(){
 		$(".redPic").css("display", "none");
 		$(".bluePic").css("display", "block");
+		$("#fieldPicDiv2").css("display", "block");
+		$("#fieldPicDiv").css("display", "none");
 	});
 	
 	$("#redButton").on("click", function(){
 		$(".redPic").css("display", "block");
 		$(".bluePic").css("display", "none");
+		$("#fieldPicDiv").css("display", "block");
+		$("#fieldPicDiv2").css("display", "none");
 	});
 	
 	$("#Rotate").on("click", function(){
@@ -761,6 +764,49 @@
 		}
     });
 	
+	$('#fieldPicDiv2').on("click", function(ev){
+		console.log("yeah");
+		if(count<=1){
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+		$("#fieldPicDiv2").append(
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.4
+			}) 
+		);
+		i++;
+		count++;
+		}
+		else{
+			console.log("deleting");
+			i--;
+			top = ev.pageY-282
+			left = ev.pageY-20.5
+			$('#shot' + i).remove();
+			$("#fieldPicDiv2").append(
+			$('<div id = "shot'+i+'"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.4
+			}) 
+			);
+			i++;
+		}
+    });
+	
+	
 	$('#fieldpic').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282
@@ -787,6 +833,47 @@
 			left = ev.pageX-20.5
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
+			$('<div id = "shot'+i+'"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.5
+			}) 
+			);
+			i++;
+		}
+    });
+	
+	$('#fieldpic2').on("click", function(ev){
+		if(count<=1){
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+		$("#fieldPicDiv2").append(
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.5
+			}) 
+		);
+		i++;
+		count++;
+		}
+		else{
+			console.log("deleting");
+			i--;
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+			$('#shot' + i).remove();
+			$("#fieldPicDiv2").append(
 			$('<div id = "shot'+i+'"></div>').css({
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',

@@ -32,6 +32,8 @@ var clickBigAuton = false;
 var clickSmallTeleop = false;
 var clickMedTeleop = false;
 var clickBigTeleop = false;
+var pathTracer = [];
+var pathCount = 0;
 
 var countFouls=function (change) {
 	fouls+=change;
@@ -504,6 +506,14 @@ var __slice = Array.prototype.slice;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         event = _ref[_i];
         this.context.lineTo(event.x, event.y);
+		if(pathCount%10==0){
+			pathTracer.push("("+Math.floor(event.x) + "," + Math.floor(event.y)+ ")");
+			pathCount++;
+		}
+		else{
+			pathCount++;
+		}
+		console.log(pathTracer);
         previous = event;
       }
       this.context.strokeStyle = action.color;
