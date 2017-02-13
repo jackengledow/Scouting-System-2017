@@ -364,7 +364,7 @@
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
 						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
-						<img class = "bluePic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv"></div>
+						<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv2"></div>
 						<p id="demo"></p>
 						</center>
 						<button id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
@@ -689,11 +689,15 @@
 	$("#blueButton").on("click", function(){
 		$(".redPic").css("display", "none");
 		$(".bluePic").css("display", "block");
+		$("#fieldPicDiv2").css("display", "block");
+		$("#fieldPicDiv").css("display", "none");
 	});
 	
 	$("#redButton").on("click", function(){
 		$(".redPic").css("display", "block");
 		$(".bluePic").css("display", "none");
+		$("#fieldPicDiv").css("display", "block");
+		$("#fieldPicDiv2").css("display", "none");
 	});
 	
 	$("#Rotate").on("click", function(){
@@ -752,6 +756,49 @@
 		}
     });
 	
+	$('#fieldPicDiv2').on("click", function(ev){
+		console.log("yeah");
+		if(count<=1){
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+		$("#fieldPicDiv2").append(
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.4
+			}) 
+		);
+		i++;
+		count++;
+		}
+		else{
+			console.log("deleting");
+			i--;
+			top = ev.pageY-282
+			left = ev.pageY-20.5
+			$('#shot' + i).remove();
+			$("#fieldPicDiv2").append(
+			$('<div id = "shot'+i+'"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.4
+			}) 
+			);
+			i++;
+		}
+    });
+	
+	
 	$('#fieldpic').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282
@@ -778,6 +825,47 @@
 			left = ev.pageX-20.5
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
+			$('<div id = "shot'+i+'"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.5
+			}) 
+			);
+			i++;
+		}
+    });
+	
+	$('#fieldpic2').on("click", function(ev){
+		if(count<=1){
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+		$("#fieldPicDiv2").append(
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+				position: 'absolute',
+				top: ev.pageY-282 + 'px',
+				left: ev.pageX-20.5 + 'px',
+				width: '10px',
+				height: '10px',
+				background: '#FFF',
+				'border-radius': '100%',
+				opacity: 0.5
+			}) 
+		);
+		i++;
+		count++;
+		}
+		else{
+			console.log("deleting");
+			i--;
+			top = ev.pageY-282
+			left = ev.pageX-20.5
+			$('#shot' + i).remove();
+			$("#fieldPicDiv2").append(
 			$('<div id = "shot'+i+'"></div>').css({
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
