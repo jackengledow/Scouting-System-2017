@@ -88,6 +88,7 @@
 		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
+	<form action="sql.html" method = "post">
 	<div class = "everything">
 	   <div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
@@ -117,10 +118,8 @@
 									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
-											<form action="">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
-											</form>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="balls" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="gear" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
 										</div>
 									</div>
 								</div>
@@ -141,10 +140,8 @@
 									<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong style = "text-decoration: underline; padding-bottom: 5px;">Autonomous Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
-											<form action="">
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
-											</form>
 										</div>
 									</div>
 								</div>
@@ -160,7 +157,7 @@
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px; opacity: 0.3;" onclick = "undoLastPoint()">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -271,12 +268,12 @@
 					<div style="color: none;" class="container">
 						<div style="color: none;" class="row">
 					<p title="Scouting system">
-						<form action="" style = "margin-top: -5px; padding-left: 0px;">
+						<div style = "margin-top: -5px; padding-left: 0px;">
 								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
-						</form>
+						</div>
 						<div class="col-md-2">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
@@ -572,9 +569,8 @@
 					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
 				<center>
-				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" onclick="submit">
-					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
-				</button>
+				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
+					<!--<input style="font-size: 35px; padding-top: 5px;" type="submit" >Submit</input>-->
 				<!--<br>
 				<div>
 					<select name="competitionDropdown">
@@ -602,6 +598,7 @@
 							
 						</script>
 	</div>
+	</form>
   	</body>
 </html>
 
