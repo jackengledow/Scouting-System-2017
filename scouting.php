@@ -117,10 +117,8 @@
 									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
-											<form action="">
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
-											</form>
 										</div>
 									</div>
 								</div>
@@ -141,10 +139,8 @@
 									<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong style = "text-decoration: underline; padding-bottom: 5px;">Autonomous Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
-											<form action="">
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
 												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
-											</form>
 										</div>
 									</div>
 								</div>
@@ -271,12 +267,12 @@
 					<div style="color: none;" class="container">
 						<div style="color: none;" class="row">
 					<p title="Scouting system">
-						<form action="" style = "margin-top: -5px; padding-left: 0px;">
+						<div style = "margin-top: -5px; padding-left: 0px;">
 								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
-						</form>
+						</div>
 						<div class="col-md-2">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
