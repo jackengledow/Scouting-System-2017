@@ -506,7 +506,7 @@ var __slice = Array.prototype.slice;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         event = _ref[_i];
         this.context.lineTo(event.x, event.y);
-		if(pathCount%0==0){
+		if(pathCount%10==0){
 			pathTracer.push("("+Math.floor(event.x) + "," + Math.floor(event.y)+ ")");
 			pathTracer.download = "pathTracer.txt";
 			pathCount++;
