@@ -153,7 +153,7 @@
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
 							
   						<div class="row">
-  							<div class="col-md-7">
+  							<div class="col-md-5">
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
@@ -166,12 +166,14 @@
 								</script>
   							</div>
 							
+							<div class="col-md-2">
 							<p>
 								<p align = "center" styler="font-size:18px">Instructions</p>
 								<ol align = "left" style = "font-size: 15px;">
 									<li> hehe xd </li>
 								</ol>
 							</p>
+							</div>
   							
 							<div class="col-md-5">
   								<div class="row">
