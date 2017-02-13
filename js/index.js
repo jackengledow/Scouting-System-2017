@@ -209,6 +209,15 @@ function sendNewDefaultCompetition() {
 	var selectedOptionElement = currentCompetitionSelect.options[selectedIndex];
 
 	var selectedCompetition = null;
+	
+	competitions[0] = "hehe";
+	competitions[1] = 
+	competitions[1] = 
+	competitions[1] = 
+	competitions[1] = 
+	competitions[1] = 
+	competitions[1] = 
+	competitions[1] = 
 
 	for(var i = 0; i < competitions.length; i += 1) {
 		competition_i = competitions[i];
