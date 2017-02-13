@@ -88,7 +88,6 @@
 		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
-	<form action="sql.html" method = "post">
 	<div class = "everything">
 	   <div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
@@ -427,7 +426,8 @@
 							<div class="col-md-5" style = "margin-left: 0px; margin-right: 40px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
-										<h2 style = "font-size: 24px"><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
+										<h2 style = "font-size: 24px"><center>
+										: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class = "row">
@@ -598,7 +598,6 @@
 							
 						</script>
 	</div>
-	</form>
   	</body>
 </html>
 
