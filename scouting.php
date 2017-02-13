@@ -156,7 +156,7 @@
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px; opacity: 0.3;" onclick = "undoLastPoint()">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
