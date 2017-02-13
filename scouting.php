@@ -579,22 +579,22 @@
 				</div>-->
 				</center>
 			</div>
-        </div>
-	<script>
-		function showCoords(event, elem) {
-			var box = elem.getBoundingClientRect();
-			var boxY = box.top;
-			var boxX = box.left;
-			var x = event.clientX;
-			var y = event.clientY;
-			setGridClickPos(x,y);
-			var newX = x - boxX;
-			var newY = y - boxY;
-			var newerX = Math.floor(newX);
-			var newerY = Math.floor(newY);
-			document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
-		}
-	</script>
+		</div>
+		<script>
+			function showCoords(event, elem) {
+				var box = elem.getBoundingClientRect();
+				var boxY = box.top;
+				var boxX = box.left;
+				var x = event.clientX;
+				var y = event.clientY;
+				setGridClickPos(x,y);
+				var newX = x - boxX;
+				var newY = y - boxY;
+				var newerX = Math.floor(newX);
+				var newerY = Math.floor(newY);
+				document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
+			}
+		</script>
 	</div>
 	</form>
   	</body>
