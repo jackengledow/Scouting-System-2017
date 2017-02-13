@@ -215,17 +215,8 @@ li.active a, li.active a:hover {
   text-align: center;
 }
 #redButton:hover {
-  opacity: none;
-  background-color: white;
-  color: #f44242;
-  border: solid 3px #f44242;
-  height: 54px;
-  width: 94px;
-  padding: 1px 5px 1px 1px;
-  font-size: 30px;
-  display:flex;
-  text-align: center;
-}
+  opacity: .3;
+  }
 #blueButton {
   border-radius: 5px;
   background-color: #5587F3;
@@ -238,16 +229,7 @@ li.active a, li.active a:hover {
   text-align: center;
 }
 #blueButton:hover {
-  opacity: none;
-  background-color: white;
-  color: #5587F3;
-  border: solid 3px #5587F3;
-  height: 54px;
-  width: 94px;
-  padding: 1px 5px 1px 1px;
-  font-size: 30px;
-  display:flex;
-  text-align: center;
+  opacity: .3;
 }
 
 .everything{
