@@ -5,7 +5,8 @@
 	</head>
 	<body>
 		<?php
-			if(isset($_POST['balls']=='Yes') {
+			$balls = $_POST['balls'];
+			if($balls = true) {
 					echo "<p>Balls</p>";
 			} else {
 					echo "<p>No balls</p>";

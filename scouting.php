@@ -363,7 +363,6 @@
 								
 							</div>
 						</p>
-
 						</div>
 					</div>
 
@@ -579,7 +578,7 @@
 					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
 				<center>
-				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
+				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
 					<!--<input style="font-size: 35px; padding-top: 5px;" type="submit" >Submit</input>-->
 				<!--<br>
 				<div>
@@ -590,23 +589,22 @@
 				</div>-->
 				</center>
 			</div>
-        </div>
-						<script>
-							function showCoords(event, elem) {
-								var box = elem.getBoundingClientRect();
-								var boxY = box.top;
-								var boxX = box.left;
-								var x = event.clientX;
-								var y = event.clientY;
-								setGridClickPos(x,y);
-								var newX = x - boxX;
-								var newY = y - boxY;
-								var newerX = Math.floor(newX);
-								var newerY = Math.floor(newY);
-								document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
-							}
-							
-						</script>
+		</div>
+		<script>
+			function showCoords(event, elem) {
+				var box = elem.getBoundingClientRect();
+				var boxY = box.top;
+				var boxX = box.left;
+				var x = event.clientX;
+				var y = event.clientY;
+				setGridClickPos(x,y);
+				var newX = x - boxX;
+				var newY = y - boxY;
+				var newerX = Math.floor(newX);
+				var newerY = Math.floor(newY);
+				document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
+			}
+		</script>
 	</div>
   	</body>
 </html>
