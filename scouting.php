@@ -153,11 +153,11 @@
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
 							
   						<div class="row">
-  							<div class="col-md-5">
+  							<div class="col-md-4">
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button id = "eraser" class = "opacity eraser" style = "opacity: 0.3; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -166,11 +166,11 @@
 								</script>
   							</div>
 							
-							<div class="col-md-2">
+							<div class="col-md-3">
 							<p>
 								<p align = "center" styler="font-size:18px">Instructions</p>
 								<ol align = "left" style = "font-size: 15px;">
-									<li> hehe xd </li>
+									<li> Use the map to trace the robot's path during the Auton period </li>
 								</ol>
 							</p>
 							</div>
@@ -369,6 +369,7 @@
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
+						<p style = "display:none" id = "jalensTag"></p>
 						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
 						<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv2"></div>
 						<p id="demo"></p>
