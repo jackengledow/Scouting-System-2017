@@ -94,7 +94,7 @@
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
           <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;margin-right: 15px" name="match"/>
           <label style = "font-size:20px; margin-top: 8px; padding-right: 10px">Team Number:</label><br>
-            <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;" name="teamNum"/>
+            <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
             <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
@@ -118,8 +118,8 @@
 									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="balls"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="gears"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="balls" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="gear" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
 										</div>
 									</div>
 								</div>
@@ -140,8 +140,8 @@
 									<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong style = "text-decoration: underline; padding-bottom: 5px;">Autonomous Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="baseline"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="autongear"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
 										</div>
 									</div>
 								</div>
@@ -179,7 +179,7 @@
 							<div class="col-md-5">
   								<div class="row">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: -10px;">
-  										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreAuton" name="AutonHigh"s>0</p></center></h2>
+  										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreAuton">0</p></center></h2>
   									</div>
   								</div>
   								<div class = "row" style = "margin-top: 10px">
@@ -280,7 +280,7 @@
 						<div style="color: none;" class="row">
 					<p title="Scouting system">
 						<div style = "margin-top: -5px; padding-left: 0px;">
-								<input type="checkbox" name="vehicle"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
+								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
@@ -556,17 +556,17 @@
 					<div style="margin-top: 50px;" class="row top" id="marginTop">
 							<div class="col-md-4">
 								<h2><strong><center>Yellow Card:</center></strong></h2><center>
-								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox"><p style="font-size: 20px;"></p></label></td>
+								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
 								</center>
 							</div>
 							<div class="col-md-4">
 								<h2><strong><center>Red Card:</center></strong></h2><center>
-								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox"><p style="font-size: 20px;"></p></label></td>
+								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
 								</center>
 							</div>
 							<div class="col-md-4"><center>
 								<h2><strong><center>Ejection:</center></strong></h2>
-								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox"><p style="font-size: 20px;"></p></label></td>
+								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
 							</center>
 						</div>
 					</div>
