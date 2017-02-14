@@ -154,11 +154,11 @@
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
 							
   						<div class="row">
-  							<div class="col-md-5">
-								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+  							<div class="col-md-4">
+								<canvas id="tools_sketch" width="320px" onclick = "clear" height="350px" style="background: url(RedTeam.png); background-size: contain;" onmouseleave = "clearArray()"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button id = "something" class = "opacity eraser" style = "opacity: 0.3; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -167,11 +167,11 @@
 								</script>
   							</div>
 							
-							<div class="col-md-2">
+							<div class="col-md-3">
 							<p>
 								<p align = "center" styler="font-size:18px">Instructions</p>
 								<ol align = "left" style = "font-size: 15px;">
-									<li> hehe xd </li>
+									<li> Use the map to trace the robot's path during the Auton period </li>
 								</ol>
 							</p>
 							</div>
@@ -370,6 +370,7 @@
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
 						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
+						<p style = "display:none" id = "jalensTag"></p>
 						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
 						<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv2"></div>
 						<p id="demo"></p>
@@ -437,7 +438,7 @@
 							<div class="col-md-5" style = "margin-left: 0px; margin-right: 40px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
-										<h2 style = "font-size: 24px"><center>Made HIgh Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
+										<h2 style = "font-size: 24px"><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class = "row">
@@ -614,63 +615,77 @@
 
 <script>
 	$(document).ready(function() {
-	opacity = 1;
-	rotate = 0;
-	var i  = 1;
-	var count = 1;
-	var top = 0;
-	var left = 0;
-	$('.clickable').on("click", function(){
-			if(opacity==1){
-				$(this).css("opacity", 0.25);
-				opacity = 0.25;
-			}
-			else{
-				$(this).css("opacity", 1);
-				opacity = 1;
-			}
+		opacity = 1;
+		rotate = 0;
+		var i  = 1;
+		var count = 1;
+		var top = 0;
+		var left = 0;
+		$('.clickable').on("click", function(){
+				if(opacity==1){
+					$(this).css("opacity", 0.25);
+					opacity = 0.25;
+				}
+				else{
+					$(this).css("opacity", 1);
+					opacity = 1;
+				}
 		});
 		
-		
+	$("#Small").on("click", function(){
+			$("#Small").css("opacity", 1);
+			$("#Medium").css("opacity", 0.3);
+			$("#Big").css("opacity", 0.3);
+	});
+	$("#Medium").on("click", function(){
+			$("#Small").css("opacity", 0.3);
+			$("#Medium").css("opacity", 1);
+			$("#Big").css("opacity", 0.3);
+	});
+	$("#Big").on("click", function(){
+			$("#Small").css("opacity", 0.3);
+			$("#Medium").css("opacity", 0.3);
+			$("#Big").css("opacity", 1);
+	});
 	$('#success').on("click", function(){
 			$('#success').css("opacity", 1);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 0.3);
-		});
+	});
 		
 	$('#fail').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 1);
 			$('#noattempt').css("opacity", 0.3);
-		});
+	});
 		
 	$('#noattempt').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 1);
-		});
+	});
 		
 	$('#1').on("click", function(){
 			$('#1').css("opacity", 1);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 0.3);
-		});
+	});
 		
 	$('#2').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 1);
 			$('#3').css("opacity", 0.3);
-		});
+	});
 		
 	$('#3').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 1);
-		});
+	});
 	$('.marker').on("click", function(){
 			$('.marker').css("opacity", 1);
 			$('.eraser').css("opacity", 0.3);
-		});
+	});
 	$('.eraser').on("click", function(){
 			$('.eraser').css("opacity", 1);
 			$('.marker').css("opacity", 0.3);
@@ -705,8 +720,7 @@
 		$(".bluePic").css("display", "none");
 		$("#fieldPicDiv").css("display", "block");
 		$("#fieldPicDiv2").css("display", "none");
-	});
-	
+	});	
 	$("#Rotate").on("click", function(){
 		if (rotate == 0){
 			$(".redPic").css("transform", "rotate(180deg)");
@@ -1040,7 +1054,7 @@
   	*/
   	
   	
-      jQuery('.tabs .tab-links a').on('click', function(e)  {
+    $('.tabs .tab-links a').on('click', function(e)  {
           var currentAttrValue = jQuery(this).attr('href');
   
           // Show/Hide Tabs
@@ -1054,4 +1068,3 @@
       });
   });
   </script>
-

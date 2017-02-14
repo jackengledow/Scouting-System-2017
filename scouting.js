@@ -20,8 +20,7 @@ var bigLoadsTeleop = [""];
 var bigCountAuton = 0;
 var bigCountTeleop = 0;
 var canvas = document.getElementById('cnv');
-var gridCounterMake = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-var gridCounterMiss = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
+var gridCounter = [];
 var mouse_x = 0;
 var mouse_y = 0;
 var fouls = 0;
@@ -34,6 +33,7 @@ var clickMedTeleop = false;
 var clickBigTeleop = false;
 var pathTracer = [];
 var pathCount = 0;
+var index = 0;
 
 var countFouls=function (change) {
 	fouls+=change;
@@ -41,6 +41,7 @@ var countFouls=function (change) {
 		fouls = 0;
 	}
 	document.getElementById("addFoul").innerHTML = fouls;
+	console.log(document.getElementById("something").style.opacity);
 }
 
 var countTechnicals=function (change) {
@@ -250,6 +251,7 @@ var lowDumpTeleop = function(type){
 	}
 }
 
+
 var dumpPercentAuton = function(percent){
 	size = lowDumpsAuton[lowCountAuton-1];
 	if (size=="Small"){
@@ -299,55 +301,36 @@ var setGridClickPos = function(x,y){
 	mouse_y = y;
 }
 
+/*function dotClicked(makemiss, change){
+	this.points = document.getElementById("demo").innerHTML;
+	this.amount = change;
+	this.makemiss = makemiss;
+	this.save = function() {
+
+    };
+}
+*/
+
 var clickZone = function (makemiss, change){
-	if(mouse_x>=138 && mouse_x<211){
-		index_x = 0;
-	}
-	if(mouse_x>=211 && mouse_x<290){
-		index_x = 1;
-	}
-	if(mouse_x>=290 && mouse_x<364){
-		index_x = 2;
-	}
-	if(mouse_x>=364 && mouse_x<438){
-		index_x = 3;
-	}
-	if(mouse_x>=438 && mouse_x<509){
-		index_x = 4;
-	}
-	
-	
-	if(mouse_y>=399 && mouse_y<479){
-		index_y = 0;
-	}
-	if(mouse_y>=479 && mouse_y<558){
-		index_y = 1;
-	}
-	if(mouse_y>=558 && mouse_y<639){
-		index_y = 2;
-	}
-	if(mouse_y>=639 && mouse_y<720){
-		index_y = 3;
-	}
-	if(mouse_y>=720 && mouse_y<795){
-		index_y = 4;
-	}
-	
-	if(makemiss == "Make"){
-		gridCounterMake[index_x][index_y] += change;
-		if (gridCounterMake[index_x][index_y] < 0){
-			gridCounterMake[index_x][index_y] = 0;
-		}
-	}
-	if(makemiss == "Miss"){
-		gridCounterMiss[index_x][index_y] += change;
-		if (gridCounterMiss[index_x][index_y] < 0){
-			gridCounterMiss[index_x][index_y] = 0;
-		}
-	}
-	console.log("When shooting from spot " + index_x + "," + index_y + ". Make: " + gridCounterMake[index_x][index_y] + ". Miss: " + gridCounterMiss[index_x][index_y] + ". Percent: " + 100*gridCounterMake[index_x][index_y]/(gridCounterMake[index_x][index_y]+gridCounterMiss[index_x][index_y])+ "%.");
+	mouse = document.getElementById("demo").innerHTML;
+	gridCounter[index] = mouse + ". Amount: " + change + ". MakeMiss: " + makemiss + ".";
+	index++;
+	console.log(gridCounter);
+	document.getElementById("jalensTag").innerHTML = gridCounter;
 }
 
+var clearArray = function(){
+	console.log("function ran");
+	var opaque = document.getElementById("something").style.opacity;
+	console.log(opaque);
+	if (opaque == 1){
+		pathTracer = [];
+		console.log(pathTracer);
+	}
+	else {
+		console.log("Error is something that this is");
+	}
+}
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;
@@ -513,7 +496,7 @@ var __slice = Array.prototype.slice;
 		else{
 			pathCount++;
 		}
-		console.log(pathTracer);
+		//console.log(pathTracer);
         previous = event;
       }
       this.context.strokeStyle = action.color;
