@@ -319,7 +319,7 @@ var clickZone = function (makemiss, change){
 	document.getElementById("jalensTag").innerHTML = gridCounter;
 }
 
-function clear(){
+var clearArray = function(){
 	console.log("function ran");
 	var opaque = document.getElementById("something").style.opacity;
 	console.log(opaque);
@@ -496,7 +496,7 @@ var __slice = Array.prototype.slice;
 		else{
 			pathCount++;
 		}
-		console.log(pathTracer);
+		//console.log(pathTracer);
         previous = event;
       }
       this.context.strokeStyle = action.color;
