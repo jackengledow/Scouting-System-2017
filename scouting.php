@@ -153,7 +153,7 @@
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
 							
   						<div class="row">
-  							<div class="col-md-7">
+  							<div class="col-md-5">
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
@@ -166,12 +166,14 @@
 								</script>
   							</div>
 							
+							<div class="col-md-2">
 							<p>
 								<p align = "center" styler="font-size:18px">Instructions</p>
 								<ol align = "left" style = "font-size: 15px;">
 									<li> hehe xd </li>
 								</ol>
 							</p>
+							</div>
   							
 							<div class="col-md-5">
   								<div class="row">
@@ -361,7 +363,6 @@
 								
 							</div>
 						</p>
-
 						</div>
 					</div>
 
@@ -577,7 +578,7 @@
 					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
 				<center>
-				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px;" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
+				<input style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" class="make makeshot width grey button rightcorner shotChart" type="submit" value="Submit"/>
 					<!--<input style="font-size: 35px; padding-top: 5px;" type="submit" >Submit</input>-->
 				<!--<br>
 				<div>
@@ -588,23 +589,22 @@
 				</div>-->
 				</center>
 			</div>
-        </div>
-						<script>
-							function showCoords(event, elem) {
-								var box = elem.getBoundingClientRect();
-								var boxY = box.top;
-								var boxX = box.left;
-								var x = event.clientX;
-								var y = event.clientY;
-								setGridClickPos(x,y);
-								var newX = x - boxX;
-								var newY = y - boxY;
-								var newerX = Math.floor(newX);
-								var newerY = Math.floor(newY);
-								document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
-							}
-							
-						</script>
+		</div>
+		<script>
+			function showCoords(event, elem) {
+				var box = elem.getBoundingClientRect();
+				var boxY = box.top;
+				var boxX = box.left;
+				var x = event.clientX;
+				var y = event.clientY;
+				setGridClickPos(x,y);
+				var newX = x - boxX;
+				var newY = y - boxY;
+				var newerX = Math.floor(newX);
+				var newerY = Math.floor(newY);
+				document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
+			}
+		</script>
 	</div>
   	</body>
 </html>
