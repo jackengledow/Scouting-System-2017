@@ -41,6 +41,7 @@ var countFouls=function (change) {
 		fouls = 0;
 	}
 	document.getElementById("addFoul").innerHTML = fouls;
+	console.log(document.getElementById("something").style.opacity);
 }
 
 var countTechnicals=function (change) {
@@ -250,6 +251,7 @@ var lowDumpTeleop = function(type){
 	}
 }
 
+
 var dumpPercentAuton = function(percent){
 	size = lowDumpsAuton[lowCountAuton-1];
 	if (size=="Small"){
@@ -317,6 +319,18 @@ var clickZone = function (makemiss, change){
 	document.getElementById("jalensTag").innerHTML = gridCounter;
 }
 
+function clear(){
+	console.log("function ran");
+	var opaque = document.getElementById("something").style.opacity;
+	console.log(opaque);
+	if (opaque == 1){
+		pathTracer = [];
+		console.log(pathTracer);
+	}
+	else {
+		console.log("Error is something that this is");
+	}
+}
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;

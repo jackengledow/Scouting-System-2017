@@ -158,6 +158,11 @@
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
 									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button id = "eraser" class = "opacity eraser" style = "opacity: 0.3; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+  							<div class="col-md-5">
+								<canvas  onclick = "clear()" id="tools_sketch" width="320px" height="350px"style="background: url(RedTeam.png); background-size: contain;"></canvas>
+								<div class="tools">
+									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button id = "something" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px; opacity: 0.3;" onclick = "undoLastPoint()">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -612,21 +617,21 @@
 
 <script>
 	$(document).ready(function() {
-	opacity = 1;
-	rotate = 0;
-	var i  = 1;
-	var count = 1;
-	var top = 0;
-	var left = 0;
-	$('.clickable').on("click", function(){
-			if(opacity==1){
-				$(this).css("opacity", 0.25);
-				opacity = 0.25;
-			}
-			else{
-				$(this).css("opacity", 1);
-				opacity = 1;
-			}
+		opacity = 1;
+		rotate = 0;
+		var i  = 1;
+		var count = 1;
+		var top = 0;
+		var left = 0;
+		$('.clickable').on("click", function(){
+				if(opacity==1){
+					$(this).css("opacity", 0.25);
+					opacity = 0.25;
+				}
+				else{
+					$(this).css("opacity", 1);
+					opacity = 1;
+				}
 		});
 		
 		
@@ -1038,7 +1043,7 @@
   	*/
   	
   	
-      jQuery('.tabs .tab-links a').on('click', function(e)  {
+    $('.tabs .tab-links a').on('click', function(e)  {
           var currentAttrValue = jQuery(this).attr('href');
   
           // Show/Hide Tabs
@@ -1052,4 +1057,3 @@
       });
   });
   </script>
-
