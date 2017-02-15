@@ -433,6 +433,7 @@
 						</div>
 					</div>
 					<div class = "col-md-6" style = "padding-left: 0px; margin-top: 80px;">
+						<div style = "display:none" id = "jalensTag"></div>
 						<div class="row" id = "popup" style = "display: none; height: 10px;">
 							<div class="col-md-5" style = "margin-left: 0px; margin-right: 40px;">
 								<div class="row">
@@ -766,7 +767,8 @@
 			top = ev.pageY-282
 			left = ev.pageX-20.5
 		$("#fieldPicDiv").append(
-			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+			$('<div id = "shot'+i+'" class = "circleThing">'+i+'</div>').css({
+				color: "black",
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
 				left: ev.pageX-20.5 + 'px',
@@ -777,6 +779,7 @@
 				opacity: 0.4
 			}) 
 		);
+		document.getElementById("shot"+i+"").innerHTML = i;
 		i++;
 		count++;
 		}
