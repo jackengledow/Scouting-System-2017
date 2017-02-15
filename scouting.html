@@ -369,13 +369,17 @@
 
 					<div class="col-md-6" style = "margin-top: 80px;">
 						<center>
-						<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
-						<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "height: 400px; position: relative;" src = "RedTeam.png"><div id = "fieldPicDiv"></div>
-						<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "height: 400px; display: none;" src = "BlueTeam.png"><div id = "fieldPicDiv2"></div>
-						<p id="demo"></p>
+							<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
+							<div style = "margin-left: 0px; padding-left: 10px;">
+							<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "RedTeam.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
+							<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; display: none; position: relative;" src = "BlueTeam.png"><div style = "display: inline-block" id = "fieldPicDiv2"></div>
+							<div id = "shotTab" style = "display: inline-block; vertical-align:top"><button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button><br></div>
+							</div>
+							<p id="demo"></p>
 						</center>
 						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
-						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 165px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
+						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Delete</p></button>
+						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
 						
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
@@ -731,6 +735,8 @@
 	
 	$(".shotChart").on("click", function(){
 		$("#popup").css("display", "none");
+		$("#shotTab").append("<button type = 'button' style = 'height:25px; padding-top: 0px;border-radius: 2px;'>"+(i-1)+"</button><br>");
+		
 	});
 	
 	$("#blueButton").on("click", function(){
