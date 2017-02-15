@@ -766,7 +766,8 @@
 			top = ev.pageY-282
 			left = ev.pageX-20.5
 		$("#fieldPicDiv").append(
-			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
+			$('<div id = "shot'+i+'" class = "circleThing">'+i+'</div>').css({
+				color: "black",
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
 				left: ev.pageX-20.5 + 'px',
@@ -817,7 +818,7 @@
 				background: '#FFF',
 				'border-radius': '100%',
 				opacity: 0.4
-			}) 
+			})
 		);
 		i++;
 		count++;
