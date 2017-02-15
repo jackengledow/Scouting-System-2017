@@ -223,49 +223,49 @@
   								</div>
   								<div class="row">
   									<div class="col-md-4">
-  										<button type = "button" class="make leftcorner red width button opacity dropDown" id = "Small" onclick = "lowDumpAuton('Small')">
+  										<button type = "button" class="make leftcorner red width button opacity dropDown1" id = "Small" onclick = "lowDumpAuton('Small')">
   											<p style = "font-size: 25px; padding-top: 5px;">Small 1-19</p>
   										</button>
   									</div>
   									<div class="col-md-4">
-  										<button type = "button" class="width button middle opacity dropDown" id = "Medium" onclick = "lowDumpAuton('Medium')">
+  										<button type = "button" class="width button middle opacity dropDown1" id = "Medium" onclick = "lowDumpAuton('Medium')">
   											<p style = "font-size: 25px; padding-top: 5px;">Med 20-39</p>
   										</button>
   									</div>
   									<div class="col-md-4">
-  										<button type = "button" class="miss rightcorner green width button opacity dropDown" id = "Big" onclick = "lowDumpAuton('Big')">
+  										<button type = "button" class="miss rightcorner green width button opacity dropDown1" id = "Big" onclick = "lowDumpAuton('Big')">
   											<p style = "font-size: 25px; padding-top: 5px;">Large 40+</p>
   										</button>
   									</div>
   								</div>
-  								<div class="row percent" style = "display: none; height: 10px; margin-top: 60px;">
+  								<div class="row percent1" style = "display: none; height: 10px; margin-top: 60px;">
 									<center>
 										<p style = "font-size: 20px;">What percent of collected balls were made?</p>
 									</center>
   									<div class="col-lg-3">
-  										<button type = "button" class="make leftcorner red width button opacity hi clickDrop" onclick = "dumpPercentAuton(0)">
+  										<button type = "button" class="make leftcorner red width button opacity hi clickDrop1" onclick = "dumpPercentAuton(0)">
   											<p style = "font-size: 25px; padding-top: 5px;">0%</p>
   										</button>
   									</div>
   									<div class="col-lg-2">
   
-  										<button type = "button" class="width button middle orange clickDrop opacity" onclick = "dumpPercentAuton(25)">
+  										<button type = "button" class="width button middle orange clickDrop opacity1" onclick = "dumpPercentAuton(25)">
 											<p style = "font-size: 25px; padding-top: 5px;">25%</p>
   										</button>
   									</div>
   									<div class="col-lg-2">
-  										<button type = "button" class="miss middle green width button opacity clickDrop" onclick = "dumpPercentAuton(50)">
+  										<button type = "button" class="miss middle green width button opacity clickDrop1" onclick = "dumpPercentAuton(50)">
   											<p style = "font-size: 25px; padding-top: 5px;">50%</p>
   										</button>
   									</div>
   									<div class="col-lg-2">
   
-  										<button type = "button" class="miss yellowGreen middle width button opacity clickDrop" onclick = "dumpPercentAuton(75)">
+  										<button type = "button" class="miss yellowGreen middle width button opacity clickDrop1" onclick = "dumpPercentAuton(75)">
 											<p style = "font-size: 25px; padding-top: 5px;">75%</p>
   										</button>
   									</div>
   									<div class="col-lg-3">
-  										<button type = "button" class="miss rightcorner green width button opacity goodbye clickDrop" onclick = "dumpPercentAuton(100)">
+  										<button type = "button" class="miss rightcorner green width button opacity goodbye clickDrop1" onclick = "dumpPercentAuton(100)">
   											<p style = "font-size: 25px; padding-top: 5px;">100%</p>
   										</button>
   									</div>
@@ -695,6 +695,12 @@
 	});
 	$(".clickDrop").on("click", function(){
 		$(".percent").css("display", "none");
+	});
+	$(".dropDown1").on("click", function(){
+		$(".percent1").css("display", "block");
+	});
+	$(".clickDrop1").on("click", function(){
+		$(".percent1").css("display", "none");
 	});
 	$(".clickGrid").on("click", function(){
 		$("#popup").css("display", "block");
