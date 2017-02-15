@@ -731,9 +731,6 @@
 	
 	$(".shotChart").on("click", function(){
 		$("#popup").css("display", "none");
-		$("#shot"+i).append(i);
-		console.log(document.getElementById("shot1").innerHTML);
-		console.log("it ran");
 	});
 	
 	$("#blueButton").on("click", function(){
@@ -942,7 +939,6 @@
 	$('.madeShot').on("click", function(){
 		size = $(this).attr('id');
 		i--;
-		$("#shot"+i).append(i);
 		$('#shot' + i).css("background", "#0F0");
 		$('#shot' + i).css("height", size);
 		$('#shot' + i).css("width", size);
@@ -953,7 +949,6 @@
 	$('.miss').on("click", function(){
 		size = $(this).attr('id');
 		i--;
-		$("#shot"+i).append(i);
 		$('#shot' +i).css("background", "red");
 		$('#shot' + i).css("height", size);
 		$('#shot' + i).css("width", size);
