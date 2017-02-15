@@ -731,6 +731,9 @@
 	
 	$(".shotChart").on("click", function(){
 		$("#popup").css("display", "none");
+		$("#shot"+i).append(i);
+		console.log(document.getElementById("shot1").innerHTML);
+		console.log("it ran");
 	});
 	
 	$("#blueButton").on("click", function(){
@@ -779,7 +782,6 @@
 				opacity: 0.4
 			}) 
 		);
-		document.getElementById("shot"+i+"").innerHTML = i;
 		i++;
 		count++;
 		}
