@@ -767,7 +767,7 @@
 			top = ev.pageY-282
 			left = ev.pageX-20.5
 		$("#fieldPicDiv").append(
-			$('<div id = "shot'+i+'" class = "circleThing">'+i+'</div>').css({
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				color: "black",
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
@@ -779,7 +779,6 @@
 				opacity: 0.4
 			}) 
 		);
-		document.getElementById("shot"+i+"").innerHTML = i;
 		i++;
 		count++;
 		}
@@ -820,7 +819,7 @@
 				background: '#FFF',
 				'border-radius': '100%',
 				opacity: 0.4
-			}) 
+			})
 		);
 		i++;
 		count++;
@@ -929,18 +928,14 @@
 			i++;
 		}
     });
-	
 	$('.deleter').on("click", function(){
 		count = 1;
 	});
-	
-	
 	$('#undo').on("click", function(){
 		i--;
 		count = 1;
 		$('#shot' + i).remove();
 	});
-	
 	$('.madeShot').on("click", function(){
 		size = $(this).attr('id');
 		i--;
