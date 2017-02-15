@@ -770,7 +770,7 @@
 			top = ev.pageY-282
 			left = ev.pageX-20.5
 		$("#fieldPicDiv").append(
-			$('<div id = "shot'+i+'" class = "circleThing">'+i+'</div>').css({
+			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				color: "black",
 				position: 'absolute',
 				top: ev.pageY-282 + 'px',
@@ -822,7 +822,7 @@
 				background: '#FFF',
 				'border-radius': '100%',
 				opacity: 0.4
-			}) 
+			})
 		);
 		i++;
 		count++;
@@ -931,21 +931,18 @@
 			i++;
 		}
     });
-	
 	$('.deleter').on("click", function(){
 		count = 1;
 	});
-	
-	
 	$('#undo').on("click", function(){
 		i--;
 		count = 1;
 		$('#shot' + i).remove();
 	});
-	
 	$('.madeShot').on("click", function(){
 		size = $(this).attr('id');
 		i--;
+		$("#shot"+i).append(i);
 		$('#shot' + i).css("background", "#0F0");
 		$('#shot' + i).css("height", size);
 		$('#shot' + i).css("width", size);
@@ -956,11 +953,14 @@
 	$('.miss').on("click", function(){
 		size = $(this).attr('id');
 		i--;
+		$("#shot"+i).append(i);
 		$('#shot' +i).css("background", "red");
 		$('#shot' + i).css("height", size);
 		$('#shot' + i).css("width", size);
 		$('#shot' + i).css("top", top-(size/2-5) + 'px');
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
+		$('#shot' + i).css("font-size", size-2 +'px');
+		$('#shot' + i).css("color", 'rgba(255,255,255,1)');
 		i++;
 	});
 		
