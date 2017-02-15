@@ -171,7 +171,7 @@
 							<p>
 								<p align = "center" styler="font-size:18px">Instructions</p>
 								<ol align = "left" style = "font-size: 15px;">
-									<li> hehe xd </li>
+									<li>Use the map to trace the robot's path during the Auton period</li>
 								</ol>
 							</p>
 							</div>
@@ -320,7 +320,7 @@
 								<div class="row">
 								<!--button-->
 									<div class="col-md-6" style="margin-top: 10px;">
-										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
+										<button type = "button" class="make leftcorner green makeshot width button" onclick="addGears(1)">
 											<center>
 												<!--<img style = "height: 30px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 												<p style = "font-size: 30px; padding-top: 5px;">+</p>
@@ -328,7 +328,7 @@
 										</button>
 									</div>
 									<div class="col-md-6" style="margin-top: 10px;">
-										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
+										<button type = "button" class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
 												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 												<p style = "font-size: 30px; padding-top: 1px;">-</p>
@@ -386,47 +386,47 @@
 						</div>
 						<div class="row">
 							<div class="col-md-4">
-								<button type = "button" class="make leftcorner red width button opacity dropDown" id = "Small" onclick = "lowDumpTeleop('Small')">
+								<button type = "button" class="make leftcorner red width button opacity dropDown1" id = "Small1" onclick = "lowDumpTeleop('Small')">
 									<p style = "font-size: 25px; padding-top: 5px;">Small 1-19</p>
 								</button>
 							</div>
 							<div class="col-md-4">
-								<button type = "button" class="width button middle opacity dropDown" id = "Medium" onclick = "lowDumpTeleop('Medium')">
+								<button type = "button" class="width button middle opacity dropDown1" id = "Medium1" onclick = "lowDumpTeleop('Medium')">
 									<p style = "font-size: 25px; padding-top: 5px;">Med 20-39</p>
 								</button>
 							</div>
 							<div class="col-md-4">
-								<button type = "button" class="miss rightcorner green width button opacity dropDown" id = "Big" onclick = "lowDumpTeleop('Big')">
+								<button type = "button" class="miss rightcorner green width button opacity dropDown1" id = "Big1" onclick = "lowDumpTeleop('Big')">
 									<p style = "font-size: 25px; padding-top: 5px;">Large 40+</p>
 								</button>
 							</div>
 						</div>
-						<div class="row percent" style = "display: none; height: 10px; margin-top: 60px;">
+						<div class="row percent1" style = "display: none; height: 10px; margin-top: 60px;">
 							<center>
 								<p style = "font-size: 20px;">What percent of collected balls were made?</p>
 							</center>
 							<div class="col-lg-3">
-								<button type = "button" class="make leftcorner red width button opacity hi clickDrop" onclick = "dumpPercentTeleop(0)">
+								<button type = "button" class="make leftcorner red width button opacity hi clickDrop1" onclick = "dumpPercentTeleop(0)">
 									<p style = "font-size: 25px; padding-top: 5px;">0%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button type = "button" class="width button middle orange clickDrop opacity" onclick = "dumpPercentTeleop(25)">
+								<button type = "button" class="width button middle orange clickDrop1 opacity" onclick = "dumpPercentTeleop(25)">
 									<p style = "font-size: 25px; padding-top: 5px;">25%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button type = "button" class="miss middle green width button opacity clickDrop" onclick = "dumpPercentTeleop(50)">
+								<button type = "button" class="miss middle green width button opacity clickDrop1" onclick = "dumpPercentTeleop(50)">
 									<p style = "font-size: 25px; padding-top: 5px;">50%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button type = "button" class="miss yellowGreen middle width button opacity clickDrop" onclick = "dumpPercentTeleop(75)">
+								<button type = "button" class="miss yellowGreen middle width button opacity clickDrop1" onclick = "dumpPercentTeleop(75)">
 									<p style = "font-size: 25px; padding-top: 5px;">75%</p>
 								</button>
 							</div>
 							<div class="col-lg-3">
-								<button type = "button" class="miss rightcorner green width button opacity goodbye clickDrop" onclick = "dumpPercentTeleop(100)">
+								<button type = "button" class="miss rightcorner green width button opacity goodbye clickDrop1" onclick = "dumpPercentTeleop(100)">
 									<p style = "font-size: 25px; padding-top: 5px;">100%</p>
 								</button>
 							</div>
@@ -437,7 +437,7 @@
 							<div class="col-md-5" style = "margin-left: 0px; margin-right: 40px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
-										<h2 style = "font-size: 24px"><center>Made HIgh Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
+										<h2 style = "font-size: 24px"><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 									</div>
 								</div>
 								<div class = "row">
@@ -531,7 +531,7 @@
 							<div class="row">
 							<!--button-->
 								<div class="col-md-6" style="margin-top:10px">
-									<button class="make leftcorner green makeshot width button" onclick="countTechnicals(1)">
+									<button type = "button" class="make leftcorner green makeshot width button" onclick="countTechnicals(1)">
 										<center>
 											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
 										<p style="font-size: 30px; padding-top: 5px;">+</p>
@@ -539,7 +539,7 @@
 									</button>
 								</div>
 								<div class="col-md-6" style="margin-top:10px">
-								<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
+								<button type = "button" class="miss rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
@@ -631,7 +631,38 @@
 			}
 		});
 		
+	$('#Big').on("click", function(){
+			$('#Big').css("opacity", 1);
+			$('#Medium').css("opacity", 0.3);
+			$('#Small').css("opacity", 0.3);
+	});
+	$('#Medium').on("click", function(){
+			$('#Big').css("opacity", 0.3);
+			$('#Medium').css("opacity", 1);
+			$('#Small').css("opacity", 0.3);
+	});
 		
+	$('#Small').on("click", function(){
+			$('#Big').css("opacity", 0.3);
+			$('#Medium').css("opacity", 0.3);
+			$('#Small').css("opacity", 1);
+	});
+	$('#Big1').on("click", function(){
+			$('#Big1').css("opacity", 1);
+			$('#Medium1').css("opacity", 0.3);
+			$('#Small1').css("opacity", 0.3);
+	});
+	$('#Medium1').on("click", function(){
+			$('#Big1').css("opacity", 0.3);
+			$('#Medium1').css("opacity", 1);
+			$('#Small1').css("opacity", 0.3);
+	});
+		
+	$('#Small1').on("click", function(){
+			$('#Big1').css("opacity", 0.3);
+			$('#Medium1').css("opacity", 0.3);
+			$('#Small1').css("opacity", 1);
+	});	
 	$('#success').on("click", function(){
 			$('#success').css("opacity", 1);
 			$('#fail').css("opacity", 0.3);
@@ -680,6 +711,14 @@
 	});
 	$(".clickDrop").on("click", function(){
 		$(".percent").css("display", "none");
+		$(".dropDown").css("opacity", 1);
+	});
+	$(".dropDown1").on("click", function(){
+		$(".percent1").css("display", "block");
+	});
+	$(".clickDrop1").on("click", function(){
+		$(".percent1").css("display", "none");
+		$(".dropDown1").css("opacity", 1);
 	});
 	$(".clickGrid").on("click", function(){
 		$("#popup").css("display", "block");

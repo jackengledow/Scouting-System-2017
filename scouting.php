@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--Scouting System Html-->
-<!--this comment is unnesesary, obviously its the scouting system-->
+<!--this comment is unnesesary, obviously its the scouting system
 <html lang="en">
 	<head>
 		<link rel = "stylesheet" href = "tab_stuff.css">
@@ -153,7 +153,7 @@
 						<br><br>
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
 							
-  						<div class="row">
+  						<!--<div class="row">
   							<div class="col-md-4">
 								<canvas id="tools_sketch" width="320px" onclick = "clear" height="350px" style="background: url(RedTeam.png); background-size: contain;" onmouseleave = "clearArray()"></canvas>				 
 								<div class="tools">
@@ -292,7 +292,7 @@
 									</div>
 								</div>
 								<div class="row">
-								<!--button-->
+								<!--button-
 									<div class="col-md-4">
 										<button type = "button" class="make leftcorner red width button opacity" id = "1">
 											<center><p style = "font-size: 25px; padding-top: 5px;">1</p></center>
@@ -310,7 +310,7 @@
 									</div>
 								</div>
 							</div>
-						<!-- <button class = "leftButton"><img class = "buttons" id = "speed" src = "http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg"></button> -->
+						<!-- <button class = "leftButton"><img class = "buttons" id = "speed" src = "http://www.rcn.com/assets/images/hub/help/how-to-get-the-most-out-of-your-speed.jpg"></button>
 							<div class="col-md-3 rightButton leftButton">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px; height: 63px;">
@@ -318,19 +318,19 @@
 									</div>
 								</div>
 								<div class="row">
-								<!--button-->
+								<!--button
 									<div class="col-md-6" style="margin-top: 10px;">
-										<button class="make leftcorner green makeshot width button" onclick="addGears(1)">
+										<button type = "button" class="make leftcorner green makeshot width button" onclick="addGears(1)">
 											<center>
-												<!--<img style = "height: 30px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
+												<!--<img style = "height: 30px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">
 												<p style = "font-size: 30px; padding-top: 5px;">+</p>
 											</center>
 										</button>
 									</div>
 									<div class="col-md-6" style="margin-top: 10px;">
-										<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
+										<button type = "button" class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
-												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
+												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">
 												<p style = "font-size: 30px; padding-top: 1px;">-</p>
 											</center>
 										</button>
@@ -344,7 +344,7 @@
 									</div>
 								</div>
 								<div class="row">
-								<!--button-->
+								<!--button
 									<div class="col-md-4">
 										<button type = "button" class="make leftcorner green width button opacity" id = "success">
 											<p style = "font-size: 25px; padding-top: 5px;">Success</p>
@@ -504,11 +504,11 @@
 								</div>
 							</div>
 							<div class="row">
-							<!--button-->
+							<!--button
 								<div class="col-md-6" style="margin-top:10px">
 									<button type = "button" class="make leftcorner green makeshot width button"  onclick="countFouls(1)">
 										<center>
-											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
+											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">
 										<p style="font-size: 30px; padding-top: 5px;">+</p>
 										</center>
 									</button>
@@ -516,7 +516,7 @@
 								<div class="col-md-6" style="margin-top:10px">
 								<button type = "button" class="miss rightcorner missshot red width button" style = "margin-left: 3px;" onclick="countFouls(-1)">
 										<center>
-											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
+											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
 										</center>
 									</button>
@@ -530,11 +530,11 @@
 								</div>
 							</div>
 							<div class="row">
-							<!--button-->
+							<!--button
 								<div class="col-md-6" style="margin-top:10px">
-									<button class="make leftcorner green makeshot width button" onclick="countTechnicals(1)">
+									<button type = "button" class="make leftcorner green makeshot width button" onclick="countTechnicals(1)">
 										<center>
-											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">-->
+											<!--<img style = "height: 40px; margin-top: 11px; margin-bottom: 11px; margin-left: 3px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/green-plus-clip-art.png">
 										<p style="font-size: 30px; padding-top: 5px;">+</p>
 										</center>
 									</button>
@@ -542,7 +542,7 @@
 								<div class="col-md-6" style="margin-top:10px">
 								<button class="miss rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
 										<center>
-											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
+											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
 										</center>
 									</button>
@@ -589,7 +589,7 @@
 						<option value="comp1">Competition 1</option>
 						<option value="comp2">Competition 2</option>
 					</select>
-				</div>-->
+				</div>
 				</center>
 			</div>
 		</div>
@@ -1073,4 +1073,4 @@
   		
       });
   });
-  </script>
+  </script>-->
