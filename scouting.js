@@ -331,6 +331,7 @@ var clearArray = function(){
 		console.log("Error is something that this is");
 	}
 }
+
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;

@@ -119,6 +119,10 @@ li.active a, li.active a:hover {
 }
 
 /*----- Content of Tabs -----*/
+.infoIns {
+	background-color: #d3d3d3;
+	border-radius: 5px; 
+}
 .tab-content {
 	padding:15px;
 	border-radius:5px;
