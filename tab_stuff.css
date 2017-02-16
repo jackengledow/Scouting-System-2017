@@ -119,6 +119,28 @@ li.active a, li.active a:hover {
 }
 
 /*----- Content of Tabs -----*/
+.infoIns {
+	background-color: #e3e3e3;
+	border-radius: 5px; 
+}
+.infoText {
+	font-family: Univers, Futura, arial;
+	margin-left: 15px;
+}
+.infoTextR {
+	font-family: Univers, Futura, arial;
+	margin-right: 5px;
+}
+.left {
+	border-right: 2px solid black;
+	margin-bottom: 17px;
+	margin-top: 17px;
+}
+.right {
+	margin-bottom: 17px;
+	margin-top: 17px;
+}
+
 .tab-content {
 	padding:15px;
 	border-radius:5px;

@@ -6,6 +6,7 @@
 		<link rel = "stylesheet" href = "tab_stuff.css">
 		<script src = "jquery-3.1.1.min.js"></script>
 		<meta charset="utf-8">
+		<title>Scouting System</title>
 		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<script src="scouting.js"></script>
 		<style>
@@ -103,14 +104,100 @@
          </div>
 		<div class="tabs">
 			<ul class="tab-links">
-				<li class="active"><a href="#tab1">Autonomous</a></li>
+				<li class="active"><a href="#tab0">Info</a></li>
+				<li><a href="#tab1">Auton</a></li>
 				<li><a href="#tab2">Teleop</a></li>
 				<li><a href="#tab3">Penalties</a></li>
 				<li><a href="#tab4">Final</a></li>
 			</ul>
-				 
+			
 			<div class="tab-content">
-				<div id="tab1" class="tab active">
+				
+				<div id="tab0" class="tab active">
+					<div class="container">
+							<br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Auton Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 left">
+									<p class="infoText">To show that a robot starts off with a ball or gear, click the respective check mark. To show the crossing of
+									the baseline or the scoring of a gear, also click their respective checkmark.</p>
+									<p class="infoText"> To trace the robot's path during the Auton period, click on the marker button and use your mouse to
+									show the path.  To erase a path, simply click the clear button and click again on the field map.</p>
+								</div>
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot makes a high goal during the Auton period, add how many balls they scored by the 
+									corresponding buttons.</p>
+									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially had in
+									it's posetion, then click the percentage of those balls actually made it into the goal.</p>
+								</div>
+							</div>
+						</div>
+							<br><br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Teleop Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 left">
+									<p class="infoText">If the robot was disabled, can collect balls, use a hobber or collect gears, mark so 
+									on their checkbox.</p>
+									<p class="infoText">Mark how fast the robot was, (1) being slow and (3) being fast.  click to add the gears 
+									scored by the robot during the match. Also mark if the robot was able to climb at the end.</p>
+								</div>
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially
+									had in it's posetion, then click the percentage of those balls actually made it into the goal.</p>
+									<p class="infoTextR">If the robot scores a high goal during the match, click the position on the field, then
+									click the corresponding button to show how many balls were scored.</p>
+								
+								</div>
+							</div>
+						</div>
+							<br><br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Penalties Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 left">
+									<p class="infoText">If a robot commits any fouls or technicals, add the amount of each penalty to the
+									respective group</p>
+								</div>
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot gets a red or yellow card, or is ejected from the match, mark it on the 
+									corresponding checkbox.</p>
+								
+								</div>
+							</div>
+						</div>
+							<br><br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Final Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p class="infoText"><center>On the Final tab, add any additonal notes or just any usefull data you collected 
+									while scouting.  Also, once you are done with everything, submit your scout form.</center></p>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div id="tab1" class="tab">
 					<div class="container" style="margin-top:15px;">
 						<div class="container top">
 							<div class="row">
@@ -127,7 +214,7 @@
 									<br>
 									<center>
 										<p>
-											<p align = "center" style="font-size:18px;">Instructions</p>
+											<p align = "center" style="font-size:18px;"><strong>Instructions:</strong></p>
 											<ol align = "left" style = "font-size: 17px;">
 												<li>Click button when action is completed</li>
 												<li>Count high balls made in High Score</li>
@@ -152,13 +239,19 @@
   					<div class="container">
 						<br><br>
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
-							
+						
+						
   						<div class="row">
-  							<div class="col-md-5">
+							
+							<div style="visibility:hidden;" class="col-md-1">
+								<img src="memes.jpg" style="width: 75px;">
+								<p>IT is better than Programing!</p>
+							</div>
+  							<div class="col-md-4">
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "undoLastPoint()">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -167,16 +260,9 @@
 								</script>
   							</div>
 							
-							<div class="col-md-2">
-							<p>
-								<p align = "center" styler="font-size:18px">Instructions</p>
-								<ol align = "left" style = "font-size: 15px;">
-									<li>Use the map to trace the robot's path during the Auton period</li>
-								</ol>
-							</p>
-							</div>
+	
   							
-							<div class="col-md-5">
+							<div class="col-md-6">
   								<div class="row">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: -10px;">
   										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreAuton">0</p></center></h2>
@@ -368,8 +454,11 @@
 					</div>
 
 					<div class="col-md-6" style = "margin-top: 80px;">
+							
 						<center>
-							<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot</p>
+
+							<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot.</p>
+
 							<div style = "margin-left: 0px; padding-left: 10px;">
 							<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "RedTeam.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
 							<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; display: none; position: relative;" src = "BlueTeam.png"><div style = "display: inline-block" id = "fieldPicDiv2"></div>
@@ -380,7 +469,6 @@
 						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
 						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Delete</p></button>
 						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
-						
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
 						<div class="row">
@@ -585,7 +673,7 @@
 				</div>
 				<center>
 				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" class="make makeshot width grey button rightcorner shotChart" value="Submit" type="submit">
-					<p style="font-size: 35px; padding-top: 5px;" >Submit</p>
+					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
 				</button>
 				<!--<br>
 				<div>
@@ -943,6 +1031,7 @@
 		i--;
 		count = 1;
 		$('#shot' + i).remove();
+		undo();
 	});
 	$('.madeShot').on("click", function(){
 		size = $(this).attr('id').substring(4);;

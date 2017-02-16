@@ -86,8 +86,8 @@ var addGears=function (change){
 	if (totalGears<0){
 		totalGears = 0;
 	}
-	if(totalGears > 13) {
-		totalGears = 13;
+	if(totalGears > 18) {
+		totalGears = 18;
 	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
 
@@ -332,7 +332,6 @@ var changeColors = function (id){
 	}
 	document.getElementById('shot'+id).style.opacity = 1;
 }
-
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
 	gridCounter[index] = mouse + ". Amount: " + change + ". MakeMiss: " + makemiss + ".";
@@ -340,7 +339,9 @@ var clickZone = function (makemiss, change){
 	console.log(gridCounter);
 	document.getElementById("jalensTag").innerHTML = gridCounter;
 }
-
+var undo = function(){
+	gridCounter.pop();
+}
 var clearArray = function(){
 	console.log("function ran");
 	var opaque = document.getElementById("something").style.opacity;
@@ -353,6 +354,7 @@ var clearArray = function(){
 		console.log("Error is something that this is");
 	}
 }
+
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;
@@ -518,7 +520,6 @@ var __slice = Array.prototype.slice;
 		else{
 			pathCount++;
 		}
-		//console.log(pathTracer);
         previous = event;
       }
       this.context.strokeStyle = action.color;
