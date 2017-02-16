@@ -1029,6 +1029,7 @@
 		i--;
 		count = 1;
 		$('#shot' + i).remove();
+		undo();
 	});
 	$('.madeShot').on("click", function(){
 		size = $(this).attr('id');
