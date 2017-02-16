@@ -35,6 +35,7 @@ var pathTracer = [];
 var pathCount = 0;
 var index = 0;
 var buttonSize = 0;
+var idSelect = 0;
 
 var countFouls=function (change) {
 	fouls+=change;
@@ -317,7 +318,7 @@ var incButtonSize = function(){
 }
 var changeColors = function (id){
 	id = id.substring(6);
-	console.log(id);
+	idSelect = id;
 	for(i = 1; i<=buttonSize; i++){
 		document.getElementById('button'+i).style.opacity = 1;
 	}
@@ -331,6 +332,15 @@ var changeColors = function (id){
 		document.getElementById('shot'+i).style.opacity = 0.4;
 	}
 	document.getElementById('shot'+id).style.opacity = 1;
+}
+
+var deletePoint = function (){
+	document.getElementById('shot'+idSelect).remove();
+	console.log(idSelect);
+	for(i = parseInt(idSelect)+1; i<= buttonSize; i++){
+		document.getElementById('shot'+i).id = 'shot' + (parseInt(i)-1).toString();
+	}
+	document.getElementById('button'+buttonSize).remove();
 }
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
