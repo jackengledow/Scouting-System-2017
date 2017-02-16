@@ -310,7 +310,6 @@ var setGridClickPos = function(x,y){
     };
 }
 */
-
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
 	gridCounter[index] = mouse + ". Amount: " + change + ". MakeMiss: " + makemiss + ".";
@@ -318,7 +317,9 @@ var clickZone = function (makemiss, change){
 	console.log(gridCounter);
 	document.getElementById("jalensTag").innerHTML = gridCounter;
 }
-
+var undo = function(){
+	gridCounter.pop();
+}
 var clearArray = function(){
 	console.log("function ran");
 	var opaque = document.getElementById("something").style.opacity;
