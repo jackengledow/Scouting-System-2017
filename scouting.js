@@ -34,6 +34,7 @@ var clickBigTeleop = false;
 var pathTracer = [];
 var pathCount = 0;
 var index = 0;
+var buttonSize = 0;
 
 var countFouls=function (change) {
 	fouls+=change;
@@ -310,6 +311,27 @@ var setGridClickPos = function(x,y){
     };
 }
 */
+var incButtonSize = function(){
+	buttonSize++;
+	console.log(buttonSize + "buttonsize");
+}
+var changeColors = function (id){
+	id = id.substring(6);
+	console.log(id);
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	for(i = 1; i<id; i++){
+		document.getElementById('button'+i).style.opacity = 0.3; 
+	}
+	for(i = parseInt(id)+1; i <= buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 0.3;
+	}
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('shot'+i).style.opacity = 0.4;
+	}
+	document.getElementById('shot'+id).style.opacity = 1;
+}
 
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;

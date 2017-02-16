@@ -447,17 +447,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
+										<button type = "button" id = "make20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button type = "button" id = "make15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button type = "button" id = "make10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -471,17 +471,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
+										<button type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -625,6 +625,7 @@
 	var count = 1;
 	var top = 0;
 	var left = 0;
+	var buttonSize = 0;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -635,7 +636,6 @@
 				opacity = 1;
 			}
 		});
-		
 	$('#Big').on("click", function(){
 			$('#Big').css("opacity", 1);
 			$('#Medium').css("opacity", 0.3);
@@ -734,11 +734,19 @@
 	});
 	
 	$(".shotChart").on("click", function(){
+		id = $(this).attr('id');
 		$("#popup").css("display", "none");
-		$("#shotTab").append("<button type = 'button' style = 'height:25px; padding-top: 0px;border-radius: 2px;'>"+(i-1)+"</button><br>");
-		
-	});
-	
+		$("#shotTab").append("<button type = 'button' id = 'button"+(i-1)+"' class = 'buttonList' style = 'height:25px; padding-top: 0px;border-radius: 2px;' onclick = 'changeColors(this.id)'>"+(i-1)+"</button><br>");
+		buttonSize++; 
+		if(id.substring(0,4) == "make"){
+			$('#button'+(i-1)+"").css("background-color", "#9eff9b");
+			$('#button'+(i-1)+"").css("border", "2px solid green");
+		}
+		if(id.substring(0,4) == "miss"){
+			$('#button'+(i-1)+"").css("background-color", "#ff9b9b");
+			$('#button'+(i-1)+"").css("border", "2px solid red");
+		}
+	});	
 	$("#blueButton").on("click", function(){
 		$(".redPic").css("display", "none");
 		$(".bluePic").css("display", "block");
@@ -768,7 +776,6 @@
 	});
 	
 	$('#fieldPicDiv').on("click", function(ev){
-		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -789,7 +796,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
@@ -811,7 +817,6 @@
     });
 	
 	$('#fieldPicDiv2').on("click", function(ev){
-		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -831,7 +836,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
@@ -873,7 +877,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -914,7 +917,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -943,7 +945,7 @@
 		$('#shot' + i).remove();
 	});
 	$('.madeShot').on("click", function(){
-		size = $(this).attr('id');
+		size = $(this).attr('id').substring(4);;
 		i--;
 		$('#shot' + i).css("background", "#0F0");
 		$('#shot' + i).css("height", size);
@@ -953,7 +955,7 @@
 		i++;
 	});
 	$('.miss').on("click", function(){
-		size = $(this).attr('id');
+		size = $(this).attr('id').substring(4);
 		i--;
 		$('#shot' +i).css("background", "red");
 		$('#shot' + i).css("height", size);
