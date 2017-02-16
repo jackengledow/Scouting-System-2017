@@ -1,0 +1,12 @@
+<?php
+	require "sql.php";
+?>
+<DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<meta http-equiv = "refresh" content = "5; url = scouting.html">
+		<h2>submitted</h2>
+	</body>
+</html>

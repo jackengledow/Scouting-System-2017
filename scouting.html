@@ -123,11 +123,17 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6">
-								
+								<div class="col-md-6 left">
+									<p class="infoText">To show that a robot starts off with a ball or gear, click the respective check mark. To show the crossing of
+									the baseline or the scoring of a gear, also click their respective checkmark.</p>
+									<p class="infoText"> To trace the robot's path during the Auton period, click on the marker button and use your mouse to
+									show the path.  To erase a path, simply click the clear button and click again on the field map.</p>
 								</div>
-								<div class="col-md-6">
-								
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot makes a high goal during the Auton period, add how many balls they scored by the 
+									corresponding buttons.</p>
+									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially had in
+									it's posetion, then click the percentage of those balls actually made it into the goal.</p>
 								</div>
 							</div>
 						</div>
@@ -216,7 +222,7 @@
 								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser" ><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -634,8 +640,8 @@
 					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
 				</div>
 				<center>
-				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" onclick="submitMove" class="make makeshot width grey button rightcorner shotChart" value="Submit" type="submit">
-					<p style="font-size: 35px; padding-top: 5px;" >Submit</p>
+				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" class="make makeshot width grey button rightcorner shotChart" value="Submit" type="submit">
+					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
 				</button>
 				<!--<br>
 				<div>
