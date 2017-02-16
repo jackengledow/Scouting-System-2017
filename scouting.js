@@ -85,8 +85,8 @@ var addGears=function (change){
 	if (totalGears<0){
 		totalGears = 0;
 	}
-	if(totalGears > 13) {
-		totalGears = 13;
+	if(totalGears > 18) {
+		totalGears = 18;
 	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
 
@@ -497,7 +497,6 @@ var __slice = Array.prototype.slice;
 		else{
 			pathCount++;
 		}
-		//console.log(pathTracer);
         previous = event;
       }
       this.context.strokeStyle = action.color;
