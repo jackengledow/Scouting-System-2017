@@ -57,7 +57,7 @@
 									<p class="infoTextR">If a robot makes a high goal during the Auton period, add how many balls they scored by the 
 									corresponding buttons.</p>
 									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially had in
-									it's posetion, then click the percentage of those balls actually made it into the goal.</p>
+									it's position, then click the percentage of those balls actually made it into the goal.</p>
 								</div>
 							</div>
 						</div>
@@ -173,16 +173,17 @@
 							</div>
 							
   							<div class="col-md-4">
-								<canvas id="tools_sketch" class = "ratat" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+								<canvas id="tools_sketch" class = "ratat" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain;"></canvas>
+								<!--<canvas id="tools_sketch" class = "ratat1" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain; display:none"></canvas>-->
 								<div class="tools">
-									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
-									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
+									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button type = "button" class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
+									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; padding-top: 4px; color: black; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
 								$(function() {
 									$('#tools_sketch').sketch({defaultColor: "#ff0"});
-								  });
+								});
 								</script>
   							</div>
 							
@@ -394,9 +395,9 @@
 							</div>
 							<p id="demo"></p>
 						</center>
-						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
-						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "deletePoint()"><p style = "font-size: 20px;">Delete</p></button>
-						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
+						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
+						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "deletePoint()"><p style = "font-size: 20px;">Delete</p></button>
+						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
 						<div class="row">
@@ -689,45 +690,38 @@
 			$('#success').css("opacity", 1);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#fail').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 1);
 			$('#noattempt').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#noattempt').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 1);
-		});
-		
+	});		
 	$('#1').on("click", function(){
 			$('#1').css("opacity", 1);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#2').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 1);
 			$('#3').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#3').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 1);
-		});
-	$('.marker').on("click", function(){
-			$('.marker').css("opacity", 1);
-			$('.eraser').css("opacity", 0.3);
-		});
-	$('.eraser').on("click", function(){
-			$('.eraser').css("opacity", 1);
-			$('.marker').css("opacity", 0.3);
-		});
+	});
+	$(".marker").on("click", function(){
+		$(".eraser").css("opacity", "0.3");
+	});
+	$(".eraser").on("click", function(){
+		$(".eraser").css("opacity", "1");
+	});
 	$(".dropDown").on("click", function(){
 		$(".percent").css("display", "block");
 	});
@@ -998,6 +992,12 @@
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
 	});
+	/*$("#eraserTool").on("click", function(){
+		//$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+		//$("canvas:nth-child(2)").css("display", "inherit");
+		//$("canvas:nth-child(1)").css("display", "none");
+		$("#tools_sketch").replaceWith("<canvas id='tools_sketch' class = 'ratat' width= '320px' height= '350px' style = 'background: url(RedTeam.png); background-size: contain;'></canvas>");
+	});*/
 	$('.miss').on("click", function(){
 		size = $(this).attr('id').substring(4);
 		i--;
@@ -1143,4 +1143,3 @@
       });
   });
   </script>
-
