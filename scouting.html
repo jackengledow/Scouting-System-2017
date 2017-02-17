@@ -462,14 +462,17 @@
 							<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot.</p>
 
 							<div style = "margin-left: 0px; padding-left: 10px;">
-							<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "RedTeam.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
-							<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; display: none; position: relative;" src = "BlueTeam.png"><div style = "display: inline-block" id = "fieldPicDiv2"></div>
-							<div id = "shotTab" style = "display: inline-block; vertical-align:top"><button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button><br></div>
+								<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "RedTeam.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
+								<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; display: none; position: relative;" src = "BlueTeam.png"><div style = "display: inline-block" id = "fieldPicDiv2"></div>
+								<div id = "shotTab" style = "display: inline-block; vertical-align:top; width: 56px;">
+									<button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button>
+									<br>
+								</div>
 							</div>
 							<p id="demo"></p>
 						</center>
 						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
-						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Delete</p></button>
+						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "deletePoint()"><p style = "font-size: 20px;">Delete</p></button>
 						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
@@ -537,17 +540,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
+										<button type = "button" id = "make20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button type = "button" id = "make15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button type = "button" id = "make10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -561,17 +564,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
+										<button type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -715,6 +718,7 @@
 	var count = 1;
 	var top = 0;
 	var left = 0;
+	var buttonSize = 0;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -725,7 +729,6 @@
 				opacity = 1;
 			}
 		});
-		
 	$('#Big').on("click", function(){
 			$('#Big').css("opacity", 1);
 			$('#Medium').css("opacity", 0.3);
@@ -824,11 +827,19 @@
 	});
 	
 	$(".shotChart").on("click", function(){
+		id = $(this).attr('id');
 		$("#popup").css("display", "none");
-		$("#shotTab").append("<button type = 'button' style = 'height:25px; padding-top: 0px;border-radius: 2px;'>"+(i-1)+"</button><br>");
-		
-	});
-	
+		$("#shotTab").append("<button type = 'button' id = 'button"+(i-1)+"' class = 'buttonList' style = 'height:25px; padding-top: 0px;border-radius: 2px;' onclick = 'changeColors(this.id)'>"+(i-1)+"</button><br>");
+		buttonSize++; 
+		if(id.substring(0,4) == "make"){
+			$('#button'+(i-1)+"").css("background-color", "#9eff9b");
+			$('#button'+(i-1)+"").css("border", "2px solid green");
+		}
+		if(id.substring(0,4) == "miss"){
+			$('#button'+(i-1)+"").css("background-color", "#ff9b9b");
+			$('#button'+(i-1)+"").css("border", "2px solid red");
+		}
+	});	
 	$("#blueButton").on("click", function(){
 		$(".redPic").css("display", "none");
 		$(".bluePic").css("display", "block");
@@ -858,7 +869,6 @@
 	});
 	
 	$('#fieldPicDiv').on("click", function(ev){
-		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -879,7 +889,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
@@ -901,7 +910,6 @@
     });
 	
 	$('#fieldPicDiv2').on("click", function(ev){
-		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -921,7 +929,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
@@ -963,7 +970,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -1004,7 +1010,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -1034,7 +1039,7 @@
 		undo();
 	});
 	$('.madeShot').on("click", function(){
-		size = $(this).attr('id');
+		size = $(this).attr('id').substring(4);;
 		i--;
 		$('#shot' + i).css("background", "#0F0");
 		$('#shot' + i).css("height", size);
@@ -1044,7 +1049,7 @@
 		i++;
 	});
 	$('.miss').on("click", function(){
-		size = $(this).attr('id');
+		size = $(this).attr('id').substring(4);
 		i--;
 		$('#shot' +i).css("background", "red");
 		$('#shot' + i).css("height", size);
