@@ -55,12 +55,11 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="margin" for="climb"><h3>Climb</h3></label>
-				<select style="width: 350px;" class="form-control" id="driveTrainSelect">
-					<option></option>
-					<option>Yes</option>
-					<option>No</option>
-				</select>
+				<label class="margin" for="climb"><h3>Can Climb</h3></label><br>
+					<form action="">
+						<input type="radio" name="balls" value="human">Yes<br>
+						<input type="radio" name="balls" value="hopper">No<br>
+					</form>
 			</div>
 			
 			<div class="form-group">
@@ -75,16 +74,18 @@
 				<label class="margin" for="location"><h3>Where is the score location?</h3></label>
 					<form action="">
 						Gears: <br>
-						<input style="width: 375px;" type="text" name="gears" alt="set location"><br>
+						<input type="radio" name="gears" alt="set location">Yes
+						<input type="radio" name="gears" alt="set location">No
 						Balls (fuel): <br>
-						<input style="width: 375px;" type="text" name="balls" alt="set location"><br>
+						<input type="radio" name="balls" alt="set location">High
+						<input type="radio" name="balls" alt="set location">Low
+						<input type="radio" name="balls" alt="set location">Both
 					</form>
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="cycle"><h3>Gear cycles</h3></label>
 					<form action="">
-						
 						<input type="text" name="gears" alt="set location"><br>
 					</form>
 			</div>
