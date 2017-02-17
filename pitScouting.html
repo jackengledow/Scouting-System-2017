@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" href = "tab_stuff.css">
+		<script src = "jquery-3.1.1.min.js"></script>
+		<meta charset="utf-8">
+		<title>Scouting System</title>
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<script src="scouting.js"></script>
+		<script src="js/jquery.form-validator.js"></script>
+		<script src="js/validate.js"></script>
+		<style>
+			.margin {
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+			.radio {
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+		</style>
+	</head>
+	<body style = "filter: grayscale(0%);">
+		<form action="sql.php" method="post">
+			<div class ="pit" style="margin-left: 20px; position: ">
+				<label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
+				<input type = "text" id="teamNumber" style="margin-top: 9px; width:75px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+			</div>
+				<br><br>
+			<div class="form-group">
+				<label class="margin" for="driveTrain"><h3>Set Current Competition</h3></label>
+				<select style="width: 350px;" class="form-control" id="driveTrainSelect">
+					<option> </option>
+					<option>Swerve</option>
+					<option>Holonomic</option>
+					<option>H drive</option>
+					<option>6 Wheel Tank</option>
+					<option>8 Wheel Tank</option>
+					<option>Mecanum</option>
+					<option>Omni</option>
+					<option>Triangular</option>
+					<option>Octal</option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label class="margin" for="focus"><h3>Focus</h3></label>
+				<select style="width: 350px;" class="form-control" id="driveTrainSelect">
+					<option></option>
+					<option>Gear</option>
+					<option>Ball</option>
+					<option>Both</option>
+					<option>Deffense</option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label class="margin" for="climb"><h3>Climb</h3></label>
+				<select style="width: 350px;" class="form-control" id="driveTrainSelect">
+					<option></option>
+					<option>Yes</option>
+					<option>No</option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label class="margin" for="balls"><h3>Where do they get balls (fuel)?</h3></label> <br>
+					<form action="">
+						<input type="checkbox" name="balls" value="human"> Human Player<br>
+						<input type="checkbox" name="balls" value="hopper"> Hopper<br>
+					</form>
+			</div>
+			
+			<div class="form-group">
+				<label class="margin" for="location"><h3>Where is the score location?</h3></label>
+					<form action="">
+						Gears: <br>
+						<input style="width: 375px;" type="text" name="gears" alt="set location"><br>
+						Balls (fuel): <br>
+						<input style="width: 375px;" type="text" name="balls" alt="set location"><br>
+					</form>
+			</div>
+			
+			<div class="form-group">
+				<label class="margin" for="cycle"><h3>Gear cycles</h3></label>
+					<form action="">
+						
+						<input type="text" name="gears" alt="set location"><br>
+					</form>
+			</div>
+			
+			<div class="form-group">
+				<label class="margin" for="score"><h3>Fuel scored per match?</h3></label>
+					<form action="">
+						
+						<input type="text" name="score" alt="set location"><br>
+					</form>
+			</div>
+		</form>
+	</body>
+</html>
+
+
+
+
+
+

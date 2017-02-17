@@ -17,7 +17,7 @@
                 .addClass(conf.errorElementClass)
                 .removeClass('valid');
 
-            var $parent = $elem.parent();
+            var $parent = $elcem.parent();
             if($parent.hasClass("input-group"))
                 $parent = $parent.parent();
             
