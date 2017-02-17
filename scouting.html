@@ -11,93 +11,15 @@
 		<script src="scouting.js"></script>
 		<script src="js/jquery.form-validator.js"></script>
 		<script src="js/validate.js"></script>
-		<style>
-			.make{
-				margin-left: 15px;
-			}
-			.leftcorner{
-				border-radius:0px 0px 0px 5px;
-			}
-			.rightcorner{
-				border-radius:0px 0px 5px 0px;
-			}
-			.green{
-				background-color: #9eff9b;
-				border:2px solid green;
-			}
-			.lightgreen{
-				background-color: #b5f2b3;
-				border:2px solid green;
-			}
-			.darkgreen{
-				background-color: #40963d;
-				border:2px solid green;
-			}
-			.grey{
-				background-color: #C0C0C0;
-				border: 2px solid black;
-			}
-			.medgreen{
-				background-color: #89e088;
-				border:2px solid green;
-			}
-			.red{
-				background-color: #ff9b9b;
-				border:2px solid red;
-			}
-			.lightred{
-				background-color: #fcbdbd;
-				border: 2px solid red;
-			}
-			.darkred{
-				background-color: #e04545;
-				border: 2px solid red;
-			}
-			.yellowGreen {
-				background-color: #bfff80 !important;
-				border: 2px solid #80ff00 !important;
-			}
-			.orange{
-				background-color: #FFAD7F !important;
-				border:2px solid #ff6600 !important;
-			}
-			.miss{
-				margin-left: 15px;
-			}
-			.middle{
-				border:2px solid #d8d802;background-color: #ffff99;
-				margin-left: 15px;
-			}
-			.width{
-				width: 100%;
-			}
-			.button{
-				 position: absolute; right: 0px;
-				 text-align: center;
-				 paddin 	g-left: 0% !important;
-			}
-			.hi {
-				border-radius: 5px 0px 0px 5px;
-			}
-			.goodbye {
-				border-radius: 0px 5px 5px 0px;
-			}
-			.newSize {
-				font-size:
-			}
-			.checkboxDescription {
-				margin-left: 11px;
-			}
-		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
 	<form action="sql.php" method="post">
 	<div class = "everything">
 	   <div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
-          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
           <label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
-			<input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+			<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
             <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
