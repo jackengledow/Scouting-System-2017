@@ -54,6 +54,10 @@ var countTechnicals=function (change) {
 	document.getElementById("addTechnical").innerHTML = technicals;
 }
 
+var noSelect = function(){
+	console.log(buttonSize);
+	document.getElementById('shot'+(buttonSize+1)).remove();
+}
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
@@ -339,8 +343,24 @@ var deletePoint = function (){
 	console.log(idSelect);
 	for(i = parseInt(idSelect)+1; i<= buttonSize; i++){
 		document.getElementById('shot'+i).id = 'shot' + (parseInt(i)-1).toString();
+		document.getElementById('button'+(i-1)).style.backgroundColor = document.getElementById('button'+(i)).style.backgroundColor;
+		document.getElementById('button'+(i-1)).style.border = document.getElementById('button'+(i)).style.border;
+	}
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
 	}
 	document.getElementById('button'+buttonSize).remove();
+	gridCounter.splice(idSelect-1,1);
+	console.log(gridCounter);
+	buttonSize--;
+}
+var resetButtons = function(){
+	for(i = 1; i<buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	for(i = 1; i<buttonSize; i++){
+		document.getElementById('shot'+i).style.opacity = 0.4;
+	}
 }
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
@@ -351,6 +371,13 @@ var clickZone = function (makemiss, change){
 }
 var undo = function(){
 	gridCounter.pop();
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	document.getElementById('shot'+buttonSize).remove();
+	document.getElementById('button'+buttonSize).remove();
+	buttonSize--;
+	
 }
 var clearArray = function(){
 	console.log("function ran");
