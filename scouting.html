@@ -9,93 +9,17 @@
 		<title>Scouting System</title>
 		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<script src="scouting.js"></script>
-		<style>
-			.make{
-				margin-left: 15px;
-			}
-			.leftcorner{
-				border-radius:0px 0px 0px 5px;
-			}
-			.rightcorner{
-				border-radius:0px 0px 5px 0px;
-			}
-			.green{
-				background-color: #9eff9b;
-				border:2px solid green;
-			}
-			.lightgreen{
-				background-color: #b5f2b3;
-				border:2px solid green;
-			}
-			.darkgreen{
-				background-color: #40963d;
-				border:2px solid green;
-			}
-			.grey{
-				background-color: #C0C0C0;
-				border: 2px solid black;
-			}
-			.medgreen{
-				background-color: #89e088;
-				border:2px solid green;
-			}
-			.red{
-				background-color: #ff9b9b;
-				border:2px solid red;
-			}
-			.lightred{
-				background-color: #fcbdbd;
-				border: 2px solid red;
-			}
-			.darkred{
-				background-color: #e04545;
-				border: 2px solid red;
-			}
-			.yellowGreen {
-				background-color: #bfff80 !important;
-				border: 2px solid #80ff00 !important;
-			}
-			.orange{
-				background-color: #FFAD7F !important;
-				border:2px solid #ff6600 !important;
-			}
-			.miss{
-				margin-left: 15px;
-			}
-			.middle{
-				border:2px solid #d8d802;background-color: #ffff99;
-				margin-left: 15px;
-			}
-			.width{
-				width: 100%;
-			}
-			.button{
-				 position: absolute; right: 0px;
-				 text-align: center;
-				 paddin 	g-left: 0% !important;
-			}
-			.hi {
-				border-radius: 5px 0px 0px 5px;
-			}
-			.goodbye {
-				border-radius: 0px 5px 5px 0px;
-			}
-			.newSize {
-				font-size:
-			}
-			.checkboxDescription {
-				margin-left: 11px;
-			}
-		</style>
+		<script src="js/jquery.form-validator.js"></script>
+		<script src="js/validate.js"></script>
 	</head>
 	<body style = "filter: grayscale(0%);">
 	<form action="sql.php" method="post">
 	<div class = "everything">
 	   <div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
-          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;margin-right: 15px" name="match"/>
-          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px">Team Number:</label><br>
-            <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
+          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
+			<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
             <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
@@ -247,20 +171,21 @@
 								<img src="memes.jpg" style="width: 75px;">
 								<p>IT is better than Programing!</p>
 							</div>
+							
   							<div class="col-md-4">
-								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+								<canvas id="tools_sketch" class = "ratat" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
+									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
-								  $(function() {
+								$(function() {
 									$('#tools_sketch').sketch({defaultColor: "#ff0"});
 								  });
 								</script>
   							</div>
 							
-	
   							
 							<div class="col-md-6">
   								<div class="row">
@@ -712,6 +637,7 @@
 	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
+	rotate2 = 0;
 	var i  = 1;
 	var count = 1;
 	var top = 0;
@@ -861,16 +787,38 @@
 		if (rotate == 0){
 			$(".redPic").css("transform", "rotate(180deg)");
 			$(".bluePic").css("transform", "rotate(180deg)");
+			$(".ratat").css("transform", "rotate(180deg)");
 			rotate = 180;
 		}
 		else{
 			$(".redPic").css("transform", "rotate(0deg)");
 			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(0deg)");
 			rotate = 0;
 		}
 		
 	});
 	
+	$("#ratata").on("click", function(){
+		if (rotate === 0){
+			$(".redPic").css("transform", "rotate(180deg)");
+			$(".bluePic").css("transform", "rotate(180deg)");
+			$(".ratat").css("transform", "rotate(180deg)");
+			rotate = 180;
+		}
+		else{
+			$(".redPic").css("transform", "rotate(0deg)");
+			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(0deg)");
+			rotate = 0;
+		}
+	});
+	$("#blueButton").on("click", function(){
+		$("#tools_sketch").css("background-image", "url('BlueTeam.png')");
+	});
+	$("#redButton").on("click", function(){
+		$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+	});	
 	$('#fieldPicDiv').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282

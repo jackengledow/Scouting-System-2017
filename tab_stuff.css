@@ -1,3 +1,79 @@
+.make{
+	margin-left: 15px;
+}
+.leftcorner{
+	border-radius:0px 0px 0px 5px;
+}
+.rightcorner{
+	border-radius:0px 0px 5px 0px;
+}
+.green{
+	background-color: #9eff9b;
+	border:2px solid green;
+}
+.lightgreen{
+	background-color: #b5f2b3;
+	border:2px solid green;
+}
+.darkgreen{
+	background-color: #40963d;
+	border:2px solid green;
+}
+.grey{
+	background-color: #C0C0C0;
+	border: 2px solid black;
+}
+.medgreen{
+	background-color: #89e088;
+	border:2px solid green;
+}
+.red{
+	background-color: #ff9b9b;
+	border:2px solid red;
+}
+.lightred{
+	background-color: #fcbdbd;
+	border: 2px solid red;
+}
+.darkred{
+	background-color: #e04545;
+	border: 2px solid red;
+}
+.yellowGreen {
+	background-color: #bfff80 !important;
+	border: 2px solid #80ff00 !important;
+}
+.orange{
+	background-color: #FFAD7F !important;
+	border:2px solid #ff6600 !important;
+}
+.miss{
+	margin-left: 15px;
+}
+.middle{
+	border:2px solid #d8d802;background-color: #ffff99;
+	margin-left: 15px;
+}
+.width{
+	width: 100%;
+}
+.button{
+	 position: absolute; right: 0px;
+	 text-align: center;
+	 paddin 	g-left: 0% !important;
+}
+.hi {
+	border-radius: 5px 0px 0px 5px;
+}
+.goodbye {
+	border-radius: 0px 5px 5px 0px;
+}
+.newSize {
+	font-size:
+}
+.checkboxDescription {
+	margin-left: 11px;
+}
 body {
   margin-top: 15px;
 }
@@ -46,7 +122,9 @@ button {
 	z-index: 0;
 	opacity: 1;
 }
-
+.tools {
+	height: 50px !important;
+}
 
 #middleSpace{
 	margin-left: 75px;
@@ -273,7 +351,14 @@ li.active a, li.active a:hover {
   height: 34px;
   margin-top: 15px;
   text-align: middle;
-
+}
+.pit{
+	  display: flex;
+  margin-left: 575px;
+  height: 34px;
+  margin-top: 15px;
+  text-align: middle;
+}
 .input {
 	margin-bottom: 10px;
 }
@@ -333,4 +418,8 @@ li.active a, li.active a:hover {
   background: #eee;
   border: 1px solid #e7e7e7;
   padding: 5px;
+}
+.form-group {
+	margin-left: 15px;
+	margin-right: 15px;
 }

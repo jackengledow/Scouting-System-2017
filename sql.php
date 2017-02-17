@@ -5,7 +5,7 @@
 		<title>SQL</title>
 	</head>
 	<body>
-		<center><h2>Successfully Submitted</h2></center>
+		<center><h2 style= "font-family: Comic Sans MS;">Successfully Submitted</h2></center>
 		<?php
 			$match = $_POST['match'];
 			$teamNum = $_POST['teamNum'];
@@ -14,8 +14,6 @@
 			$baseline = $_POST['baseline'];
 			$autongears = $_POST['autongears'];
 			$autonhigh = $_POST['autonhigh'];
-			
-			<h2>submitted</h2>
 
 			echo "$match\n";
 			echo "$teamNum\n";

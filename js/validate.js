@@ -3,7 +3,7 @@ $.validate({
     errorMessagePosition: 'top', // Instead of 'element' which is default
 	addValidClassOnAll: true,
 	validateOnBlur: false,
-	scrollToTopOnError: true, // Set this property to true if you have a long form
+	scrollToTopOnError: false, // Set this property to true if you have a long form
     onError: function() {
 		$('.sideDiv').affix({
 			offset: {
