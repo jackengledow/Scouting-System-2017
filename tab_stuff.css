@@ -122,7 +122,9 @@ button {
 	z-index: 0;
 	opacity: 1;
 }
-
+.tools {
+	height: 50px !important;
+}
 
 #middleSpace{
 	margin-left: 75px;
