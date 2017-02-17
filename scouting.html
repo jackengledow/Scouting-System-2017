@@ -247,11 +247,13 @@
 								<img src="memes.jpg" style="width: 75px;">
 								<p>IT is better than Programing!</p>
 							</div>
+							
   							<div class="col-md-4">
-								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+								<canvas id="tools_sketch" class = "ratat" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
 									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
+									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
 								  $(function() {
@@ -260,7 +262,6 @@
 								</script>
   							</div>
 							
-	
   							
 							<div class="col-md-6">
   								<div class="row">
@@ -712,6 +713,7 @@
 	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
+	rotate2 = 0;
 	var i  = 1;
 	var count = 1;
 	var top = 0;
@@ -865,7 +867,23 @@
 		}
 		
 	});
-	
+	$("#ratata").on("click", function(){
+		if (rotate === 0){
+			$(".redPic").css("transform", "rotate(0deg)");
+			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(180deg)");
+			rotate = 180;
+		}
+		else{
+			$(".redPic").css("transform", "rotate(0deg)");
+			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(0deg)");
+			rotate = 0;
+		}
+	});
+	$("#blueButton").on("click", function(){
+		$("#tools_sketch").css("background-image", "url('BlueTeam.png')");
+	});
 	$('#fieldPicDiv').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282
