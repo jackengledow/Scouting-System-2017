@@ -858,19 +858,22 @@
 		if (rotate == 0){
 			$(".redPic").css("transform", "rotate(180deg)");
 			$(".bluePic").css("transform", "rotate(180deg)");
+			$(".ratat").css("transform", "rotate(180deg)");
 			rotate = 180;
 		}
 		else{
 			$(".redPic").css("transform", "rotate(0deg)");
 			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(0deg)");
 			rotate = 0;
 		}
 		
 	});
+	
 	$("#ratata").on("click", function(){
 		if (rotate === 0){
-			$(".redPic").css("transform", "rotate(0deg)");
-			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".redPic").css("transform", "rotate(180deg)");
+			$(".bluePic").css("transform", "rotate(180deg)");
 			$(".ratat").css("transform", "rotate(180deg)");
 			rotate = 180;
 		}
@@ -884,6 +887,9 @@
 	$("#blueButton").on("click", function(){
 		$("#tools_sketch").css("background-image", "url('BlueTeam.png')");
 	});
+	$("#redButton").on("click", function(){
+		$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+	});	
 	$('#fieldPicDiv').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282
