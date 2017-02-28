@@ -34,6 +34,8 @@ var clickBigTeleop = false;
 var pathTracer = [];
 var pathCount = 0;
 var index = 0;
+var buttonSize = 0;
+var idSelect = 0;
 
 var countFouls=function (change) {
 	fouls+=change;
@@ -52,6 +54,10 @@ var countTechnicals=function (change) {
 	document.getElementById("addTechnical").innerHTML = technicals;
 }
 
+var noSelect = function(){
+	console.log(buttonSize);
+	document.getElementById('shot'+(buttonSize+1)).remove();
+}
 
 var countHighMakeTeleop=function (change){
 	makeHighTeleop+=change;
@@ -85,8 +91,8 @@ var addGears=function (change){
 	if (totalGears<0){
 		totalGears = 0;
 	}
-	if(totalGears > 13) {
-		totalGears = 13;
+	if(totalGears > 18) {
+		totalGears = 18;
 	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
 
@@ -310,7 +316,52 @@ var setGridClickPos = function(x,y){
     };
 }
 */
+var incButtonSize = function(){
+	buttonSize++;
+	console.log(buttonSize + "buttonsize");
+}
+var changeColors = function (id){
+	id = id.substring(6);
+	idSelect = id;
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	for(i = 1; i<id; i++){
+		document.getElementById('button'+i).style.opacity = 0.3; 
+	}
+	for(i = parseInt(id)+1; i <= buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 0.3;
+	}
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('shot'+i).style.opacity = 0.4;
+	}
+	document.getElementById('shot'+id).style.opacity = 1;
+}
 
+var deletePoint = function (){
+	document.getElementById('shot'+idSelect).remove();
+	console.log(idSelect);
+	for(i = parseInt(idSelect)+1; i<= buttonSize; i++){
+		document.getElementById('shot'+i).id = 'shot' + (parseInt(i)-1).toString();
+		document.getElementById('button'+(i-1)).style.backgroundColor = document.getElementById('button'+(i)).style.backgroundColor;
+		document.getElementById('button'+(i-1)).style.border = document.getElementById('button'+(i)).style.border;
+	}
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	document.getElementById('button'+buttonSize).remove();
+	gridCounter.splice(idSelect-1,1);
+	console.log(gridCounter);
+	buttonSize--;
+}
+var resetButtons = function(){
+	for(i = 1; i<buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	for(i = 1; i<buttonSize; i++){
+		document.getElementById('shot'+i).style.opacity = 0.4;
+	}
+}
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
 	gridCounter[index] = mouse + ". Amount: " + change + ". MakeMiss: " + makemiss + ".";
@@ -318,7 +369,16 @@ var clickZone = function (makemiss, change){
 	console.log(gridCounter);
 	document.getElementById("jalensTag").innerHTML = gridCounter;
 }
-
+var undo = function(){
+	gridCounter.pop();
+	for(i = 1; i<=buttonSize; i++){
+		document.getElementById('button'+i).style.opacity = 1;
+	}
+	document.getElementById('shot'+buttonSize).remove();
+	document.getElementById('button'+buttonSize).remove();
+	buttonSize--;
+	
+}
 var clearArray = function(){
 	console.log("function ran");
 	var opaque = document.getElementById("something").style.opacity;
@@ -331,6 +391,7 @@ var clearArray = function(){
 		console.log("Error is something that this is");
 	}
 }
+
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;
@@ -496,7 +557,6 @@ var __slice = Array.prototype.slice;
 		else{
 			pathCount++;
 		}
-		//console.log(pathTracer);
         previous = event;
       }
       this.context.strokeStyle = action.color;

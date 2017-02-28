@@ -6,111 +6,144 @@
 		<link rel = "stylesheet" href = "tab_stuff.css">
 		<script src = "jquery-3.1.1.min.js"></script>
 		<meta charset="utf-8">
+		<title>Scouting System</title>
 		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 		<script src="scouting.js"></script>
-		<style>
-			.make{
-				margin-left: 15px;
-			}
-			.leftcorner{
-				border-radius:0px 0px 0px 5px;
-			}
-			.rightcorner{
-				border-radius:0px 0px 5px 0px;
-			}
-			.green{
-				background-color: #9eff9b;
-				border:2px solid green;
-			}
-			.lightgreen{
-				background-color: #b5f2b3;
-				border:2px solid green;
-			}
-			.darkgreen{
-				background-color: #40963d;
-				border:2px solid green;
-			}
-			.grey{
-				background-color: #C0C0C0;
-				border: 2px solid black;
-			}
-			.medgreen{
-				background-color: #89e088;
-				border:2px solid green;
-			}
-			.red{
-				background-color: #ff9b9b;
-				border:2px solid red;
-			}
-			.lightred{
-				background-color: #fcbdbd;
-				border: 2px solid red;
-			}
-			.darkred{
-				background-color: #e04545;
-				border: 2px solid red;
-			}
-			.yellowGreen {
-				background-color: #bfff80 !important;
-				border: 2px solid #80ff00 !important;
-			}
-			.orange{
-				background-color: #FFAD7F !important;
-				border:2px solid #ff6600 !important;
-			}
-			.miss{
-				margin-left: 15px;
-			}
-			.middle{
-				border:2px solid #d8d802;background-color: #ffff99;
-				margin-left: 15px;
-			}
-			.width{
-				width: 100%;
-			}
-			.button{
-				 position: absolute; right: 0px;
-				 text-align: center;
-				 paddin 	g-left: 0% !important;
-			}
-			.hi {
-				border-radius: 5px 0px 0px 5px;
-			}
-			.goodbye {
-				border-radius: 0px 5px 5px 0px;
-			}
-			.newSize {
-				font-size:
-			}
-			.checkboxDescription {
-				margin-left: 11px;
-			}
-		</style>
+		<script src="js/jquery.form-validator.js"></script>
+		<script src="js/validate.js"></script>
 	</head>
 	<body style = "filter: grayscale(0%);">
 	<form action="sql.php" method="post">
 	<div class = "everything">
-	   <div class ="teamInfo">
+	   <!--<div class ="teamInfo">
 	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
-          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;margin-right: 15px" name="match"/>
-          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px">Team Number:</label><br>
-            <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px;"/>
+          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
+			<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
             <p  style = "display: flex">
             <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
             <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
             <button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
             </p>
-         </div>
+         </div>-->
 		<div class="tabs">
 			<ul class="tab-links">
-				<li class="active"><a href="#tab1">Autonomous</a></li>
+				<li class="active"><a href="#tab0">Info</a></li>
+				<li><a href="#tab1">Auton</a></li>
 				<li><a href="#tab2">Teleop</a></li>
 				<li><a href="#tab3">Penalties</a></li>
 				<li><a href="#tab4">Final</a></li>
 			</ul>
 			
 			<div class="tab-content">
-				<div id="tab1" class="tab active">
+				
+				<div id="tab0" class="tab active">
+					<div class="container">
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Team Information</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class ="teamInfo">
+									<label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
+									<input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+									<label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
+									<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+									<p  style = "display: flex">
+									<label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
+									<button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
+									<button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
+									</p>
+									</div>
+								</div>
+							</div>
+						</div>
+							<br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Auton Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 left">
+									<p class="infoText">To show that a robot starts off with a ball or gear, click the respective check mark. To show the crossing of
+									the baseline or the scoring of a gear, also click their respective checkmark.</p>
+									<p class="infoText"> To trace the robot's path during the Auton period, click on the marker button and use your mouse to
+									show the path.  To erase a path, simply click the clear button and click again on the field map.</p>
+								</div>
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot makes a high goal during the Auton period, add how many balls they scored by the 
+									corresponding buttons.</p>
+									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially had in
+									it's position, then click the percentage of those balls actually made it into the goal.</p>
+								</div>
+							</div>
+						</div>
+							<br><br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Teleop Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 left">
+									<p class="infoText">If the robot was disabled, can collect balls, use a hobber or collect gears, mark so 
+									on their checkbox.</p>
+									<p class="infoText">Mark how fast the robot was, (1) being slow and (3) being fast.  click to add the gears 
+									scored by the robot during the match. Also mark if the robot was able to climb at the end.</p>
+								</div>
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially
+									had in it's posetion, then click the percentage of those balls actually made it into the goal.</p>
+									<p class="infoTextR">If the robot scores a high goal during the match, click the position on the field, then
+									click the corresponding button to show how many balls were scored.</p>
+								
+								</div>
+							</div>
+						</div>
+							<br><br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Penalties Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 left">
+									<p class="infoText">If a robot commits any fouls or technicals, add the amount of each penalty to the
+									respective group</p>
+								</div>
+								<div class="col-md-6 right">
+									<p class="infoTextR">If a robot gets a red or yellow card, or is ejected from the match, mark it on the 
+									corresponding checkbox.</p>
+								
+								</div>
+							</div>
+						</div>
+							<br><br>
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Final Instructions:</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p class="infoText"><center>On the Final tab, add any additonal notes or just any usefull data you collected 
+									while scouting.  Also, once you are done with everything, submit your scout form.</center></p>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div id="tab1" class="tab">
 					<div class="container" style="margin-top:15px;">
 						<div class="container top">
 							<div class="row">
@@ -152,6 +185,7 @@
   					<div class="container">
 						<br><br>
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
+
 						<div class="row">
 							<!--<div class="col-md-12">
 								<p align = "center" styler="font-size:18px"><strong>Instructions:</strong></p>
@@ -160,6 +194,7 @@
 								</ol>
 							</div>-->
 						</div>
+
 						
   						<div class="row">
 							
@@ -167,20 +202,22 @@
 								<img src="memes.jpg" style="width: 75px;">
 								<p>IT is better than Programing!</p>
 							</div>
+							
   							<div class="col-md-4">
-								<canvas id="tools_sketch" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+								<canvas id="tools_sketch" class = "ratat" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain;"></canvas>
+								<!--<canvas id="tools_sketch" class = "ratat1" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain; display:none"></canvas>-->
 								<div class="tools">
-									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 195px;" data-tool="eraser" ><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button type = "button" class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
+									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; padding-top: 4px; color: black; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
-								  $(function() {
+								$(function() {
 									$('#tools_sketch').sketch({defaultColor: "#ff0"});
-								  });
+								});
 								</script>
   							</div>
 							
-	
   							
 							<div class="col-md-6">
   								<div class="row">
@@ -374,18 +411,24 @@
 					</div>
 
 					<div class="col-md-6" style = "margin-top: 80px;">
+							
 						<center>
-							<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot. Then click the amount of fuel made or the amount of fuel missed. If you want to delete a point, click the corresponding number on the right side and click delete. Undo erases the last point.</p>
+
+							<p style = "font-size: 17px;"><strong>Instructions:</strong> Click the location of an attempted High-Goal shot.</p>
+
 							<div style = "margin-left: 0px; padding-left: 10px;">
-							<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "RedTeam.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
-							<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; display: none; position: relative;" src = "BlueTeam.png"><div style = "display: inline-block" id = "fieldPicDiv2"></div>
-							<div id = "shotTab" style = "display: inline-block; vertical-align:top"><button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button><br></div>
+								<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "RedTeam.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
+								<img class = "bluePic clickGrid" id = "fieldpic2" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; display: none; position: relative;" src = "BlueTeam.png"><div style = "display: inline-block" id = "fieldPicDiv2"></div>
+								<div id = "shotTab" style = "display: inline-block; vertical-align:top; width: 20px;">
+									<button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button>
+									<br>
+								</div>
 							</div>
 							<p id="demo"></p>
 						</center>
-						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
-						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Delete</p></button>
-						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
+						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
+						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "deletePoint()"><p style = "font-size: 20px;">Delete</p></button>
+						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
 						<div class="row">
@@ -452,17 +495,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10)">
+										<button type = "button" id = "make20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5)">
+										<button type = "button" id = "make15" class = "deleter make makeshot medgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(5), clickZone('Make', 5), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1)">
+										<button type = "button" id = "make10" class = "deleter make makeshot rightcorner lightgreen width button shotChart madeShot" onclick = "countHighMakeTeleop(1), clickZone('Make', 1), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -476,17 +519,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10)">
+										<button type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5)">
+										<button type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1)">
+										<button type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -590,7 +633,7 @@
 				</div>
 				<center>
 				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" class="make makeshot width grey button rightcorner shotChart" value="Submit" type="submit">
-					<p style="font-size: 35px; padding-top: 5px;" >Submit</p>
+					<p style="font-size: 35px; padding-top: 5px;">Submit</p>
 				</button>
 				<!--<br>
 				<div>
@@ -626,10 +669,12 @@
 	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
+	rotate2 = 0;
 	var i  = 1;
 	var count = 1;
 	var top = 0;
 	var left = 0;
+	var buttonSize = 0;
 	$('.clickable').on("click", function(){
 			if(opacity==1){
 				$(this).css("opacity", 0.25);
@@ -640,7 +685,6 @@
 				opacity = 1;
 			}
 		});
-		
 	$('#Big').on("click", function(){
 			$('#Big').css("opacity", 1);
 			$('#Medium').css("opacity", 0.3);
@@ -677,45 +721,38 @@
 			$('#success').css("opacity", 1);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#fail').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 1);
 			$('#noattempt').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#noattempt').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 1);
-		});
-		
+	});		
 	$('#1').on("click", function(){
 			$('#1').css("opacity", 1);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#2').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 1);
 			$('#3').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#3').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 1);
-		});
-	$('.marker').on("click", function(){
-			$('.marker').css("opacity", 1);
-			$('.eraser').css("opacity", 0.3);
-		});
-	$('.eraser').on("click", function(){
-			$('.eraser').css("opacity", 1);
-			$('.marker').css("opacity", 0.3);
-		});
+	});
+	$(".marker").on("click", function(){
+		$(".eraser").css("opacity", "0.3");
+	});
+	$(".eraser").on("click", function(){
+		$(".eraser").css("opacity", "1");
+	});
 	$(".dropDown").on("click", function(){
 		$(".percent").css("display", "block");
 	});
@@ -738,12 +775,25 @@
 		$("#popup").css("display", "block");
 	});
 	
-	$(".shotChart").on("click", function(){
-		$("#popup").css("display", "none");
-		$("#shotTab").append("<button type = 'button' style = 'height:25px; padding-top: 0px;border-radius: 2px;'>"+(i-1)+"</button><br>");
-		
+	$("#delete").on("click", function(){
+		i--;
+		buttonSize--;
 	});
 	
+	$(".shotChart").on("click", function(){
+		id = $(this).attr('id');
+		$("#popup").css("display", "none");
+		$("#shotTab").append("<button type = 'button' id = 'button"+(i-1)+"' class = 'buttonList' style = 'height:25px; padding-top: 0px;border-radius: 2px;' onclick = 'changeColors(this.id), noSelect()'>"+(i-1)+"</button>");
+		buttonSize++;
+		if(id.substring(0,4) == "make"){
+			$('#button'+(i-1)+"").css("background-color", "#9eff9b");
+			$('#button'+(i-1)+"").css("border", "2px solid green");
+		}
+		if(id.substring(0,4) == "miss"){
+			$('#button'+(i-1)+"").css("background-color", "#ff9b9b");
+			$('#button'+(i-1)+"").css("border", "2px solid red");
+		}
+	});
 	$("#blueButton").on("click", function(){
 		$(".redPic").css("display", "none");
 		$(".bluePic").css("display", "block");
@@ -762,18 +812,39 @@
 		if (rotate == 0){
 			$(".redPic").css("transform", "rotate(180deg)");
 			$(".bluePic").css("transform", "rotate(180deg)");
+			$(".ratat").css("transform", "rotate(180deg)");
 			rotate = 180;
 		}
 		else{
 			$(".redPic").css("transform", "rotate(0deg)");
 			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(0deg)");
 			rotate = 0;
 		}
 		
 	});
 	
+	$("#ratata").on("click", function(){
+		if (rotate === 0){
+			$(".redPic").css("transform", "rotate(180deg)");
+			$(".bluePic").css("transform", "rotate(180deg)");
+			$(".ratat").css("transform", "rotate(180deg)");
+			rotate = 180;
+		}
+		else{
+			$(".redPic").css("transform", "rotate(0deg)");
+			$(".bluePic").css("transform", "rotate(0deg)");
+			$(".ratat").css("transform", "rotate(0deg)");
+			rotate = 0;
+		}
+	});
+	$("#blueButton").on("click", function(){
+		$("#tools_sketch").css("background-image", "url('BlueTeam.png')");
+	});
+	$("#redButton").on("click", function(){
+		$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+	});	
 	$('#fieldPicDiv').on("click", function(ev){
-		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -794,7 +865,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
@@ -816,7 +886,6 @@
     });
 	
 	$('#fieldPicDiv2').on("click", function(ev){
-		console.log("yeah");
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -836,7 +905,6 @@
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
@@ -871,14 +939,13 @@
 				height: '10px',
 				background: '#FFF',
 				'border-radius': '100%',
-				opacity: 0.5
+				opacity: 0.4
 			}) 
 		);
 		i++;
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -892,7 +959,7 @@
 				height: '10px',
 				background: '#FFF',
 				'border-radius': '100%',
-				opacity: 0.5
+				opacity: 0.4
 			}) 
 			);
 			i++;
@@ -912,14 +979,13 @@
 				height: '10px',
 				background: '#FFF',
 				'border-radius': '100%',
-				opacity: 0.5
+				opacity: 0.4
 			}) 
 		);
 		i++;
 		count++;
 		}
 		else{
-			console.log("deleting");
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
@@ -933,7 +999,7 @@
 				height: '10px',
 				background: '#FFF',
 				'border-radius': '100%',
-				opacity: 0.5
+				opacity: 0.4
 			}) 
 			);
 			i++;
@@ -945,10 +1011,10 @@
 	$('#undo').on("click", function(){
 		i--;
 		count = 1;
-		$('#shot' + i).remove();
+		undo();
 	});
 	$('.madeShot').on("click", function(){
-		size = $(this).attr('id');
+		size = $(this).attr('id').substring(4);;
 		i--;
 		$('#shot' + i).css("background", "#0F0");
 		$('#shot' + i).css("height", size);
@@ -957,8 +1023,14 @@
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
 	});
+	/*$("#eraserTool").on("click", function(){
+		//$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+		//$("canvas:nth-child(2)").css("display", "inherit");
+		//$("canvas:nth-child(1)").css("display", "none");
+		$("#tools_sketch").replaceWith("<canvas id='tools_sketch' class = 'ratat' width= '320px' height= '350px' style = 'background: url(RedTeam.png); background-size: contain;'></canvas>");
+	});*/
 	$('.miss').on("click", function(){
-		size = $(this).attr('id');
+		size = $(this).attr('id').substring(4);
 		i--;
 		$('#shot' +i).css("background", "red");
 		$('#shot' + i).css("height", size);
@@ -1102,4 +1174,3 @@
       });
   });
   </script>
-

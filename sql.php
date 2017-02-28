@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta http-equiv = "refresh" content = "1.5; url = scouting.html">
 		<title>SQL</title>
 	</head>
 	<body>
+		<center><h2 style= "font-family: Comic Sans MS;">Successfully Submitted</h2></center>
 		<?php
 			$match = $_POST['match'];
 			$teamNum = $_POST['teamNum'];
