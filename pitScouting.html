@@ -38,6 +38,7 @@
 	</head>
 	<body style = "filter: grayscale(0%);">
 		<form action="sql.php" method="post">
+		<a class = "back" style="background-color:#cccccc; border:3px solid black;" href="index.html">Back</a>
 			<div class ="pit" style="margin-left: 20px; position: ">
 				<label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
 				<input type = "number" id="teamNumber" style="margin-top: 9px; width:75px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
@@ -55,18 +56,17 @@
 					<option>Omni</option>
 					<option>Triangular</option>
 					<option>Octal</option>
+					<option>Other</option>
 				</select>
 			</div>
 			
 			<div class="form-group">
-				<label class="margin" for="focus"><h3>Focus</h3></label>
-				<select style="width: 350px;" class="form-control" id="driveTrainSelect">
-					<option>Select Team's Focus</option>
-					<option>Gear</option>
-					<option>Ball</option>
-					<option>Both</option>
-					<option>Deffense</option>
-				</select>
+				<label class="margin" for="focus"><h3>Focus</h3></label> <br>
+					<form action="">
+						<input type="checkbox" name="balls" value="human" class = "input"> Gear<br>
+						<input type="checkbox" name="balls" value="hopper" class = "input"> Ball<br>
+						<input type="checkbox" name="balls" value="hopper" class = "input"> Defense<br>
+					</form>
 			</div>
 			
 			<div class="form-group">
@@ -90,7 +90,7 @@
 					<form action="">
 						<h4>Gears:</h4>
 						<input type="radio" name="gears" alt="set location" class = "input">Yes
-						<input type="radio" name="gears" alt="set location" class = "input">No<br>
+						<input type="radio" name="gears" alt="set location" class = "input">No<br><br>
 						<h4>Balls (fuel):</h4>
 						<input type="radio" name="balls" alt="set location" class = "input">High
 						<input type="radio" name="balls" alt="set location" class = "input">Low
