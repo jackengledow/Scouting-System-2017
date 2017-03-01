@@ -1,6 +1,6 @@
-var autonNotes = $("#auton-notes");
-var teleopNotes = $("#teleop-notes");
-var issuesNotes = $("#issues-notes");
+var autonNotes = $("#text-area");
+/*var teleopNotes = $("#teleop-notes");
+var issuesNotes = $("#issues-notes");*/
 
 var notesSelect = $("#notes-team");
 var notesMatchList = $("#match-list");
@@ -32,8 +32,8 @@ function updateNotesViewer() {
 				$("#notes-content > .panel > .panel-body").empty();
 
 				autonNotes.find(".panel-body").append($("<p>").text(rec.autonNotes));
-				teleopNotes.find(".panel-body").append($("<p>").text(rec.teleopNotes));
-				issuesNotes.find(".panel-body").append($("<p>").text(rec.robotNotes));
+				/*teleopNotes.find(".panel-body").append($("<p>").text(rec.teleopNotes));
+				issuesNotes.find(".panel-body").append($("<p>").text(rec.robotNotes));*/
 			});
 
 			notesMatchList.append(button);

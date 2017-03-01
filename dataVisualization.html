@@ -12,8 +12,9 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/datatables.min.css">
 		<link rel="stylesheet" href="css/blueimp-gallery.min.css">
-		<link rel="stylesheet" href="css/2015.css">
+		<!--<link rel="stylesheet" href="css/2015.css">-->
 		<link rel="stylesheet" href="css/datavis.css">
+		<link rel="stylesheet" href="tab_stuff.css">
 		<script src="js/defenseOptom.js"></script>
 	</head>
 
@@ -32,12 +33,12 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="page-header">
+					<div class="page-header" style = "margin-top: 0px;">
 						<div class="back-arrow-container">
-							<a href="index.html" class="back-arrow">&larr;</a>
+							<a class = "backButton" style="background-color:#cccccc; border:3px solid black;" href="index.html">Back</a>
 							<h1>Data Visualization <small id="currentCompetitionStylishIndicator"></small></h1>
-							<label>Competition</label>
-							<select class="form-control" id="workingComp" onchange="separateData(this.value)"></select>
+							<!--<label>Competition</label>
+							<select class="form-control" id="workingComp" onchange="separateData(this.value)"></select>-->
 						</div>
 					</div>
 				</div>
@@ -106,14 +107,14 @@
 										<div class="panel-heading">Auton Notes</div>
 										<div class="panel-body"></div>
 									</div>
-									<div id="teleop-notes" class="panel panel-default">
+									<!--<div id="teleop-notes" class="panel panel-default">
 										<div class="panel-heading">Teleop Notes</div>
 										<div class="panel-body"></div>
 									</div>
 									<div id="issues-notes" class="panel panel-default">
 										<div class="panel-heading">Robot Issues</div>
 										<div class="panel-body"></div>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>

@@ -288,7 +288,6 @@ li.active a, li.active a:hover {
 	margin-left: 10px;
 }
 .form-control {
-	width: 75px ;
 	height: 45px ;
 }
 /*.iLikeCheck {
@@ -358,7 +357,7 @@ li.active a, li.active a:hover {
 	text-align: middle;
 	float: right;
 }
-.back {
+.backButton {
 	padding: 15px 25px;
     display: inline-block;
     border-radius: 5px 5px 5px 5px;
