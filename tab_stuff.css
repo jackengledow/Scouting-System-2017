@@ -368,6 +368,7 @@ li.active a, li.active a:hover {
     transition: all linear 0.15s;
 	float: right;
 	margin: 5px 30px;
+	text-decoration: none;
 }
 #back:hover {
 	color: black;
