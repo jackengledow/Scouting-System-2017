@@ -14,31 +14,46 @@
 	</head>
 	<body style = "filter: grayscale(0%);">
 	<form action="sql.php" method="post">
-	<div class = "everything">
-	   <div class ="teamInfo">
-	      <label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
-          <input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
-          <label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
-			<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
-            <p  style = "display: flex">
-            <label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
-            <button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
-            <button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
-            </p>
-         </div>
-		<div class="tabs">
-			<ul class="tab-links">
-				<li class="active"><a href="#tab0">Info</a></li>
-				<li><a href="#tab1">Auton</a></li>
-				<li><a href="#tab2">Teleop</a></li>
-				<li><a href="#tab3">Penalties</a></li>
-				<li><a href="#tab4">Final</a></li>
-			</ul>
-			
+		<div class = "everything">
+	
+			<div class="">
+				<div class="tabs">
+					<ul class="tab-links" style="margin-bottom: 5px;">
+						<li class="active"><a href="#tab0">Info</a></li>
+						<li><a href="#tab1">Auton</a></li>
+						<li><a href="#tab2">Teleop</a></li>
+						<li><a href="#tab3">Penalties</a></li>
+						<li><a href="#tab4">Final</a></li>
+						<a id="back" class= "backButton" style="background-color:#cccccc; margin-right: 25px;" href="./index.html">Back</a>
+					</ul>
+				</div>
+			</div>
 			<div class="tab-content">
 				
 				<div id="tab0" class="tab active">
 					<div class="container">
+						<div class="infoIns">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 style="font-size: 25px;text-decoration: underline;"><center><strong>Team Information</strong></center></h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class ="teamInfo">
+									<label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
+									<input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+									<label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
+									<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+									<p  style = "display: flex">
+									<label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
+									<button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
+									<button type="button" id ="blueButton" style = "padding-left: 15px; opacity: 0.3;">Blue</button>
+									</p>
+									</div>
+								</div>
+							</div>
+						</div>
 							<br>
 						<div class="infoIns">
 							<div class="row">
@@ -57,7 +72,7 @@
 									<p class="infoTextR">If a robot makes a high goal during the Auton period, add how many balls they scored by the 
 									corresponding buttons.</p>
 									<p class="infoTextR">If a robot socres points in the low goal, click the amount of balls that the robot initially had in
-									it's posetion, then click the percentage of those balls actually made it into the goal.</p>
+									it's position, then click the percentage of those balls actually made it into the goal.</p>
 								</div>
 							</div>
 						</div>
@@ -163,7 +178,16 @@
   					<div class="container">
 						<br><br>
 							<!-- <p><center><strong style = "font-size: 35px; text-decoration: underline">Fuel</strong></center></p> -->
-						
+
+						<div class="row">
+							<!--<div class="col-md-12">
+								<p align = "center" styler="font-size:18px"><strong>Instructions:</strong></p>
+								<ol align = "left" style = "font-size: 15px;">
+									<li>Use the map to trace the robot's path during the Auton period</li>
+								</ol>
+							</div>-->
+						</div>
+
 						
   						<div class="row">
 							
@@ -173,16 +197,20 @@
 							</div>
 							
   							<div class="col-md-4">
-								<canvas id="tools_sketch" class = "ratat" width="320px" height="350px" style="background: url(RedTeam.png); background-size: contain;"></canvas>				 
+								<canvas id="tools_sketch" class = "ratat" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain;"></canvas>
+								<!--<canvas id="tools_sketch" class = "ratat1" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain; display:none"></canvas>-->
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
 									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser"><button class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
 									<button type = "button" id = "ratata" class = "opacity" style="margin-left: 45px; margin-top: -10px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000;font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
+									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button type = "button" class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Clear</button></a>
+									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; padding-top: 4px; color: black; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
 								$(function() {
 									$('#tools_sketch').sketch({defaultColor: "#ff0"});
-								  });
+								});
 								</script>
   							</div>
 							
@@ -397,6 +425,9 @@
 						<button type = "button" id = "ratatas" class = "opacity" style="margin-left: 115px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000;font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "deletePoint()"><p style = "font-size: 20px;">Delete</p></button>
 						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
+						<button type = "button" id = "Rotate" class = "opacity" style = "margin-left: 115px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Rotate Field</p></button>
+						<button type = "button" id = "delete" class = "opacity" style = "margin-left: 42.5px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" onclick = "deletePoint()"><p style = "font-size: 20px;">Delete</p></button>
+						<button type = "button" id = "undo" class = "opacity" style = "margin-left: 42.5px; color: black; height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p style = "font-size: 20px;">Undo</p></button>
 					</div>
 					<div class="col-md-6" style = "margin-top: 80px; padding-left: 0px; padding-right: 75px;">
 						<div class="row">
@@ -629,11 +660,13 @@
 			}
 		</script>
 	</div>
+	</div>
 	</form>
   	</body>
 </html>
 
 <script>
+	var color = "red";
 	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
@@ -689,45 +722,38 @@
 			$('#success').css("opacity", 1);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#fail').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 1);
 			$('#noattempt').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#noattempt').on("click", function(){
 			$('#success').css("opacity", 0.3);
 			$('#fail').css("opacity", 0.3);
 			$('#noattempt').css("opacity", 1);
-		});
-		
+	});		
 	$('#1').on("click", function(){
 			$('#1').css("opacity", 1);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#2').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 1);
 			$('#3').css("opacity", 0.3);
-		});
-		
+	});		
 	$('#3').on("click", function(){
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 1);
-		});
-	$('.marker').on("click", function(){
-			$('.marker').css("opacity", 1);
-			$('.eraser').css("opacity", 0.3);
-		});
-	$('.eraser').on("click", function(){
-			$('.eraser').css("opacity", 1);
-			$('.marker').css("opacity", 0.3);
-		});
+	});
+	$(".marker").on("click", function(){
+		$(".eraser").css("opacity", "0.3");
+	});
+	$(".eraser").on("click", function(){
+		$(".eraser").css("opacity", "1");
+	});
 	$(".dropDown").on("click", function(){
 		$(".percent").css("display", "block");
 	});
@@ -829,9 +855,35 @@
 	});
 	$("#blueButton").on("click", function(){
 		$("#tools_sketch").css("background-image", "url('BlueTeam.png')");
+		color = "blue";
 	});
 	$("#redButton").on("click", function(){
 		$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+		color = "red";
+	});
+	
+	$("#ratata").on("click", function(){
+		if (rotate === 0){
+			if (color == "blue"){
+				$("canvas").css("background-image", "url(BlueTeamRotated.png");
+				console.log($("canvas").css("background-image"));
+				rotate = 180;
+			}
+			else{
+				$("canvas").css("background-image", "url(RedTeamRotate.png");
+				rotate = 180;
+			}
+		}
+		else {
+			if (color == "blue"){
+				$("canvas").css("background-image", "url(BlueTeam.png");
+				rotate = 0;
+			}
+			else{
+				$("canvas").css("background-image", "url(RedTeam.png");
+				rotate = 0;
+			}
+		}
 	});	
 	$('#fieldPicDiv').on("click", function(ev){
 		if(count<=1){
@@ -1012,6 +1064,12 @@
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
 	});
+	/*$("#eraserTool").on("click", function(){
+		//$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+		//$("canvas:nth-child(2)").css("display", "inherit");
+		//$("canvas:nth-child(1)").css("display", "none");
+		$("#tools_sketch").replaceWith("<canvas id='tools_sketch' class = 'ratat' width= '320px' height= '350px' style = 'background: url(RedTeam.png); background-size: contain;'></canvas>");
+	});*/
 	$('.miss').on("click", function(){
 		size = $(this).attr('id').substring(4);
 		i--;
@@ -1146,15 +1204,14 @@
       jQuery('.tabs .tab-links a').on('click', function(e)  {
           var currentAttrValue = jQuery(this).attr('href');
   
-          // Show/Hide Tabs
-          jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+          // Show/Hide Content
+          jQuery('.tab' + currentAttrValue).addClass('active').siblings().removeClass('active');
   
           // Change/remove current tab to active
           jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-  
+		  
           e.preventDefault();
   		
       });
   });
   </script>
-

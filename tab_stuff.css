@@ -288,7 +288,6 @@ li.active a, li.active a:hover {
 	margin-left: 10px;
 }
 .form-control {
-	width: 75px ;
 	height: 45px ;
 }
 /*.iLikeCheck {
@@ -346,11 +345,34 @@ li.active a, li.active a:hover {
 }
 .teamInfo {
   display: flex;
-  position: absolute;
-  margin-left: 575px;
-  height: 34px;
+  margin-left: 300px;
+  marign-right: 100px;
   margin-top: 15px;
   text-align: middle;
+}
+.teamInfo1 {
+	display: flex;
+	margin-left: 800px;
+	margin-top: 15px;
+	text-align: middle;
+	float: right;
+}
+.backButton {
+	padding:9px 15px;
+	display:inline-block;
+	border-radius	:5px 5px 5px 5px;
+	background:#7FB5DA;
+	font-size:16px;
+	font-weight:600;
+	color:#4c4c4c;
+	transition:all linear 0.15s;
+	float: right;
+	text-decoration: none;
+}
+#back:hover {
+	color: black;
+	text-decoration: none;
+	opacity: .8;
 }
 .pit{
 	  display: flex;
@@ -395,10 +417,8 @@ li.active a, li.active a:hover {
 	opacity: .1;
 }
 #Rotate {
-	height: 25px !important;
 	background-color: #ccc;
 	border-radius: 2px;
-	border: none;
 	font-weight: bold;
 }
 #blueButton:hover {
