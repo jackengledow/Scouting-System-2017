@@ -15,6 +15,7 @@
 	<body style = "filter: grayscale(0%);">
 	<form action="sql.php" method="post">
 		<div class = "everything">
+		<div class = "container">
 			<div class="row">
 				<div class="tabs">
 					<ul class="tab-links">
@@ -47,7 +48,7 @@
 									<p  style = "display: flex">
 									<label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
 									<button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
-									<button type="button" id ="blueButton" style = "padding-left: 15px">Blue</button>
+									<button type="button" id ="blueButton" style = "padding-left: 15px; opacity: 0.3;">Blue</button>
 									</p>
 									</div>
 								</div>
@@ -200,7 +201,7 @@
 								<!--<canvas id="tools_sketch" class = "ratat1" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain; display:none"></canvas>-->
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button type = "button" class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Eraser</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Clear</button></a>
 									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; padding-top: 4px; color: black; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
@@ -653,11 +654,13 @@
 			}
 		</script>
 	</div>
+	</div>
 	</form>
   	</body>
 </html>
 
 <script>
+	var color = "red";
 	$(document).ready(function() {
 	opacity = 1;
 	rotate = 0;
@@ -815,26 +818,37 @@
 		}
 		
 	});
-	
-	$("#ratata").on("click", function(){
-		if (rotate === 0){
-			$(".redPic").css("transform", "rotate(180deg)");
-			$(".bluePic").css("transform", "rotate(180deg)");
-			$(".ratat").css("transform", "rotate(180deg)");
-			rotate = 180;
-		}
-		else{
-			$(".redPic").css("transform", "rotate(0deg)");
-			$(".bluePic").css("transform", "rotate(0deg)");
-			$(".ratat").css("transform", "rotate(0deg)");
-			rotate = 0;
-		}
-	});
 	$("#blueButton").on("click", function(){
 		$("#tools_sketch").css("background-image", "url('BlueTeam.png')");
+		color = "blue";
 	});
 	$("#redButton").on("click", function(){
 		$("#tools_sketch").css("background-image", "url('RedTeam.png')");
+		color = "red";
+	});
+	
+	$("#ratata").on("click", function(){
+		if (rotate === 0){
+			if (color == "blue"){
+				$("canvas").css("background-image", "url(BlueTeamRotated.png");
+				console.log($("canvas").css("background-image"));
+				rotate = 180;
+			}
+			else{
+				$("canvas").css("background-image", "url(RedTeamRotate.png");
+				rotate = 180;
+			}
+		}
+		else {
+			if (color == "blue"){
+				$("canvas").css("background-image", "url(BlueTeam.png");
+				rotate = 0;
+			}
+			else{
+				$("canvas").css("background-image", "url(RedTeam.png");
+				rotate = 0;
+			}
+		}
 	});	
 	$('#fieldPicDiv').on("click", function(ev){
 		if(count<=1){
