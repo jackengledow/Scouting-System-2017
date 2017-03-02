@@ -19,7 +19,40 @@
 	</head>
 
 	<!-- Body -->
-
+	<!-- 
+		Auton:
+			Match Number
+			Team Number
+			Start With Balls
+			Start With Gear
+			Cross Baseline
+			Score the Gear
+		Teleop:
+			Speed
+			Disabled
+			Can Collect from Ground
+			Can Use a Hopper
+			Can Collect a Gear from the Ground
+			Auton Movement (canvas)
+			Auton High Goal Count/Accuracy
+			Auton Low Goal	Count/Accuracy
+			Auton Gears Scored
+			Teleop Gears Scored
+			Low Goal Count
+			Low Goal Accuracy
+			High Goal Count
+			High Goal Accuracy
+			Teleop Heat Map
+			Climb
+		Penalties:
+			Fouls
+			Technicals
+			Yellow Card
+			Red Card
+			Ejection
+		Notes:
+			Notes
+	-->
 	<body>
 		<div id="blueimp-gallery" class="blueimp-gallery">
 			<div class="slides"></div>
@@ -58,7 +91,39 @@
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="general-stats">
 							<div class="graph-content">
-								<div id="general-graph-list" class="graph-list"></div>
+								<!--Auton:
+								Match Number
+								Team Number
+								Start With Balls
+								Start With Gear
+								Cross Baseline
+								Score the Gear
+							Teleop:
+								Speed
+								Disabled
+								Can Collect from Ground
+								Can Use a Hopper
+								Can Collect a Gear from the Ground
+								Auton Movement (canvas)
+								Auton High Goal Count/Accuracy
+								Auton Low Goal	Count/Accuracy
+								Auton Gears Scored
+								Teleop Gears Scored
+								Low Goal Count
+								Low Goal Accuracy
+								High Goal Count
+								High Goal Accuracy
+								Teleop Heat Map
+								Climb
+							Penalties:
+								Fouls
+								Technicals
+								Yellow Card
+								Red Card
+								Ejection
+							Notes:
+								Notes-->
+								<!--<div id="general-graph-list" class="graph-list"></div>-->
 								<div class="graph-space"></div>
 							</div>
 						</div>
@@ -67,12 +132,71 @@
 								<button class="btn btn-default btn-lg" onclick="addTeamSelect()">Add Team</button>
 								<button id="remove-team" class="btn btn-default btn-lg" onclick="removeTeamSelect()">Remove Team</button>
 
-								<label class="btn btn-default btn-lg"><!--<input type="checkbox" id="separate-teams" onchange="updateCompareGraphs()">-->Separate Teams</label>
+								<!--<label class="btn btn-default btn-lg"><!--<input type="checkbox" id="separate-teams" onchange="updateCompareGraphs()">Separate Teams</label>-->
 							</div>
 							<div id="compare-teams"></div>
 							<hr>
-							<div class="graph-content">
-								<div id="compare-graph-list" class="graph-list"></div>
+							<div class="graph-content" style="display:block">
+								<!--<div id="compare-graph-list" class="graph-list"></div>-->
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Movement
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton High Goal
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Gears Scored
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Teleop Gears Scored
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Low Goal Count
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Low Goal Accuracy
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">High Goal Count
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">High Goal Accuracy
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Climb
+									</label>
+								</div>								
 								<div class="graph-space"></div>
 							</div>
 						</div>
