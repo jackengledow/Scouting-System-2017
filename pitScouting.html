@@ -1,5 +1,40 @@
 <!DOCTYPE html>
 <html>
+	<!--
+		Pit Scouting
+			Drive Train:
+				Swerve
+				Holonomic
+				H Drive
+				6 Wheel Tank
+				8 Wheel Tank
+				Mecanum
+				Omni
+				Triangular
+				Octal Other
+			Focus:
+				Gear
+				Ball
+				Other
+			Can Climb:
+				Yes 
+				No
+			Where Do They Get Fuel From?:
+				Human Player
+				Hopper
+			How Can They Score?:
+				Gear
+					Yes
+					No
+				Fuel
+					High
+					Low
+					Both
+			Number of Gear Cycles:
+				(Number)
+			Number of Fuel Scored Per Match:
+				(Number)
+			-->
 	<head>
 		<link rel = "stylesheet" href = "tab_stuff.css">
 		<script src = "jquery-3.1.1.min.js"></script>
@@ -64,7 +99,7 @@
 				<label class="margin" for="focus"><h3>Focus</h3></label> <br>
 					<form action="">
 						<input type="checkbox" name="balls" value="human" class = "input"> Gear<br>
-						<input type="checkbox" name="balls" value="hopper" class = "input"> Ball<br>
+						<input type="checkbox" name="balls" value="hopper" class = "input"> Fuel<br>
 						<input type="checkbox" name="balls" value="hopper" class = "input"> Defense<br>
 					</form>
 			</div>
@@ -78,7 +113,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="margin" for="balls"><h3>Where do they get balls (fuel)?</h3></label> <br>
+				<label class="margin" for="balls"><h3>Where do they get fuel?</h3></label> <br>
 					<form action="">
 						<input type="checkbox" name="balls" value="human" class = "input"> Human Player<br>
 						<input type="checkbox" name="balls" value="hopper" class = "input"> Hopper<br>
@@ -91,7 +126,7 @@
 						<h4>Gears:</h4>
 						<input type="radio" name="gears" alt="set location" class = "input">Yes
 						<input type="radio" name="gears" alt="set location" class = "input">No<br><br>
-						<h4>Balls (fuel):</h4>
+						<h4>Fuel:</h4>
 						<input type="radio" name="balls" alt="set location" class = "input">High
 						<input type="radio" name="balls" alt="set location" class = "input">Low
 						<input type="radio" name="balls" alt="set location" class = "input">Both
