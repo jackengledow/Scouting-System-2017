@@ -365,9 +365,6 @@ var resetButtons = function(){
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
 	gridCounter[index] = mouse + ". Amount: " + change + ". MakeMiss: " + makemiss + ".";
-	//<?php
-	//	$query = "INSERT INTO $MakeMiss VALUES(
-	//?>
 	index++;
 	console.log(gridCounter);
 	document.getElementById("jalensTag").innerHTML = gridCounter;
@@ -382,17 +379,10 @@ var undo = function(){
 	buttonSize--;
 	
 }
-var clearArray = function(){
+var clearPathTracer = function(){
 	console.log("function ran");
-	var opaque = document.getElementById("something").style.opacity;
-	console.log(opaque);
-	if (opaque == 1){
-		pathTracer = [];
-		console.log(pathTracer);
-	}
-	else {
-		console.log("Error is something that this is");
-	}
+	pathTracer = [];
+	console.log(pathTracer);
 }
 
 var __slice = Array.prototype.slice;

@@ -201,7 +201,7 @@
 								<!--<canvas id="tools_sketch" class = "ratat1" width= "320px" height= "350px" style = "background: url(RedTeam.png); background-size: contain; display:none"></canvas>-->
 								<div class="tools">
 									<a href="#tools_sketch" style = "color:black" data-tool="marker"><button type = "button" class = "opacity marker" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;">Marker</button></a>
-									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Clear</button></a>
+									<a href="#tools_sketch" style = "color:black; margin-left: 45px;" data-tool="eraser" id = "eraserTool"><button type = "button" onclick = "clearPathTracer()" class = "opacity eraser" style = "height: 25px; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;" id = "eraser">Clear</button></a>
 									<button type = "button" id = "ratata" class = "eraser" style="margin-left: 45px; height: 25px; padding-top: 4px; color: black; background-color: #ccc; border-radius: 5px; border-color: #000; font-weight: bold; height: 32px;"><p>Rotate Field</p></button>
 								</div>
 								<script type="text/javascript">
@@ -451,7 +451,7 @@
 								<p style = "font-size: 20px;">What percent of collected balls were made?</p>
 							</center>
 							<div class="col-lg-3">
-								<button type = "button" class="make leftcorner red width button opacity clickDrop1" onclick = "dumpPercentTeleop(0)">
+								<button type = "button" class=" leftcorner red width button opacity clickDrop1" onclick = "dumpPercentTeleop(0)">
 									<p style = "font-size: 25px; padding-top: 5px;">0%</p>
 								</button>
 							</div>
@@ -461,17 +461,17 @@
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button type = "button" class="miss middle green width button opacity clickDrop1" onclick = "dumpPercentTeleop(50)">
+								<button type = "button" class="middle green width button opacity clickDrop1" onclick = "dumpPercentTeleop(50)">
 									<p style = "font-size: 25px; padding-top: 5px;">50%</p>
 								</button>
 							</div>
 							<div class="col-lg-2">
-								<button type = "button" class="miss yellowGreen middle width button opacity clickDrop1" onclick = "dumpPercentTeleop(75)">
+								<button type = "button" class="yellowGreen middle width button opacity clickDrop1" onclick = "dumpPercentTeleop(75)">
 									<p style = "font-size: 25px; padding-top: 5px;">75%</p>
 								</button>
 							</div>
 							<div class="col-lg-3">
-								<button type = "button" class="miss rightcorner green width button opacity goodbye clickDrop1" onclick = "dumpPercentTeleop(100)">
+								<button type = "button" class="rightcorner green width button opacity goodbye clickDrop1" onclick = "dumpPercentTeleop(100)">
 									<p style = "font-size: 25px; padding-top: 5px;">100%</p>
 								</button>
 							</div>
