@@ -365,9 +365,9 @@ var resetButtons = function(){
 var clickZone = function (makemiss, change){
 	mouse = document.getElementById("demo").innerHTML;
 	gridCounter[index] = mouse + ". Amount: " + change + ". MakeMiss: " + makemiss + ".";
-	<?php
-		$query = "INSERT INTO $MakeMiss VALUES(
-	?>
+	//<?php
+	//	$query = "INSERT INTO $MakeMiss VALUES(
+	//?>
 	index++;
 	console.log(gridCounter);
 	document.getElementById("jalensTag").innerHTML = gridCounter;
