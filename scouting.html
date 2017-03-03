@@ -321,7 +321,7 @@
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
 								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-2" name = "speed" id = "speed">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Speed</center></h2>
@@ -330,17 +330,17 @@
 								<div class="row">
 								<!--button-->
 									<div class="col-md-4">
-										<button type = "button" class="make leftcorner red width button opacity" id = "1">
+										<button type = "button" class="make leftcorner red width button opacity" id = "1" onclick = "speedOne()">
 											<center><p style = "font-size: 25px; padding-top: 5px;">1</p></center>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button type = "button" class="width button middle opacity" id = "2">
+										<button type = "button" class="width button middle opacity" id = "2" onclick = "speedTwo()">
 											<center><p style = "font-size: 25px; padding-top: 5px;">2</p></center>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button type = "button" class="miss rightcorner green width button opacity" id = "3">
+										<button type = "button" class="miss rightcorner green width button opacity" id = "3" onclick = "speedThree()">
 											<center><p style = "font-size: 25px; padding-top: 5px;">3</p></center>
 										</button>
 									</div>
@@ -373,7 +373,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6" name = "climb" id = "climb">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Climbing</center></h2>
@@ -382,17 +382,17 @@
 								<div class="row">
 								<!--button-->
 									<div class="col-md-4">
-										<button type = "button" class="make leftcorner green width button opacity" id = "success">
+										<button type = "button" class="make leftcorner green width button opacity" id = "success" onclick = "successClimb()">
 											<p style = "font-size: 25px; padding-top: 5px;">Success</p>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button type = "button" class="width button middle opacity" id = "fail">
+										<button type = "button" class="width button middle opacity" id = "fail" onclick = "failClimb()">
 											<p style = "font-size: 25px; padding-top: 5px;">Fail</p>
 										</button>
 									</div>
 									<div class="col-md-4">
-										<button type = "button" class="miss rightcorner red width button opacity" id = "noattempt">
+										<button type = "button" class="miss rightcorner red width button opacity" id = "noattempt" onclick = "nullClimb()">
 											<p style = "font-size: 25px; padding-top: 5px;">No attempt</p>
 										</button>
 									</div>

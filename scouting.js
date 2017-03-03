@@ -380,11 +380,26 @@ var undo = function(){
 	
 }
 var clearPathTracer = function(){
-	console.log("function ran");
 	pathTracer = [];
-	console.log(pathTracer);
 }
-
+var speedOne = function(){
+	document.getElementById("speed").value = 1;
+}
+var speedTwo = function(){
+	document.getElementById("speed").value = 2;
+}
+var speedThree = function(){
+	document.getElementById("speed").value = 3;	
+}
+var successClimb = function(){
+	document.getElementById("climb").value = "success";
+}
+var failClimb = function(){
+	document.getElementById("climb").value = "fail";
+}
+var nullClimb = function(){
+	document.getElementById("climb").value = "no attempt";
+}
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;
