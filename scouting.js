@@ -43,7 +43,7 @@ var countFouls=function (change) {
 		fouls = 0;
 	}
 	document.getElementById("addFoul").innerHTML = fouls;
-	console.log(document.getElementById("something").style.opacity);
+	console.log(document.getElementById("addFoul").style.opacity);
 }
 
 var countTechnicals=function (change) {
@@ -560,7 +560,6 @@ var __slice = Array.prototype.slice;
         this.context.lineTo(event.x, event.y);
 
 		pathTracer.push("("+Math.floor(event.x) + "," + Math.floor(event.y)+ ")");
-		console.log(Math.floor(event.x)+"\n"+Math.floor(event.y));
 		pathCount++;
 		
         previous = event;

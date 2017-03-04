@@ -108,7 +108,7 @@
 							</div>
 							<div class="row">
 								<div class="col-md-6 left">
-									<p class="infoText">If a robot commits any fouls or technicals, add the amount of each penalty to the
+								<p class="infoText">If a robot commits any fouls or technicals, add the amount of each penalty to the
 									respective group</p>
 								</div>
 								<div class="col-md-6 right">
@@ -364,7 +364,7 @@
 										</button>
 									</div>
 									<div class="col-md-6" style="margin-top: 10px;">
-										<button type = "button" class="miss rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
+										<button type = "button" class="rightcorner missshot red width button" margin-left: 3px; onclick="addGears(-1)">
 											<center>
 												<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 												<p style = "font-size: 30px; padding-top: 1px;">-</p>
@@ -486,7 +486,7 @@
 										<h2 style = "font-size: 24px"><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
 									</div>
 								</div>
-								<div class = "row">
+								<div class = "row" onmouseleave = "checkMakeMiss()">
 									<div class = "col-md-4">
 										<button type = "button" id = "make20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
@@ -512,22 +512,23 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize(), resetButtons()">
+										<button onmouseleave = "checkMakeMiss()" type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize(), resetButtons()">
+										<button onmouseleave = "checkMakeMiss()" type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize(), resetButtons()">
+										<button onmouseleave = "checkMakeMiss()" type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
 								</div>
 							</div>
+							<p id = "teleopHighGoals" name = "teleopHighGoals"></p>
 						</div>
 
 					</div>
@@ -559,7 +560,7 @@
 									</button>
 								</div>
 								<div class="col-md-6" style="margin-top:10px">
-								<button type = "button" class="miss rightcorner missshot red width button" style = "margin-left: 3px;" onclick="countFouls(-1)">
+								<button type = "button" class="rightcorner missshot red width button" style = "margin-left: 3px;" onclick="countFouls(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
@@ -585,7 +586,7 @@
 									</button>
 								</div>
 								<div class="col-md-6" style="margin-top:10px">
-								<button type = "button" class="miss rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
+								<button type = "button" class="rightcorner missshot red width button" margin-left: 3px; onclick="countTechnicals(-1)">
 										<center>
 											<!--<img style = "height: 40px;  margin-top: 11px; margin-bottom: 11px;" src = "http://bsccongress.com/wp-content/uploads/2016/06/red-minus-clip-art.png">-->
 											<p style="font-size: 30px; padding-top: 1px;">-</p>
@@ -639,6 +640,8 @@
 			</div>
 		</div>
 		<script>
+			var newerX;
+			var newerY;
 			function showCoords(event, elem) {
 				var box = elem.getBoundingClientRect();
 				var boxY = box.top;
@@ -648,8 +651,8 @@
 				setGridClickPos(x,y);
 				var newX = x - boxX;
 				var newY = y - boxY;
-				var newerX = Math.floor(newX);
-				var newerY = Math.floor(newY);
+				newerX = Math.round(newX);
+				newerY = Math.round(newY);
 				document.getElementById("demo").innerHTML = "X coords: " + newerX + ",Y coords: " + newerY;
 			}
 		</script>
@@ -660,6 +663,10 @@
 </html>
 
 <script>
+	var makeMissArray = [];
+	var totalTeleop = [];
+	var teleopMakeArray = [];
+	var teleopMissArray = [];
 	var color = "red";
 	$(document).ready(function() {
 	opacity = 1;
@@ -741,9 +748,6 @@
 			$('#1').css("opacity", 0.3);
 			$('#2').css("opacity", 0.3);
 			$('#3').css("opacity", 1);
-	});
-	$(".marker").on("click", function(){
-		$(".eraser").css("opacity", "0.3");
 	});
 	$(".eraser").on("click", function(){
 		$(".eraser").css("opacity", "1");
@@ -854,6 +858,7 @@
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
+			totalTeleop.push([newerX, newerY]);
 		$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				color: "black",
@@ -874,6 +879,7 @@
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
+			totalTeleop.push([newerX, newerY]);
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'"></div>').css({
@@ -889,12 +895,14 @@
 			);
 			i++;
 		}
+		console.log(totalTeleop);
     });
 	
 	$('#fieldPicDiv2').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
+			totalTeleop.push([newerX, newerY]);
 		$("#fieldPicDiv2").append(
 			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				position: 'absolute',
@@ -914,6 +922,7 @@
 			i--;
 			top = ev.pageY-282
 			left = ev.pageY-20.5
+			totalTeleop.push([newerX, newerY]);
 			$('#shot' + i).remove();
 			$("#fieldPicDiv2").append(
 			$('<div id = "shot'+i+'"></div>').css({
@@ -929,6 +938,7 @@
 			);
 			i++;
 		}
+		console.log(totalTeleop);
     });
 	
 	
@@ -936,6 +946,7 @@
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
+			totalTeleop.push([newerX, newerY]);
 		$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				position: 'absolute',
@@ -955,6 +966,7 @@
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
+			totalTeleop.push([newerX, newerY]);
 			$('#shot' + i).remove();
 			$("#fieldPicDiv").append(
 			$('<div id = "shot'+i+'"></div>').css({
@@ -970,12 +982,14 @@
 			);
 			i++;
 		}
+		console.log(totalTeleop);
     });
 	
 	$('#fieldpic2').on("click", function(ev){
 		if(count<=1){
 			top = ev.pageY-282
 			left = ev.pageX-20.5
+			totalTeleop.push([newerX, newerY]);
 		$("#fieldPicDiv2").append(
 			$('<div id = "shot'+i+'" class = "circleThing"></div>').css({
 				position: 'absolute',
@@ -995,6 +1009,7 @@
 			i--;
 			top = ev.pageY-282
 			left = ev.pageX-20.5
+			totalTeleop.push([newerX, newerY]);
 			$('#shot' + i).remove();
 			$("#fieldPicDiv2").append(
 			$('<div id = "shot'+i+'"></div>').css({
@@ -1010,6 +1025,7 @@
 			);
 			i++;
 		}
+		console.log(totalTeleop);
     });
 	$('.deleter').on("click", function(){
 		count = 1;
@@ -1020,7 +1036,8 @@
 		undo();
 	});
 	$('.madeShot').on("click", function(){
-		size = $(this).attr('id').substring(4);;
+		size = $(this).attr('id').substring(4);
+		makeMissArray.push(1);
 		i--;
 		$('#shot' + i).css("background", "#0F0");
 		$('#shot' + i).css("height", size);
@@ -1028,6 +1045,7 @@
 		$('#shot' + i).css("top", top-(size/2-5) + 'px');
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
+		console.log(makeMissArray);
 	});
 	/*$("#eraserTool").on("click", function(){
 		//$("#tools_sketch").css("background-image", "url('RedTeam.png')");
@@ -1037,6 +1055,7 @@
 	});*/
 	$('.miss').on("click", function(){
 		size = $(this).attr('id').substring(4);
+		makeMissArray.push(0);
 		i--;
 		$('#shot' +i).css("background", "red");
 		$('#shot' + i).css("height", size);
@@ -1044,6 +1063,7 @@
 		$('#shot' + i).css("top", top-(size/2-5) + 'px');
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
+		console.log(makeMissArray);
 	});
 		
 	/*
@@ -1080,7 +1100,18 @@
 });
 </script>
   <script>
-  	
+  	var checkMakeMiss = function(){
+		for(r = 0; r < totalTeleop; r++){
+			if(makeMiss[r] == 1){
+				teleopMakeArray.push(totalTeleop[r]);
+			}
+			else {
+				teleopMissArray.push(totalTeleop[r]);
+			}			
+		}
+		console.log(teleopMakeArray);
+		console.log(teleopMissArray);
+	}
   	jQuery(document).ready(function() {
   	opacity = 1;
   	$('.clickable').on("click", function(){
