@@ -1187,9 +1187,7 @@
   	
 
       $(".tabs .tab-links a").on('click', function(e)  {
-  	console.log('ran');
           var currentAttrValue = jQuery(this).attr('href');
-	console.log(currentAttrValue);
   
           // Show/Hide Content
           jQuery('.tab' + currentAttrValue).addClass('active').siblings().removeClass('active');

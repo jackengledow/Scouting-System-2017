@@ -43,6 +43,7 @@ var countFouls=function (change) {
 		fouls = 0;
 	}
 	document.getElementById("addFoul").innerHTML = fouls;
+	document.getElementById("fouls").value = fouls;
 }
 
 var countTechnicals=function (change) {

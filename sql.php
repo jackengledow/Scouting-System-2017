@@ -1,96 +1,122 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv = "refresh" content = "1.5; url = scouting.html">
+		<!--<meta http-equiv = "refresh" content = "1.5; url = scouting.html">-->
 		<title>SQL</title>
 	</head>
 	<body>
 		<center><h2 style= "font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">Successfully Submitted</h2></center>
-		<?php
+		<?php 
+			function getValue($key, $defVal){
+				if(isset($_POST[$key]) && !empty($_POST[$key])){
+					return $_POST[$key];
+				}
+				return $defVal;
+			} 
+			function getString($key, $defVal){
+				return "'" . getValue($key, $defVal) . "'";
+			}
 			$host = "localhost";
-			$user = "pi";
+			$user = "root";
 			$pass = "team868!";
 			$dbname = "techHounds";
 
 			$con = new mysqli($host,$user,$pass,$dbname);
+			if($con->connect_errno) {
+				echo "Connection failed: " . $con->connect_error;
+			}
 
-			$teamNumber = $_POST['teamNumber'];
-			$matchNumber = $_POST['matchNumber'];
-			$startFuel = $_POST['startFuel'];
-			$startGears = $_POST['startGears'];
-			$baseline = $_POST['baseline'];
-			$scoreGear = $_POST['scoreGear'];
-			$autonHigh = $_POST['autonHigh'];
-			$speed = $_POST['speed'];
-			$disabled = $_POST['disabled'];
-			$collectsFuel = $_POST['collectsFuel'];
-			$useHopper = $_POST['useHopper'];
-			$collectsGear = $_POST['collectsGear'];
-			$teleopGears = $_POST['teleopGears'];
-			$climb = $_POST['climb'];
-			$teleopHigh = $_POST['t eleopHigh'];
-			$fouls = $_POST['fouls'];
-			$technicals = $_POST['technicals'];
-			$yellows = $_POST['yellows'];
-			$reds = $_POST['reds'];
-			$ejections = $_POST['ejections'];
-			$notes = $_POST['notes'];
+			//$teamNumber = $_POST['teamNumber'];
+			$teamNumber = getValue('teamNumber', 0);
+			$matchNumber = getValue('matchNumber', "0");
+			$startFuel = getValue('startFuel', "FALSE");
+			$startGears = getValue('startGears', "FALSE");
+			$baseline = getValue('baseline', "FALSE");
+			$scoreGear = getValue('scoreGear', "FALSE");
+			$autonHigh = getValue('autonHigh', "0");
+			$speed = getValue('speed', "0");
+			$disabled = getValue('disabled', "FALSE");
+			$collectsFuel = getValue('collectsFuel', "FALSE");
+			$useHopper = getValue('useHopper', "FALSE");
+			$collectsGear = getValue('collectsGear', "FALSE");
+			$teleopGears = getValue('teleopGears', "0");
+			$climb = getString('climb', 'no attempt');
+			$teleopHigh = getValue('teleopHigh', "0");
+			$fouls = getValue('fouls', "0");
+			$technicals = getValue('technicals', "0");
+			$yellows = getValue('yellows', "FALSE");
+			$reds = getValue('reds', "TRUE");
+			$ejections = getValue('ejections', "FALSE");
+			$notes = getString('notes', '');
 
-			if(startFuel=="on") {
+			if($startFuel=="on") {
 				$startFuel="TRUE";
 			} else {
 				$startFuel="FALSE";
 			}
 
-			if(startGears=="on") {
+			if($startGears=="on") {
 				$startGears="TRUE";
 			} else {
 				$startGears="FALSE";
 			}
 
-			if(baseline=="on") {
+			if($baseline=="on") {
 				$baseline="TRUE";
 			} else {
 				$baseline="FALSE";
 			}
 
-			if(scoreGear=="on") {
+			if($scoreGear=="on") {
 				$scoreGear="TRUE";
 			} else {
 				$scoreGear="FALSE";
 			}
 
-			if(disabled=="on") {
+			if($disabled=="on") {
 				$disabled="TRUE";
 			} else {
 				$disabled="FALSE";
 			}
 
-			if(collectsFuel=="on") {
+			if($collectsFuel=="on") {
 				$collectsFuel="TRUE";
 			} else {
 				$collectsFuel="FALSE";
 			}
 
-			if(useHopper=="on") {
+			if($useHopper=="on") {
 				$useHopper="TRUE";
 			} else {
 				$useHopper="FALSE";
 			}
 
-			if(collectsGear=="on") {
+			if($collectsGear=="on") {
 				$collectsGear="TRUE";
 			} else {
 				$collectsGear="FALSE";
 			}
+			if($yellows == "on"){
+				$yellows = "TRUE";
+			} else {
+				$yellows = "FALSE";
+			}
+			if($reds == "on"){
+				$reds = "TRUE";
+			} else {
+				$reds = "FALSE";
+			}
+			if($ejections == "on"){
+				$ejections = "TRUE";
+			} else {
+				$ejections = "FALSE";
+			}
 
-
-			$query = "INSERT INTO generic(teamNumber,matchNumber,startFuel,startGears,baseline,scoreGear,autonHigh, 				autonGears,speed,disabled,collectsFuel,useHopper,collectsGear,teleopGears,teleopHigh,climb,fouls,technicals,yellows,reds,ejections,notes) VALUES($teamNumber,$matchNumber,$startFuel,$startGears,$baseline,$scoreGear,$autonHigh, 				$autonGears,$speed,$disabled,$collectsFuel,$useHopper,$collectsGear,$teleopGears,$teleopHigh,$climb,$fouls,$technicals,$yellows,$reds,$ejections,$notes);";
-
+			$query = "INSERT INTO generic(teamNumber,matchNumber,startFuel,startGears,baseline,scoreGear,autonHigh,speed,disabled,collectsFuel,useHopper,collectsGear,teleopGears,teleopHigh,climb,fouls,technicals,yellows,reds,ejections,notes) VALUES($teamNumber,$matchNumber,$startFuel,$startGears,$baseline,$scoreGear,$autonHigh,$speed,$disabled,$collectsFuel,$useHopper,$collectsGear,$teleopGears,$teleopHigh,$climb,$fouls,$technicals,$yellows,$reds,$ejections,$notes);";
+			echo $query;
 			$con->query($query);
-
-
-			/*echo "$teamNumber\n";
+			/*
+			echo "$teamNumber\n";
 			echo "$matchNumber\n";
 			echo "$startFuel\n";
 			echo "$startGears\n";
