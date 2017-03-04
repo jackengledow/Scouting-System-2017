@@ -28,7 +28,7 @@
 			$collectsGear = $_POST['collectsGear'];
 			$teleopGears = $_POST['teleopGears'];
 			$climb = $_POST['climb'];
-			$teleopHigh = $_POST['teleopHigh'];
+			$teleopHigh = $_POST['t eleopHigh'];
 			$fouls = $_POST['fouls'];
 			$technicals = $_POST['technicals'];
 			$yellows = $_POST['yellows'];
