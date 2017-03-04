@@ -72,80 +72,69 @@
 		</style>
 	</head>
 	<body style = "filter: grayscale(0%);">
-		<form action="sql.php" method="post">
+		<form action="pit.php" method="post">
 		<a class = "backButton" style="background-color:#cccccc; margin-right: 25px;" href="index.html">Back</a>
 			<div class ="pit" style="margin-left: 20px; position: ">
 				<label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
-				<input type = "number" id="teamNumber" style="margin-top: 9px; width:75px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+				<input name = "teamNumber" type = "number" id="teamNumber" style="margin-top: 9px; width:75px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
 			</div>
 			<div class="form-group">
 				<label class="margin" for="driveTrain"><h3>Drive Train</h3></label>
-				<select style="width: 350px;" class="form-control" id="driveTrainSelect">
+				<select name="driveTrain" style="width: 350px;" class="form-control" id="driveTrainSelect">
 					<option>Select Type of Drive Train</option>
-					<option>Swerve</option>
-					<option>Holonomic</option>
-					<option>H drive</option>
-					<option>6 Wheel Tank</option>
-					<option>8 Wheel Tank</option>
-					<option>Mecanum</option>
-					<option>Omni</option>
-					<option>Triangular</option>
-					<option>Octal</option>
-					<option>Other</option>
+					<option value="swerve">Swerve</option>
+					<option value="holonomic">Holonomic</option>
+					<option value="h-drive">H drive</option>
+					<option value="6-wheel-tank">6 Wheel Tank</option>
+					<option value="8-wheel-tank">8 Wheel Tank</option>
+					<option value="mecanum">Mecanum</option>
+					<option value="omni">Omni</option>
+					<option value="triangular">Triangular</option>
+					<option value="octal">Octal</option>
+					<option value="other">Other</option>
 				</select>
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="focus"><h3>Focus</h3></label> <br>
-					<form action="">
-						<input type="checkbox" name="balls" value="human" class = "input"> Gear<br>
-						<input type="checkbox" name="balls" value="hopper" class = "input"> Fuel<br>
-						<input type="checkbox" name="balls" value="hopper" class = "input"> Defense<br>
-					</form>
+						<input type="checkbox" name="focus" value="gear" class = "input"> Gear<br>
+						<input type="checkbox" name="focus" value="ball" class = "input"> Fuel<br>
+						<input type="checkbox" name="focus" value="other" class = "input"> Defense<br>
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="climb"><h3>Can Climb</h3></label><br>
-					<form action="">
-						<input type="radio" name="balls" value="human">Yes<br>
-						<input type="radio" name="balls" value="hopper">No<br>
-					</form>
+						<input type="radio" name="climb" value="TRUE">Yes<br>
+						<input type="radio" name="climb" value="FALSE">No<br>
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="balls"><h3>Where do they get fuel?</h3></label> <br>
-					<form action="">
-						<input type="checkbox" name="balls" value="human" class = "input"> Human Player<br>
-						<input type="checkbox" name="balls" value="hopper" class = "input"> Hopper<br>
-					</form>
+						<input type="checkbox" name="fuelOrigin" value="human" class = "input"> Human Player<br>
+						<input type="checkbox" name="fuelOrigin" value="hopper" class = "input"> Hopper<br>
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="location"><h3>How can they score?</h3></label>
-					<form action="">
 						<h4>Gears:</h4>
-						<input type="radio" name="gears" alt="set location" class = "input">Yes
-						<input type="radio" name="gears" alt="set location" class = "input">No<br><br>
+						<input type="radio" name="gear" value="TRUE" alt="set location" class = "input">Yes
+						<input type="radio" name="gear" value="FALSE" alt="set location" class = "input">No<br><br>
 						<h4>Fuel:</h4>
-						<input type="radio" name="balls" alt="set location" class = "input">High
-						<input type="radio" name="balls" alt="set location" class = "input">Low
-						<input type="radio" name="balls" alt="set location" class = "input">Both
-					</form>
+						<input type="radio" name="fuel" value="high" alt="set location" class = "input">High
+						<input type="radio" name="fuel" value="low" alt="set location" class = "input">Low
+						<input type="radio" name="fuel" value="both" alt="set location" class = "input">Both
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="cycle"><h3>Number of Gear Cycles:</h3></label>
-					<form action="">
-						<input type="number" name="gears" alt="set location"><br>
-					</form>
+						<input type="number" name="gearCycles" alt="set location"><br>
 			</div>
 			
 			<div class="form-group">
 				<label class="margin" for="score"><h3>Number of Fuel Scored Per Match:</h3></label>
-					<form action="">
-						<input type="number" name="score" alt="set location"><br>
-					</form>
+						<input type="number" name="fuelPerMatch" alt="set location"><br>
 			</div>
+			<button type="submit" value="submit">Submit</button>
 		</form>
 	</body>
 </html>

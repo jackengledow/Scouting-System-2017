@@ -43,7 +43,6 @@ var countFouls=function (change) {
 		fouls = 0;
 	}
 	document.getElementById("addFoul").innerHTML = fouls;
-	console.log(document.getElementById("addFoul").style.opacity);
 }
 
 var countTechnicals=function (change) {
@@ -52,6 +51,7 @@ var countTechnicals=function (change) {
 		technicals=0;
 	}
 	document.getElementById("addTechnical").innerHTML = technicals;
+	document.getElementById("technicals").value = technicals;
 }
 
 var noSelect = function(){
@@ -65,6 +65,7 @@ var countHighMakeTeleop=function (change){
 		makeHighTeleop = 0;
 	}
 	document.getElementById("highScoreTeleop").innerHTML = makeHighTeleop;
+	document.getElementById("teleopHigh").value = makeHighTeleop;
 
 }
 
@@ -83,6 +84,7 @@ var countHighMakeAuton=function (change){
 		makeHighAuton = 0;
 	}
 	document.getElementById("highScoreAuton").innerHTML = makeHighAuton;
+	document.getElementById("autonHigh").value = makeHighAuton;
 
 }
 
@@ -95,6 +97,7 @@ var addGears=function (change){
 		totalGears = 18;
 	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
+	document.getElementById("teleopGears").value = totalGears;
 
 }
 
@@ -398,7 +401,7 @@ var failClimb = function(){
 	document.getElementById("climb").value = "fail";
 }
 var nullClimb = function(){
-	document.getElementById("climb").value = "no attempt";
+	document.getElementById("climb").value = "no_attempt";
 }
 var __slice = Array.prototype.slice;
 (function($) {

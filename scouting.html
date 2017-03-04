@@ -42,9 +42,9 @@
 								<div class="col-md-12">
 									<div class ="teamInfo">
 									<label style = "font-size:20px; margin-top: 8px; padding-right: 20px; margin-left: -85px;">Match Number:</label><br>
-									<input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="match" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+									<input type = "text" id="teamNumber" style="margin-top: 9px;height: 31px; text-align: center; margin-right: 15px" name="matchNumber" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
 									<label style = "font-size:20px; margin-top: 8px; padding-right: 10px" >Team Number:</label><br>
-									<input type = "text" id="teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
+									<input type = "text" id="teamNumber" name = "teamNumber" style="margin-top: 9px; text-align: center; height: 31px;" data-validation="required" data-validation-error-msg="You did not enter a match number!" current-error="You did not enter a match number!" style="border-color: red;"/>
 									<p  style = "display: flex">
 									<label style = "font-size:20px; margin-top: 8px; padding-left: 20px">Team Color:</label><br>
 									<button type="button" id ="redButton" style = "margin-right: 5px; margin-left: 10px; padding-left: 15px">Red</button>
@@ -144,8 +144,8 @@
 									<p style = "padding-left: 15px; font-size: 25px;"><strong style = "text-decoration: underline">Preliminary Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 70px;">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="balls" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="gear" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="startFuel"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Balls</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="startGears"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Start with Gear</div>
 										</div>
 									</div>
 								</div>
@@ -166,8 +166,8 @@
 									<p align = "right" style = "padding-right: 15px; font-size: 25px;"><strong style = "text-decoration: underline; padding-bottom: 5px;">Autonomous Buttons:</strong></p>
 									<div class="row">
 										<div class="col-md-12" style = "padding-top: 0px; padding-left: 165px;">
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
-												<input style="width: 15px; height: 15px;" type="checkbox" name="vehicle" value="Car"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="baseline"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Cross Baseline</div><br><br>
+												<input style="width: 15px; height: 15px;" type="checkbox" name="scoreGear"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Score the Gear</div>
 										</div>
 									</div>
 								</div>
@@ -216,6 +216,7 @@
   								<div class="row">
   									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: -10px;">
   										<h2><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreAuton">0</p></center></h2>
+									<input type="hidden" name="autonHigh" id="autonHigh"/>
   									</div>
   								</div>
   								<div class = "row" style = "margin-top: 10px">
@@ -316,12 +317,13 @@
 						<div style="color: none;" class="row">
 					<p title="Scouting system">
 						<div style = "margin-top: -5px; padding-left: 0px;">
-								<input type="checkbox" name="vehicle" value="Bike"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
-								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
-								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
-								<input type = "checkbox" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
+								<input type="checkbox" name="disabled"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Did not perform / Disabled</div>
+								<input type = "checkbox" name="collectsFuel" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect balls from ground</div>								
+								<input type = "checkbox" name="useHopper" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can use a hopper</div>
+								<input type = "checkbox" name="collectsGear" style = "margin-left: 50px;"><div class="checkboxDescription" style = "display: inline-block; font-size: 20px;">Can collect gear from ground</div><br><br>
 						</div>
-						<div class="col-md-2" name = "speed" id = "speed">
+						<div class="col-md-2">
+							<input type = "hidden" name ="speed" id="speed"/>
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Speed</center></h2>
@@ -351,6 +353,7 @@
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px; height: 63px;">
 										<h2><center>Gears Scored: <p style = "display: inline-block;" id= "gearsTeleop">0</p></center></h2>
+									<input type = "hidden" name = "teleopGears" id = "teleopGears"/>
 									</div>
 								</div>
 								<div class="row">
@@ -373,13 +376,14 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6" name = "climb" id = "climb">
+							<div class="col-md-6">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#c1c1c1;padding-left: 0px;">
 										<h2><center>Climbing</center></h2>
 									</div>
 								</div>
 								<div class="row">
+								<input type="hidden" name="climb" id="climb">
 								<!--button-->
 									<div class="col-md-4">
 										<button type = "button" class="make leftcorner green width button opacity" id = "success" onclick = "successClimb()">
@@ -479,14 +483,15 @@
 					</div>
 					<div class = "col-md-6" style = "padding-left: 0px; margin-top: 80px;">
 						<div style = "display:none" id = "jalensTag"></div>
-						<div class="row" id = "popup" style = "display: none; height: 10px;">
+						<div onclick = "checkMakeMiss()" class="row" id = "popup" style = "display: none; height: 10px;">
 							<div class="col-md-5" style = "margin-left: 0px; margin-right: 40px;">
 								<div class="row">
 									<div class="col-md-12 topStyle" style="background-color:#d3d3d3; margin-bottom: 0px;">
 										<h2 style = "font-size: 24px"><center>Made High Goals: <p style = "display: inline-block;" id= "highScoreTeleop">0</p></center></h2>
+									<input type="hidden" name="teleopHigh" id="teleopHigh"/>
 									</div>
 								</div>
-								<div class = "row" onmouseleave = "checkMakeMiss()">
+								<div class = "row">
 									<div class = "col-md-4">
 										<button type = "button" id = "make20" class = "deleter make makeshot darkgreen leftcorner width button shotChart madeShot" onclick = "countHighMakeTeleop(10), clickZone('Make', 10), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
@@ -512,17 +517,17 @@
 								</div>
 								<div class = "row">
 									<div class = "col-md-4">
-										<button onmouseleave = "checkMakeMiss()" type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize(), resetButtons()">
+										<button type = "button" id = "miss20" class = "deleter make makeshot darkred width leftcorner button shotChart miss" onclick = "countHighMissTeleop(10), clickZone('Miss', 10), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+10</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button onmouseleave = "checkMakeMiss()" type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize(), resetButtons()">
+										<button type = "button" id = "miss15" class = "deleter make makeshot red width button shotChart miss" onclick = "countHighMissTeleop(5), clickZone('Miss', 5), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+5</p>
 										</button>
 									</div>
 									<div class = "col-md-4">
-										<button onmouseleave = "checkMakeMiss()" type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize(), resetButtons()">
+										<button type = "button" id = "miss10" class = "deleter make makeshot width lightred button rightcorner shotChart miss" onclick = "countHighMissTeleop(1), clickZone('Miss', 1), incButtonSize(), resetButtons()">
 											<p style = "font-size: 25px; padding-top: 5px;">+1</p>
 										</button>
 									</div>
@@ -547,6 +552,7 @@
 							<div class="row">
 								<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
 									<h2><center>Foul(s): <p style = "display: inline-block;" id = "addFoul">0</p></center></h2>
+								<input type="hidden" name ="fouls" id="fouls"/>
 								</div>
 							</div>
 							<div class="row">
@@ -573,6 +579,7 @@
 							<div  class="row">
 								<div class="col-md-12 topStyle" style="background-color:#c1c1c1; margin-bottom: -10px;">
 									<h2><center>Technical(s): <p style = "display: inline-block;" id= "addTechnical">0</p></center></h2>
+								<input type="hidden" name="technicals" id="technicals"/>
 								</div>
 							</div>
 							<div class="row">
@@ -603,17 +610,17 @@
 					<div style="margin-top: 50px;" class="row top" id="marginTop">
 							<div class="col-md-4">
 								<h2><strong><center>Yellow Card:</center></strong></h2><center>
-								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
+								  <td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" name="yellows"><p style="font-size: 20px;"></p></label></td>
 								</center>
 							</div>
 							<div class="col-md-4">
 								<h2><strong><center>Red Card:</center></strong></h2><center>
-								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
+								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" name="reds"><p style="font-size: 20px;"></p></label></td>
 								</center>
 							</div>
 							<div class="col-md-4"><center>
 								<h2><strong><center>Ejection:</center></strong></h2>
-								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" value=""><p style="font-size: 20px;"></p></label></td>
+								<td style="paddzing-top: 27px"><label class="check"><input style="width: 40px;height: 40px;" type="checkbox" name="ejections"><p style="font-size: 20px;"></p></label></td>
 							</center>
 						</div>
 					</div>
@@ -623,7 +630,7 @@
 			<div id="tab4" class="tab">
 				<div class="container">
 					<h2><b>Match Notes:</b></h2>
-					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;"></textarea>
+					<textarea id="textarea" contenteditable="true" style="border-radius: 4px; width: 1100px; height: 150px; padding: 10px;" name="notes"></textarea>
 				</div>
 				<center>
 				<button style="margin-top: 80px; margin-right: 440px; border-radius: 4px; width: 400px; height: 80px; font-size: 40px" id = "submit" class="make makeshot width grey button rightcorner shotChart" value="Submit" type="submit">
@@ -1045,7 +1052,6 @@
 		$('#shot' + i).css("top", top-(size/2-5) + 'px');
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
-		console.log(makeMissArray);
 	});
 	/*$("#eraserTool").on("click", function(){
 		//$("#tools_sketch").css("background-image", "url('RedTeam.png')");
@@ -1063,7 +1069,6 @@
 		$('#shot' + i).css("top", top-(size/2-5) + 'px');
 		$('#shot' + i).css("left", left-(size/2-5) + 'px');
 		i++;
-		console.log(makeMissArray);
 	});
 		
 	/*
@@ -1101,8 +1106,10 @@
 </script>
   <script>
   	var checkMakeMiss = function(){
-		for(r = 0; r < totalTeleop; r++){
-			if(makeMiss[r] == 1){
+		teleopMakeArray = [];
+		teleopMissArray = [];
+		for(r = 0; r < totalTeleop.length; r++){
+			if(makeMissArray[r] == 1){
 				teleopMakeArray.push(totalTeleop[r]);
 			}
 			else {
