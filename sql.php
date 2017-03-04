@@ -37,51 +37,51 @@
 			$notes = $_POST['notes'];
 
 			if(startFuel=="on") {
-				startFuel="TRUE";
+				$startFuel="TRUE";
 			} else {
-				startFuel="FALSE";
+				$startFuel="FALSE";
 			}
 
 			if(startGears=="on") {
-				startGears="TRUE";
+				$startGears="TRUE";
 			} else {
-				startGears="FALSE";
+				$startGears="FALSE";
 			}
 
 			if(baseline=="on") {
-				baseline="TRUE";
+				$baseline="TRUE";
 			} else {
-				baseline="FALSE";
+				$baseline="FALSE";
 			}
 
 			if(scoreGear=="on") {
-				scoreGear="TRUE";
+				$scoreGear="TRUE";
 			} else {
-				scoreGear="FALSE";
+				$scoreGear="FALSE";
 			}
 
 			if(disabled=="on") {
-				disabled="TRUE";
+				$disabled="TRUE";
 			} else {
-				disabled="FALSE";
+				$disabled="FALSE";
 			}
 
 			if(collectsFuel=="on") {
-				collectsFuel="TRUE";
+				$collectsFuel="TRUE";
 			} else {
-				collectsFuel="FALSE";
+				$collectsFuel="FALSE";
 			}
 
 			if(useHopper=="on") {
-				useHopper="TRUE";
+				$useHopper="TRUE";
 			} else {
-				useHopper="FALSE";
+				$useHopper="FALSE";
 			}
 
 			if(collectsGear=="on") {
-				collectsGear="TRUE";
+				$collectsGear="TRUE";
 			} else {
-				collectsGear="FALSE";
+				$collectsGear="FALSE";
 			}
 
 
