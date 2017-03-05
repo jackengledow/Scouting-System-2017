@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="js/jquery-2.2.1.min.js"></script>
-		<script src="js/datatables.min.js"></script>
-		<script src="js/plotly.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/blueimp-gallery.min.js"></script>
+		<script src="fusioncharts-suite-xt/js/fusioncharts.js"></script>
+		<script src="fusioncharts-suite-xt/js/fusioncharts.charts.js"></script>
+		<script src="js/jquery-2.2.1.min.js"></script>;
 		<!-- <script src="js/bootstrap.min.js"></script> -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/webca.css" rel="stylesheet">
@@ -15,7 +13,7 @@
 		<!--<link rel="stylesheet" href="css/2015.css">-->
 		<link rel="stylesheet" href="css/datavis.css">
 		<link rel="stylesheet" href="tab_stuff.css">
-		<script src="js/defenseOptom.js"></script>
+
 	</head>
 
 	<!-- Body -->
@@ -88,6 +86,12 @@
 					</ul>
 
 					<div class="tab-content">
+						<form action = "getTeam.php" method = "post">Team Number: <input type="number" name="dataTeamNumber" id = "numbyBoo"></form><button onclick = "onclick" class = "backButton" type = "submit">Submit</button>
+						<script>
+							var onclick = function(){
+								console.log(document.getElementById('numbyBoo').value);
+							}
+						</script>
 						<div class="tab-pane fade in active" id="general-stats">
 							<!--<div class="graph-content">-->
 							<!--<div>

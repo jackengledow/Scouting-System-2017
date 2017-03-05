@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!--<meta http-equiv = "refresh" content = "1.5; url = scouting.html">-->
+		<meta http-equiv = "refresh" content = "1.5; url = scouting.html">
 		<title>SQL</title>
 	</head>
 	<body>
@@ -26,24 +26,23 @@
 				echo "Connection failed: " . $con->connect_error;
 			}
 
-			//$teamNumber = $_POST['teamNumber'];
 			$teamNumber = getValue('teamNumber', 0);
-			$matchNumber = getValue('matchNumber', "0");
+			$matchNumber = getValue('matchNumber', 0);
 			$startFuel = getValue('startFuel', "FALSE");
 			$startGears = getValue('startGears', "FALSE");
 			$baseline = getValue('baseline', "FALSE");
 			$scoreGear = getValue('scoreGear', "FALSE");
-			$autonHigh = getValue('autonHigh', "0");
+			$autonHigh = getValue('autonHigh', 0);
 			$speed = getValue('speed', "0");
 			$disabled = getValue('disabled', "FALSE");
 			$collectsFuel = getValue('collectsFuel', "FALSE");
 			$useHopper = getValue('useHopper', "FALSE");
 			$collectsGear = getValue('collectsGear', "FALSE");
-			$teleopGears = getValue('teleopGears', "0");
+			$teleopGears = getValue('teleopGears', 0);
 			$climb = getString('climb', 'no attempt');
-			$teleopHigh = getValue('teleopHigh', "0");
+			$teleopHigh = getValue('teleopHigh', 0);
 			$fouls = getValue('fouls', "0");
-			$technicals = getValue('technicals', "0");
+			$technicals = getValue('technicals', 0);
 			$yellows = getValue('yellows', "FALSE");
 			$reds = getValue('reds', "TRUE");
 			$ejections = getValue('ejections', "FALSE");
@@ -113,7 +112,6 @@
 			}
 
 			$query = "INSERT INTO generic(teamNumber,matchNumber,startFuel,startGears,baseline,scoreGear,autonHigh,speed,disabled,collectsFuel,useHopper,collectsGear,teleopGears,teleopHigh,climb,fouls,technicals,yellows,reds,ejections,notes) VALUES($teamNumber,$matchNumber,$startFuel,$startGears,$baseline,$scoreGear,$autonHigh,$speed,$disabled,$collectsFuel,$useHopper,$collectsGear,$teleopGears,$teleopHigh,$climb,$fouls,$technicals,$yellows,$reds,$ejections,$notes);";
-			echo $query;
 			$con->query($query);
 			/*
 			echo "$teamNumber\n";
