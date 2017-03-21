@@ -3,7 +3,8 @@
 	<head>
 		<script src="fusioncharts-suite-xt/js/fusioncharts.js"></script>
 		<script src="fusioncharts-suite-xt/js/fusioncharts.charts.js"></script>
-		<script src="js/jquery-2.2.1.min.js"></script>;
+		<script src="js/jquery-2.2.1.min.js"></script>
+		<script src="dataVisualization.js"></script>
 		<!-- <script src="js/bootstrap.min.js"></script> -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/webca.css" rel="stylesheet">
@@ -13,7 +14,11 @@
 		<!--<link rel="stylesheet" href="css/2015.css">-->
 		<link rel="stylesheet" href="css/datavis.css">
 		<link rel="stylesheet" href="tab_stuff.css">
-
+		<style>
+			div > p {
+				display:inline-block;
+			}
+		</style>
 	</head>
 
 	<!-- Body -->
@@ -86,12 +91,7 @@
 					</ul>
 
 					<div class="tab-content">
-						<form action = "getTeam.php" method = "post">Team Number: <input type="number" name="dataTeamNumber" id = "numbyBoo"></form><button onclick = "onclick" class = "backButton" type = "submit">Submit</button>
-						<script>
-							var onclick = function(){
-								console.log(document.getElementById('numbyBoo').value);
-							}
-						</script>
+						<form action = "getTeam.php" method = "post">Team Number: <input type="number" name="dataTeamNumber"></form><button onclick = "display()" class = "backButton" type = "submit">Submit</button>
 						<div class="tab-pane fade in active" id="general-stats">
 							<!--<div class="graph-content">-->
 							<!--<div>
@@ -167,32 +167,32 @@
 								</div>
 							</div>
 							<div class="graph-space"></div>-->
-							<p> Auton: </p>
-								<div style="display: flex"><p style="margin-left: 30px;">Starts With Fuel:</p> <span style="width: 20px;"></span> <p>%</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Starts With Gears:</p> <span style="width: 20px;"></span> <p>%</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Crosses Baseline:</p> <span style="width: 20px;"></span> <p>%</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Scores the Gear:</p> <span style="width: 20px;"></span> <p>%</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Auton Movement:</p> <span style="width: 20px;"></span> <p>Canvas</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Auton High Goal:</p> <span style="width: 20px;"></span> <p>Num/Match (Line Graph)</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Auton Low Goal:</p> <span style="width: 20px;"></span> <p>Num/Match (Line Graph)</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Auton Gears Scored:</p> <span style="width: 20px;"></span> <p>Num/Match (Line Graph)</p></div>
-							<p> Teleop: </p>
-								<div style="display: flex"><p style="margin-left: 30px;">Speed Rating Average:</p> <span style="width: 20px;"></span> <p>Avg</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Any Disabled Matches?:</p> <span style="width: 20px;"></span> <p>Match List</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Can Collect Fuel from Ground:</p> <span style="width: 20px;"></span> <p>Y/N</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Can Use a Hopper:</p> <span style="width: 20px;"></span> <p>Y/N</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Can Collect a Gear from the Ground:</p> <span style="width: 20px;"></span> <p>Y/N</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Gear Count:</p> <span style="width: 20px;"></span> <p>Num/Match (Line Graph)</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Low Goal Count:</p> <span style="width: 20px;"></span> <p>Num/Match (Line Graph)</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">High Goal:</p> <span style="width: 20px;"></span> <p>Heat Map</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">High Goal:</p> <span style="width: 20px;"></span> <p></p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Climb:</p> <span style="width: 20px;"></span> <p>% (When Attempted)</p></div>
-							<p> Penalties: </p>
-								<div style="display: flex"><p style="margin-left: 30px;">Fouls:</p> <span style="width: 20px;"></span> <p>Num and Match</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Technicals:</p> <span></span>Num and Match<p></p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Yellow Cards:</p> <span style="width: 20px;"></span> <p>Num and Match</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Red Cards:</p> <span style="width: 20px;"></span> <p>Num and Match</p></div>
-								<div style="display: flex"><p style="margin-left: 30px;">Ejections:</p> <span style="width: 20px;"></span> <p>Num and Match</p></div>
+							<p> Auton: </p><br>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Starts With Fuel:</p><p id = "startFuel"> %</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Starts With Gears:</p><p id = "startGear"> %</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Crosses Baseline:</p><p id = "baseline">%</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Scores the Gear:</p><p id = "scoreGear">%</p></div>
+								<!--<div style="display: inline-block"><p style="margin-left: 30px;">Auton Movement:</p><p>Canvas</p></div>-->
+								<div style="display: inline-block"><p style="margin-left: 30px;">Auton Low Goal:</p><p>Num/Match (Line Graph)</p></div><br>
+								<div style="display: inline-block" id = "autonHigh"></div><br>
+							<p> Teleop: </p><br>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Speed Rating Average:</p>  <p id = "avgSpeed">Avg</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Any Disabled Matches?:</p>  <p>Match List</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Can Collect Fuel from Ground:</p>  <p id = "groundCollect">Y/N</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Can Use a Hopper:</p>  <p id = "hopper">Y/N</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Can Collect a Gear from the Ground:</p>  <p id = "groundGear">Y/N</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Gear Count:</p>  <p>Num/Match (Line Graph)</p></div>
+								<!--<div style="display: inline-block"><p style="margin-left: 30px;">Low Goal Count:</p>  <p>Num/Match (Line Graph)</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">High Goal:</p>  <p>Heat Map</p></div>-->
+								<div style="display: inline-block"><p style="margin-left: 30px;">High Goal:</p>  <p></p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Climb:</p>  <p>% (When Attempted)</p></div><br>
+								<div style="display: inline-block" id = "teleopHigh"></div><div style = "display: inline-block" id = "teleopGear"></div>
+							<p> Penalties: </p><br>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Fouls:</p>  <p>Num and Match</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Technicals:</p> <span></span>Num and Match<p></p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Yellow Cards:</p>  <p>Num and Match</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Red Cards:</p>  <p>Num and Match</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Ejections:</p>  <p>Num and Match</p></div>
 							<p> Notes: </p>
 								<div style="display: flex"><p style="margin-left: 30px;">Notes:</p> <span style="width: 20px;"></span> <p>Notes</p></div>
 								
