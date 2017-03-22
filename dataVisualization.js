@@ -34,7 +34,7 @@ var scoreGear = false;
 var crossBaseline = false;
 var useHopper = false;
 var groundGear = false;
-var avgSpeed = 2;
+//var avgSpeed = <?php echo json_encode($speed); ?>;
 var display = function(){
 	if (startFuel == true){
 		document.getElementById("startFuel").innerHTML = "Yes";
@@ -78,6 +78,7 @@ var display = function(){
 	else {
 		document.getElementById("groundGear").innerHTML = "No";
 	}
+	document.getElementById("avgSpeed").innerHTML = avgSpeed;
 	FusionCharts.ready(function () {
 		var autonHigh = new FusionCharts({
 			type: 'line',
