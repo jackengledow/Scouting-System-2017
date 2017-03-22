@@ -1,6 +1,7 @@
 const DB_NAME = 'scouting-db';
 const DB_VERSION = 6;
 var db;
+var teamsSelected = 0;
 
 //Global variables for the data
 var data = new Object();            //Object for all the data pulled directly from indexeddb
@@ -324,16 +325,23 @@ function addGraph(toDiv, graphs, graphName, opts) {
 }
 
 function addTeamSelect() {
-	var select = $("<select>").addClass("form-control teams");
+	teamsSelected = teamsSelected + 1;
+	if(teamsSelected<4){
+	var select = $("<select>").addClass("form-control teams").css('width','140px');
 	select.change(updateCompareGraphs);
 	compareTeams.append(select);
 	populateTeamsSelectors(false);
 
 	updateCompareGraphs();
+	}
+	else{
+		teamsSelected = 3;
+	}
 }
 
 function removeTeamSelect() {
 	if (compareTeams.children().length > 1) {
+		teamsSelected -= 1;
 		compareTeams.find("select").last().remove();
 		updateCompareGraphs();
 	}

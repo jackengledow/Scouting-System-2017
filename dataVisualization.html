@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel = "stylesheet" href = "tab_stuff.css">
 		<script src="fusioncharts-suite-xt/js/fusioncharts.js"></script>
 		<script src="fusioncharts-suite-xt/js/fusioncharts.charts.js"></script>
-		<script src="js/jquery-2.2.1.min.js"></script>
+		<script src="jquery-3.1.1.min.js"></script>
 		<script src="dataVisualization.js"></script>
 		<!-- <script src="js/bootstrap.min.js"></script> -->
 		<link href="css/bootstrap.css" rel="stylesheet">
@@ -80,7 +81,7 @@
 			</div>
 			<!-- Tab panes -->
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 tabs">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#general-stats" data-toggle="tab">General Statistics</a></li>
 						<li><a href="#compare" data-toggle="tab">Comparison</a></li>
@@ -92,7 +93,7 @@
 
 					<div class="tab-content">
 						<form action = "getTeam.php" method = "post">Team Number: <input type="number" name="dataTeamNumber"></form><button onclick = "display()" class = "backButton" type = "submit">Submit</button>
-						<div class="tab-pane fade in active" id="general-stats">
+						<div class="tab-pane tabs fade in active" id="general-stats">
 							<!--<div class="graph-content">-->
 							<!--<div>
 								<div data-toggle="buttons" class="btn-group compare-graph-btn">
@@ -198,7 +199,7 @@
 								<div class="graph-space"></div>
 							<!--</div>-->
 						</div>
-						<div class="tab-pane fade in" id="compare">
+						<div class="tab-pane tabs fade in" id="compare" style = "width: 20%; float: left">
 							<div id="teams-management" class="form-group">
 								<button class="btn btn-default btn-lg" onclick="addTeamSelect()">Add Team</button>
 								<button id="remove-team" class="btn btn-default btn-lg" onclick="removeTeamSelect()">Remove Team</button>
@@ -217,25 +218,25 @@
 								<div class="graph-space"></div>
 								<div data-toggle="buttons" class="btn-group compare-graph-btn">
 									<label class="btn btn-default btn-lg">
-										<input type="checkbox">Auton High Goal
+										<input id = "auton-high-goal" type="checkbox" onclick = "makeGraphAutonHighGoals()">Auton High Goal
 									</label>
 								</div><br>
 								<div class="graph-space"></div>
 								<div data-toggle="buttons" class="btn-group compare-graph-btn">
 									<label class="btn btn-default btn-lg">
-										<input type="checkbox">Auton Low Goal
+										<input type="checkbox" onclick = "makeGraphAutonHighGoals()">Auton Low Goal
 									</label>
 								</div><br>
 								<div class="graph-space"></div>
 								<div data-toggle="buttons" class="btn-group compare-graph-btn">
 									<label class="btn btn-default btn-lg">
-										<input type="checkbox">Auton Gears Scored
+										<input type="checkbox" onclick = "makeGraphAutonHighGoals()">Auton Gears Scored
 									</label>
 								</div><br>
 								<div class="graph-space"></div>
 								<div data-toggle="buttons" class="btn-group compare-graph-btn">
 									<label class="btn btn-default btn-lg">
-										<input type="checkbox">Teleop Gears Scored
+										<input type="checkbox" onclick = "makeGraphAutonHighGoals()">Teleop Gears Scored
 									</label>
 								</div><br>
 								<div class="graph-space"></div>
@@ -271,7 +272,21 @@
 								<div class="graph-space"></div>
 							</div>
 						</div>
-						<div class="tab-pane fade in container-fluid" id="pit-scouting">
+						<div style = "width: 80%; height: 700px; float: right; padding-top: 100px;" id = "six">
+							<div style = "width: 50%; height: 50%; float: left;" id = "six1">
+								
+							</div>
+							<div style = "width: 50%; height: 50%; float: right;" id = "six2">
+								
+							</div>
+							<div style = "width: 50%; height: 50%; float: left;" id = "six3">
+								
+							</div>
+							<div style = "width: 50%; height: 50%; float: right;" id = "six4">
+								
+							</div>
+						</div>
+						<div class="tab-pane tabs fade in container-fluid" id="pit-scouting">
 							<div id="team-selector" class="row">
 								<div class="col-md-3">
 									<select id="pit-team" class="form-control teams" onchange="updatePitScoutView()"></select>
@@ -284,7 +299,7 @@
 
 							</div>
 						</div>
-						<div class="tab-pane fade in" id="notes-viewer">
+						<div class="tab-pane tabs fade in" id="notes-viewer">
 							<div id="team-selector" class="row">
 								<div class="col-md-3">
 									<select id="notes-team" class="form-control teams" onchange="updateNotesViewer()"></select>
@@ -313,7 +328,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="lists-viewer">
+						<div class="tab-pane tabs" id="lists-viewer">
 							<div class="row">
 								<div class="col-md-3">
 									<h3>Climbers</h3>
@@ -408,7 +423,7 @@
 					</div>
 				</div>
 			</div>
-			<script src="js/sort.js"></script>
+		</div>
 			<script src="js/defenses.js"></script>
 			<script src="js/graphs.js"></script>
 			<script src="js/heatmap.js"></script>
@@ -418,5 +433,35 @@
 			<script src="js/datavis-lists.js"></script>
 			<script src="js/datavis-match-predictor.js"></script>
 			<script src="js/datavis-table.js"></script>
+			<script>
+			jQuery(document).ready(function() {
+				jQuery('.tabs a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+		console.log("This ran");
+        // Show/Hide Tabs
+        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+        e.preventDefault();
+		
+    });
+	$(".tabs a").on('click', function(e)  {
+          var currentAttrValue = jQuery(this).attr('href');
+			console.log("This ran");
+          // Show/Hide Content
+          jQuery('.tab' + currentAttrValue).addClass('active').siblings().removeClass('active');
+  
+          // Change/remove current tab to active
+          jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+		  
+          e.preventDefault();
+  		
+      });
+	
+			});
+			</script>
+			
 	</body>
 </html>
