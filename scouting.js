@@ -43,7 +43,7 @@ var countFouls=function (change) {
 		fouls = 0;
 	}
 	document.getElementById("addFoul").innerHTML = fouls;
-	console.log(document.getElementById("something").style.opacity);
+	document.getElementById("fouls").value = fouls;
 }
 
 var countTechnicals=function (change) {
@@ -52,6 +52,7 @@ var countTechnicals=function (change) {
 		technicals=0;
 	}
 	document.getElementById("addTechnical").innerHTML = technicals;
+	document.getElementById("technicals").value = technicals;
 }
 
 var noSelect = function(){
@@ -65,6 +66,7 @@ var countHighMakeTeleop=function (change){
 		makeHighTeleop = 0;
 	}
 	document.getElementById("highScoreTeleop").innerHTML = makeHighTeleop;
+	document.getElementById("teleopHigh").value = makeHighTeleop;
 
 }
 
@@ -83,6 +85,7 @@ var countHighMakeAuton=function (change){
 		makeHighAuton = 0;
 	}
 	document.getElementById("highScoreAuton").innerHTML = makeHighAuton;
+	document.getElementById("autonHigh").value = makeHighAuton;
 
 }
 
@@ -95,6 +98,7 @@ var addGears=function (change){
 		totalGears = 18;
 	}
 	document.getElementById("gearsTeleop").innerHTML = totalGears;
+	document.getElementById("teleopGears").value = totalGears;
 
 }
 
@@ -379,19 +383,27 @@ var undo = function(){
 	buttonSize--;
 	
 }
-var clearArray = function(){
-	console.log("function ran");
-	var opaque = document.getElementById("something").style.opacity;
-	console.log(opaque);
-	if (opaque == 1){
-		pathTracer = [];
-		console.log(pathTracer);
-	}
-	else {
-		console.log("Error is something that this is");
-	}
+var clearPathTracer = function(){
+	pathTracer = [];
 }
-
+var speedOne = function(){
+	document.getElementById("speed").value = 1;
+}
+var speedTwo = function(){
+	document.getElementById("speed").value = 2;
+}
+var speedThree = function(){
+	document.getElementById("speed").value = 3;	
+}
+var successClimb = function(){
+	document.getElementById("climb").value = "success";
+}
+var failClimb = function(){
+	document.getElementById("climb").value = "fail";
+}
+var nullClimb = function(){
+	document.getElementById("climb").value = "no_attempt";
+}
 var __slice = Array.prototype.slice;
 (function($) {
   var Sketch;
@@ -550,13 +562,10 @@ var __slice = Array.prototype.slice;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         event = _ref[_i];
         this.context.lineTo(event.x, event.y);
-		if(pathCount%10==0){
-			pathTracer.push("("+Math.floor(event.x) + "," + Math.floor(event.y)+ ")");
-			pathCount++;
-		}
-		else{
-			pathCount++;
-		}
+
+		pathTracer.push("("+Math.round(event.x) + "," + Math.round(event.y)+ ")");
+		pathCount++;
+		
         previous = event;
       }
       this.context.strokeStyle = action.color;

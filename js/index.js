@@ -60,24 +60,24 @@ function populateCompetitionSelect() {
 		competitionSelect.appendChild(newPlaceHolderElement);
 	}
 
-	/* Iterate through the competitions array, */
+	/* Iterate through the competitions array, 
 	for(var i = 0; i < competitions.length; i += 1) {
 		competition_i = competitions[i];
 
 		/* Cache the id and name of the competition,
 		 * so we don't have to type this over and over again.
-		 */
+		 
 		newCompetitionID = competition_i["_id"];
 		newCompetitionName = competition_i["name"];
 
-		/* Create a new option, with the value being the id. */
+		/* Create a new option, with the value being the id. 
 		var newCompetitionElement = document.createElement("option");
 		newCompetitionElement.setAttribute("value", newCompetitionID);
 
-		/* Set the displayed text of that option to the competition's name. */
+		/* Set the displayed text of that option to the competition's name. 
 		var newCompetitionTextNode = document.createTextNode(newCompetitionName);
 
-		/* Add the text to the option, and the option to the select menu. */
+		/* Add the text to the option, and the option to the select menu. 
 		newCompetitionElement.appendChild(newCompetitionTextNode);
 		competitionSelect.appendChild(newCompetitionElement);
 	}
@@ -210,14 +210,14 @@ function sendNewDefaultCompetition() {
 
 	var selectedCompetition = null;
 	
-	competitions[0] = "hehe";
+	/*competitions[0] = "hehe";
 	competitions[1] = 
 	competitions[1] = 
 	competitions[1] = 
 	competitions[1] = 
 	competitions[1] = 
 	competitions[1] = 
-	competitions[1] = 
+	competitions[1] = */
 
 	for(var i = 0; i < competitions.length; i += 1) {
 		competition_i = competitions[i];

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="fusioncharts-suite-xt/js/fusioncharts.js"></script>
+		<script src="fusioncharts-suite-xt/js/fusioncharts.charts.js"></script>
 		<script src="js/jquery-2.2.1.min.js"></script>
-		<script src="js/datatables.min.js"></script>
-		<script src="js/plotly.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/blueimp-gallery.min.js"></script>
+		<script src="dataVisualization.js"></script>
 		<!-- <script src="js/bootstrap.min.js"></script> -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/webca.css" rel="stylesheet">
@@ -15,11 +14,47 @@
 		<!--<link rel="stylesheet" href="css/2015.css">-->
 		<link rel="stylesheet" href="css/datavis.css">
 		<link rel="stylesheet" href="tab_stuff.css">
-		<script src="js/defenseOptom.js"></script>
+		<style>
+			div > p {
+				display:inline-block;
+			}
+		</style>
 	</head>
 
 	<!-- Body -->
-
+	<!-- 
+		Auton:
+			Match Number
+			Team Number
+			Starts With Fuel
+			Start With Gears
+			Cross Baseline
+			Score the Gear
+			Auton Movement (canvas)
+			Auton High Goal Count
+			Auton Low Goal Count
+			Auton Gears Scored
+		Teleop:
+			Speed
+			Disabled
+			Can Collect Fuel from Ground
+			Can Use a Hopper
+			Can Collect a Gear from the Ground
+			Teleop Gears Scored
+			Low Goal Count
+			High Goal Count
+			High Goal Accuracy
+			Teleop Heat Map
+			Climb
+		Penalties:
+			Fouls
+			Technicals
+			Yellow Card
+			Red Card
+			Ejection
+		Notes:
+			Notes
+	-->
 	<body>
 		<div id="blueimp-gallery" class="blueimp-gallery">
 			<div class="slides"></div>
@@ -52,27 +87,187 @@
 						<li><a href="#pit-scouting" data-toggle="tab">Pit Scouting Info</a></li>
 						<li><a href="#notes-viewer" data-toggle="tab">Notes Viewer</a></li>
 						<li><a href="#lists-viewer" data-toggle="tab">Lists Viewer</a></li>
-						<li><a href="#match-predictor" data-toggle="tab">Match Predictor</a></li>
+						<!--<li><a href="#match-predictor" data-toggle="tab">Match Predictor</a></li>-->
 					</ul>
 
 					<div class="tab-content">
+						<form action = "getTeam.php" method = "post">Team Number: <input type="number" name="dataTeamNumber"></form><button onclick = "display()" class = "backButton" type = "submit">Submit</button>
 						<div class="tab-pane fade in active" id="general-stats">
-							<div class="graph-content">
-								<div id="general-graph-list" class="graph-list"></div>
-								<div class="graph-space"></div>
+							<!--<div class="graph-content">-->
+							<!--<div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Starts With Fuel
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Starts With Gear
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Crosses Baseline
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Scores the Gear
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div>
 							</div>
+							<div class="graph-space"></div>-->
+							<p> Auton: </p><br>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Starts With Fuel:</p><p id = "startFuel"> %</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Starts With Gears:</p><p id = "startGear"> %</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Crosses Baseline:</p><p id = "baseline">%</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Scores the Gear:</p><p id = "scoreGear">%</p></div>
+								<!--<div style="display: inline-block"><p style="margin-left: 30px;">Auton Movement:</p><p>Canvas</p></div>-->
+								<div style="display: inline-block"><p style="margin-left: 30px;">Auton Low Goal:</p><p>Num/Match (Line Graph)</p></div><br>
+								<div style="display: inline-block" id = "autonHigh"></div><br>
+							<p> Teleop: </p><br>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Average Speed:</p>  <p id = "avgSpeed"></p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Any Disabled Matches?:</p>  <p>Match List</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Can Collect Fuel from Ground:</p>  <p id = "groundCollect">Y/N</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Can Use a Hopper:</p>  <p id = "hopper">Y/N</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Can Collect a Gear from the Ground:</p>  <p id = "groundGear">Y/N</p></div>
+								<!--<div style="display: inline-block"><p style="margin-left: 30px;">Low Goal Count:</p>  <p>Num/Match (Line Graph)</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">High Goal:</p>  <p>Heat Map</p></div>-->
+								<div style="display: inline-block"><p style="margin-left: 30px;">Climb:</p>  <p>% (When Attempted)</p></div><br>
+								<div style="display: inline-block" id = "teleopHigh"></div><div style = "display: inline-block" id = "teleopGear"></div>
+							<p> Penalties: </p><br>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Fouls:</p>  <p>Num and Match</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Technicals:</p> <span></span>Num and Match<p></p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Yellow Cards:</p>  <p>Num and Match</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Red Cards:</p>  <p>Num and Match</p></div>
+								<div style="display: inline-block"><p style="margin-left: 30px;">Ejections:</p>  <p>Num and Match</p></div>
+							<p> Notes: </p>
+								<div style="display: flex"><p style="margin-left: 30px;">Notes:</p> <span style="width: 20px;"></span> <p>Notes</p></div>
+								
+								<!--<div id="general-graph-list" class="graph-list"></div>-->
+								<div class="graph-space"></div>
+							<!--</div>-->
 						</div>
 						<div class="tab-pane fade in" id="compare">
 							<div id="teams-management" class="form-group">
 								<button class="btn btn-default btn-lg" onclick="addTeamSelect()">Add Team</button>
 								<button id="remove-team" class="btn btn-default btn-lg" onclick="removeTeamSelect()">Remove Team</button>
 
-								<label class="btn btn-default btn-lg"><!--<input type="checkbox" id="separate-teams" onchange="updateCompareGraphs()">-->Separate Teams</label>
+								<!--<label class="btn btn-default btn-lg"><!--<input type="checkbox" id="separate-teams" onchange="updateCompareGraphs()">Separate Teams</label>-->
 							</div>
 							<div id="compare-teams"></div>
 							<hr>
-							<div class="graph-content">
-								<div id="compare-graph-list" class="graph-list"></div>
+							<div class="graph-content" style="display:block">
+								<!--<div id="compare-graph-list" class="graph-list"></div>-->
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Movement
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton High Goal
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Low Goal
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Auton Gears Scored
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Teleop Gears Scored
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Low Goal Count
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Low Goal Accuracy
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">High Goal Count
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">High Goal Accuracy
+									</label>
+								</div><br>
+								<div class="graph-space"></div>
+								<div data-toggle="buttons" class="btn-group compare-graph-btn">
+									<label class="btn btn-default btn-lg">
+										<input type="checkbox">Climb
+									</label>
+								</div>								
 								<div class="graph-space"></div>
 							</div>
 						</div>
@@ -104,7 +299,7 @@
 								</div>
 								<div id="notes-content">
 									<div id="auton-notes" class="panel panel-default">
-										<div class="panel-heading">Auton Notes</div>
+										<!--<div class="panel-heading"></div>-->
 										<div class="panel-body"></div>
 									</div>
 									<!--<div id="teleop-notes" class="panel panel-default">
@@ -150,8 +345,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="match-predictor">
-							<!--<p style="margin-top: 15px">You should probably choose the current competition first. Note: This is experimental and shouldn't be expected to be 100% accurate.</p>-->
+						<!--<div class="tab-pane" id="match-predictor">
+							<p style="margin-top: 15px">You should probably choose the current competition first. Note: This is experimental and shouldn't be expected to be 100% accurate.</p>
 							<div class="row">
 								<div class="col-md-6">
 									<h3>Red Alliance</h3>
@@ -209,7 +404,7 @@
 						<div class="tab-pane fade in" id="table-shoot-viewer">
 							<h2>High and Low Goals</h2>
 							<table id="table-shoot" class="table" width="100%"></table>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

@@ -202,7 +202,7 @@ function separateData(id){
 	findClimbers();
 	findGoodHighGoalers();
 	findGoodLowGoalers();
-	findMultiBallAutons();
+	findlAutons();
 	createTables();
 	populateTeamsSelectors(true);
 }
