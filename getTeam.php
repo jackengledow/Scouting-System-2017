@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta http-equiv = "refresh" content = "0, URL = 'dataVisualization.html'"/>
 		<title>Team Get</title>
 	</head>
 	<body>
 		<h2>THis</h2>
 		<?php 
-			$speed = 2;
 			$host = "localhost";
 			$user = "root";
 			$pass = "team868!";
@@ -16,20 +16,15 @@
 				echo "Connection failed: " . $con->connect_error;
 			}
 			function getVal($key, $defVal){
-				echo "$key\n";
-				if(isset($POST_[$key]) && !empty($POST_[$key])){
-					echo $POST_[$key];					
-					return $POST_[$key];
+				if(!empty($_POST[$key])){					
+					return $_POST[$key];
 				}
 				return $defVal;
-			}
-					
+			}		
 			$dataTeamNumber = getVal('dataTeamNumber', 0);
 			echo "$dataTeamNumber\n";
 
 			$query = "SELECT * FROM generic WHERE teamNumber='" . $dataTeamNumber . "';";
-			$row = mysql_fetch_row($query);
-			echo $row;
 			$con->query($query);
 			mysqli_close($con);
 		?>

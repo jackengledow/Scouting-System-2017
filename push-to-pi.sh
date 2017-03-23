@@ -1,3 +1,4 @@
 #!/bin/bash
 
-scp -r ./* pi@10.8.68.42:/var/www/html/
+#scp -r ./* pi@localhost:/var/www/html/
+cp -r -v ./* /var/www/html/
