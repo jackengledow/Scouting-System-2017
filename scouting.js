@@ -396,13 +396,13 @@ var speedThree = function(){
 	document.getElementById("speed").value = 3;	
 }
 var successClimb = function(){
-	document.getElementById("climb").value = "success";
+	document.getElementById("climb").value = "1";
 }
 var failClimb = function(){
-	document.getElementById("climb").value = "fail";
+	document.getElementById("climb").value = "0";
 }
 var nullClimb = function(){
-	document.getElementById("climb").value = "no_attempt";
+	document.getElementById("climb").value = "0";
 }
 var __slice = Array.prototype.slice;
 (function($) {

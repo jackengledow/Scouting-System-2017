@@ -39,7 +39,7 @@
 			$useHopper = getValue('useHopper', "FALSE");
 			$collectsGear = getValue('collectsGear', "FALSE");
 			$teleopGears = getValue('teleopGears', 0);
-			$climb = getString('climb', 'no attempt');
+			$climb = getValue('climb', '0');
 			$teleopHigh = getValue('teleopHigh', 0);
 			$fouls = getValue('fouls', "0");
 			$technicals = getValue('technicals', 0);
